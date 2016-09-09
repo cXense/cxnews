@@ -17,7 +17,7 @@
 
 #### How to run the app?
 
-You will need an Xcode 8 and iOS simulators with iOS8+ versions. Before you can launch the app you need to do some manual operations. 
+You will need an Xcode 7 and iOS simulators with iOS8+ versions. Before you can launch the app you need to do some manual operations. 
 
 	##### Project configuration
 
