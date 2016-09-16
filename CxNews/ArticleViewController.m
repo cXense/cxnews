@@ -31,7 +31,8 @@
     [super viewDidLoad];
 
     [self showActivityIndicator];
-    [[ArticleService sharedInstance] articleForURL:[NSURL URLWithString:self.url]completion:^(ArticleModel *model, NSError *error) {
+    [[ArticleService sharedInstance] articleForURL:[NSURL URLWithString:self.eventUrl]
+                                        completion:^(ArticleModel *model, NSError *error) {
         if (error || !model) {
             UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Error"
                                                                              message:@"Article could not be loaded due to some error."

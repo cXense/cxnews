@@ -7,6 +7,7 @@
 //
 
 #import "Reco2ArticleConverter.h"
+#import "ATS-URL-Converter.h"
 
 @implementation Reco2ArticleConverter
 
@@ -21,12 +22,10 @@
 + (ArticleModel *)articleFromRecommendation:(CxenseContentRecommendation *)reco {
     ArticleModel *model = [[ArticleModel alloc] init];
     // replace 'http' onto 'https'. ATS is enabled
-    NSString *receivedImageUrl = [reco data][@"dominantthumbnail"];
-    model.imageUrl = [receivedImageUrl stringByReplacingOccurrencesOfString:@"http:" withString:@"https:"];
-    NSLog(@"[IMAGE URL]: %@", model.imageUrl);
+    model.imageUrl = [ATS_URL_Converter convertToHttps:[reco data][@"dominantthumbnail"]];
     model.headline = [reco data][@"title"];
-    model.clickUrl = reco.clickUrl;
-    model.url = reco.url;
+    model.clickUrl = [ATS_URL_Converter convertToHttps:reco.clickUrl];
+    model.url = [ATS_URL_Converter convertToHttps:reco.url];
     model.timestamp = reco.data[@"body"][1];
     model.section = reco.data[@"body"][0];
     return model;

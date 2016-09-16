@@ -7,6 +7,7 @@
 //
 
 #import "ArticleService.h"
+#import "ATS-URL-Converter.h"
 
 @implementation ArticleService
 
@@ -74,11 +75,12 @@
                                imageRange = [imageTemp rangeOfString:@"<img src=\""];
                                imageTemp = [imageTemp substringFromIndex:imageRange.location + imageRange.length];
                                imageRange = [imageTemp rangeOfString:@"\""];
-                               model.imageUrl = [imageTemp substringToIndex:imageRange.location];
+                               model.imageUrl = [ATS_URL_Converter convertToHttps:[imageTemp substringToIndex:imageRange.location]];
 
                                // Article Url
-                               model.url = url.absoluteString;
-                               model.clickUrl = url.absoluteString;
+                               NSString *securedUrl = [ATS_URL_Converter convertToHttps:url.absoluteString];
+                               model.url = securedUrl;
+                               model.clickUrl = securedUrl;
 
                                completion(model, nil);
                            }];
@@ -231,11 +233,12 @@
     imageRange = [imageTemp rangeOfString:@"<img src=\""];
     imageTemp = [imageTemp substringFromIndex:imageRange.location + imageRange.length];
     imageRange = [imageTemp rangeOfString:@"\""];
-    model.imageUrl = [imageTemp substringToIndex:imageRange.location];
+    model.imageUrl = [ATS_URL_Converter convertToHttps:[imageTemp substringToIndex:imageRange.location]];
     
     // Article Url
-    model.url = url.absoluteString;
-    model.clickUrl = url.absoluteString;
+    NSString *securedUrl = [ATS_URL_Converter convertToHttps:url.absoluteString];
+    model.url = securedUrl;
+    model.clickUrl = securedUrl;
     
     return model;
 }

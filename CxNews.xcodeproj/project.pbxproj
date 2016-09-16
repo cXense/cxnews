@@ -13,6 +13,7 @@
 		431A4F711F82037FCD967E27 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A4D9911F510C6A017BE26 /* UserService.m */; };
 		8701F1AD1D30FD6700542ACF /* libCxenseInsightSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8701F1AC1D30FD6700542ACF /* libCxenseInsightSDK.a */; };
 		8701F1AF1D31004000542ACF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8701F1AE1D31004000542ACF /* libsqlite3.tbd */; };
+		8702ED9E1D8BE05F001F45B7 /* ATS-URL-Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8702ED9D1D8BE05F001F45B7 /* ATS-URL-Converter.m */; };
 		87060C1E1D03F882006E6C36 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87060C1D1D03F882006E6C36 /* FeedViewController.m */; };
 		87060C221D04B065006E6C36 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87060C211D04B064006E6C36 /* UserAccountViewController.m */; };
 		8707D8631CF0887A007B1A2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8707D8621CF0887A007B1A2B /* main.m */; };
@@ -104,6 +105,8 @@
 		8701F1AB1D30FD6700542ACF /* CxenseInsightTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseInsightTracker.h; sourceTree = "<group>"; };
 		8701F1AC1D30FD6700542ACF /* libCxenseInsightSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCxenseInsightSDK.a; sourceTree = "<group>"; };
 		8701F1AE1D31004000542ACF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8702ED9C1D8BE05F001F45B7 /* ATS-URL-Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ATS-URL-Converter.h"; sourceTree = "<group>"; };
+		8702ED9D1D8BE05F001F45B7 /* ATS-URL-Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ATS-URL-Converter.m"; sourceTree = "<group>"; };
 		87060C1C1D03F882006E6C36 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		87060C1D1D03F882006E6C36 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		87060C201D04B064006E6C36 /* UserAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAccountViewController.h; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 				87110ABF1D3E126100451251 /* Reco2ArticleConverter.m */,
 				87A9A51E1D4B335600014FC4 /* SectionLinksProvider.h */,
 				87A9A51F1D4B335600014FC4 /* SectionLinksProvider.m */,
+				8702ED9C1D8BE05F001F45B7 /* ATS-URL-Converter.h */,
+				8702ED9D1D8BE05F001F45B7 /* ATS-URL-Converter.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -766,6 +771,7 @@
 				8707D8661CF0887A007B1A2B /* AppDelegate.m in Sources */,
 				8790D5531CF9A2FE0009EBFF /* RearMenuViewController.m in Sources */,
 				879007641D5DDCA700709591 /* InterestsProcessingService.m in Sources */,
+				8702ED9E1D8BE05F001F45B7 /* ATS-URL-Converter.m in Sources */,
 				87B7FF141D28EF34002D040D /* ArticleService.m in Sources */,
 				8707D8631CF0887A007B1A2B /* main.m in Sources */,
 				87A9A5251D4B879200014FC4 /* InterestsViewController.m in Sources */,
