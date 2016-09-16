@@ -20,7 +20,10 @@
 
 + (ArticleModel *)articleFromRecommendation:(CxenseContentRecommendation *)reco {
     ArticleModel *model = [[ArticleModel alloc] init];
-    model.imageUrl = [reco data][@"dominantthumbnail"];
+    // replace 'http' onto 'https'. ATS is enabled
+    NSString *receivedImageUrl = [reco data][@"dominantthumbnail"];
+    model.imageUrl = [receivedImageUrl stringByReplacingOccurrencesOfString:@"http:" withString:@"https:"];
+    NSLog(@"[IMAGE URL]: %@", model.imageUrl);
     model.headline = [reco data][@"title"];
     model.clickUrl = reco.clickUrl;
     model.url = reco.url;

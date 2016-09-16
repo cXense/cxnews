@@ -16,7 +16,7 @@
 @implementation ArticleServiceTests
 
 - (void)testPerformanceExample {
-    NSURL *techSectionUrl = [NSURL URLWithString:@"http://cxnews.azurewebsites.net/articles/tech/"];
+    NSURL *techSectionUrl = [NSURL URLWithString:@"https://cxnews.azurewebsites.net/articles/tech/"];
     ArticleService *service = [ArticleService sharedInstance];
     [self measureBlock:^{
         NSSet<ArticleModel *> *result = [service articlesForURL:techSectionUrl error:nil];

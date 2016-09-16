@@ -64,7 +64,7 @@
     [[CXNEventsService sharedInstance] trackEventWithName:@"Article View"
                                           forPageWithName:self.headlineTextView.text
                                                    andUrl:self.eventUrl
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net"
+                                          andRefferingUrl:@"https://cxnews.azurewebsites.net"
                                         byTrackerWithName:@"Article"];
 }
 

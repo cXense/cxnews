@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class CxenseContentRecommendation;
+
 typedef NS_ENUM(NSInteger, CxenseContentWidgetErrorCode) {
     CxenseContentWidgetUnknownError
 };
@@ -18,30 +20,31 @@ typedef NS_ENUM(NSInteger, CxenseContentWidgetErrorCode) {
  *  @param items    An array of CxenseContentRecommendation objects.
  *  @param error    NSError to debug any error that occured.
  */
-typedef void (^CxenseContentWidgetCompletion)(BOOL success, NSArray *items, NSError *error);
+typedef void (^CxenseContentWidgetCompletion)(BOOL success, NSArray<CxenseContentRecommendation *> *items, NSError *error);
 
 @class CxenseContentUser, CxenseContentContext, CxenseContentRecommendation;
+
 @interface CxenseContentWidget : NSObject
 
 /**
  *  The widget id for the widget in Cxense Content.
  */
-@property (nonatomic, strong) NSString *widgetId;
+@property(nonatomic, strong) NSString *widgetId;
 
 /**
  *  Optional context for the widget
  */
-@property (nonatomic, strong) CxenseContentContext *context;
+@property(nonatomic, strong) CxenseContentContext *context;
 
 /**
  *  Optional user for the widget
  */
-@property (nonatomic, strong) CxenseContentUser *user;
+@property(nonatomic, strong) CxenseContentUser *user;
 
 /**
  *  Array of CxenseContentRecommendations objects for the widget.
  */
-@property (nonatomic, strong, readonly) NSArray *items;
+@property(nonatomic, strong, readonly) NSArray *items;
 
 
 /**

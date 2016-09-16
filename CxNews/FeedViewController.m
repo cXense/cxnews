@@ -68,7 +68,7 @@
 
     [[CXNEventsService sharedInstance] trackEventWithName:@"Feed View"
                                           forPageWithName:@"Recommendations"
-                                                   andUrl:@"http://cxnews.azurewebsites.net"
+                                                   andUrl:@"https://cxnews.azurewebsites.net"
                                           andRefferingUrl:nil
                                         byTrackerWithName:@"Feed"];
 }

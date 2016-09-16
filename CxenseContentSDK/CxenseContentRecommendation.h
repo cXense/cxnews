@@ -12,18 +12,18 @@
 /**
  *  The URL
  */
-@property (nonatomic, strong, readonly) NSString *url;
+@property(nonatomic, strong, readonly) NSString *url;
 
 /**
  *  The click URL for the recommendation. The default behavior is that this url (if set) redirects to the URL for the recommendation.
  */
-@property (nonatomic, strong, readonly) NSString *clickUrl;
+@property(nonatomic, strong, readonly) NSString *clickUrl;
 
 /**
  *  A dictionary representation of the raw recommendation data (JSON).
  */
-@property (nonatomic, strong, readonly) NSDictionary *data;
+@property(nonatomic, strong, readonly) NSDictionary<NSString *, id> *data;
 
-- (instancetype)initWithRecommendationDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithRecommendationDictionary:(NSDictionary<NSString *, id> *)dictionary;
 
 @end
