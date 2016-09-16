@@ -9,17 +9,17 @@
 /**
 * Represents the category or type of information.
 */
-@property  (nonatomic, copy) NSString *group;
+@property(nonatomic, copy) NSString *group;
 
 /**
 * The number of times the item/group combination was generated from the page content.
 */
-@property  (nonatomic) NSInteger count;
+@property(nonatomic) NSInteger count;
 
 /**
 * Indicates the relative prominence of the item/group combination.
 */
-@property  (nonatomic) double weight;
+@property(nonatomic) double weight;
 
 /**
 * Creates and returns a CxenseDMPGroup object with the specified parameters set.
@@ -30,6 +30,8 @@
 *
 * @return CxenseDMPGroup object with specified parameters set.
 */
-+ (CxenseDMPGroup *)groupWithGroup:(NSString *)group count:(NSInteger)count weight:(double)weight;
++ (CxenseDMPGroup *)groupWithGroup:(NSString *)group
+                             count:(NSInteger)count
+                            weight:(double)weight;
 
 @end

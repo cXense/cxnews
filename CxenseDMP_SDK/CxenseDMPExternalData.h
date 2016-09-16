@@ -4,6 +4,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class CxenseDMPExternalProfile;
+
 /**
 * CxenseDMPExternalData represent external data associated with a user.
 */
@@ -12,23 +14,25 @@
 /**
 * The identifier of the user.
 */
-@property (nonatomic, copy) NSString *dataId;
+@property(nonatomic, copy) NSString *dataId;
 
 /**
 * The customer identifier type (customer prefix) under which the user identifier is stored.
 */
-@property (nonatomic, copy) NSString *dataType;
+@property(nonatomic, copy) NSString *dataType;
 
 /**
 * Array of CxenseDMPExternalProfile objects, representing the stored key-values for the user.
 */
-@property (nonatomic, strong) NSArray *profiles;
+@property(nonatomic, strong) NSArray<CxenseDMPExternalProfile *> *profiles;
 
 /**
 * Creates and returns an CxenseDMPExternalData object with the specified dataId, type and profiles.
 *
 * @return CxenseDMPExternalData object with specified parameters.
 */
-+ (CxenseDMPExternalData *)externalDataWithId:(NSString *)dataId type:(NSString *)type profiles:(NSArray *)profiles;
++ (CxenseDMPExternalData *)externalDataWithId:(NSString *)dataId
+                                         type:(NSString *)type
+                                     profiles:(NSArray<CxenseDMPExternalProfile *> *)profiles;
 
 @end
