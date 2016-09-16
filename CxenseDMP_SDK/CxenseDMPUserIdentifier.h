@@ -10,12 +10,12 @@
 /**
 * Site specific identifier (type cx) or external user identifier type.
 */
-@property (nonatomic, copy) NSString *type;
+@property(nonatomic, copy) NSString *type;
 
 /**
 * Value of the user identifier.
 */
-@property (nonatomic, copy) NSString *identifier;
+@property(nonatomic, copy) NSString *identifier;
 
 /**
 * Creates and return a User Identifier object.
@@ -26,6 +26,7 @@
 *
 * @return CxenseDMPEventUserIdentifier object with the specified type and identifier set.
 */
-+ (CxenseDMPUserIdentifier *)identifierWithType:(NSString *)type identifier:(NSString *)identifier;
++ (CxenseDMPUserIdentifier *)identifierWithType:(NSString *)type
+                                     identifier:(NSString *)identifier;
 
 @end

@@ -16,12 +16,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
-/** String with URL of the article which must be shown on the screen. */
+/**
+ String with URL of the article which must be shown on the screen.
+ */
 @property (nonatomic, weak) NSString *url;
-/** 
+
+/**
  String with URL of the article which must be shown on the screen.
  Basically, this URL leads to same page as previous, but without redirects on tracking pages.
- This is needed to have events statistics on plain URLs instead of something like 'http://api.cxense.com/click/...'.
+ This is needed to have events statistics on plain URLs instead of something like 'https://api.cxense.com/click/...'.
  */
 @property (nonatomic, weak) NSString *eventUrl;
 

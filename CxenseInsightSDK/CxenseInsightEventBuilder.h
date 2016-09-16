@@ -5,6 +5,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol CxenseInsightLocation;
+
 @interface CxenseInsightEventBuilder : NSObject
 
 /**
@@ -15,7 +16,8 @@
 * @param parameter The parameter to set for the specified key
 * @param key       The key for the parameter
 */
-- (void)setParameter:(NSString *)parameter forKey:(NSString *)key;
+- (void)setParameter:(NSString *)parameter
+              forKey:(NSString *)key;
 
 /**
 * Set Custom Parameters
@@ -26,7 +28,8 @@
 * @param parameter The parameter to set for the specified key
 * @param key       The key for the parameter
 */
-- (void)setCustomParameter:(NSString *)parameter forKey:(NSString *)key;
+- (void)setCustomParameter:(NSString *)parameter
+                    forKey:(NSString *)key;
 
 /**
 * Set User Profile Parameters
@@ -37,7 +40,8 @@
 * @param parameter The parameter to set for the specified key
 * @param key       The key for the parameter
 */
-- (void)setUserProfileParameter:(NSString *)parameter forKey:(NSString *)key;
+- (void)setUserProfileParameter:(NSString *)parameter
+                         forKey:(NSString *)key;
 
 /**
 * Retrieve the value for a specific key.
@@ -73,7 +77,8 @@
 *
 * @return CxenseInsightEventBuilder builder with parameters set for a pageview with the specified url and referring url.
 */
-+ (CxenseInsightEventBuilder *)pageViewEventWithURL:(NSString *)url referringURL:(NSString *)referringUrl;
++ (CxenseInsightEventBuilder *)pageViewEventWithURL:(NSString *)url
+                                       referringURL:(NSString *)referringUrl;
 
 /**
 * Create a CxenseInsightEventBuilder for a PageView event with the specified url.
@@ -85,6 +90,8 @@
 *
 * @return CxenseInsightEventBuilder builder with parameters set for a pageview with the specified url, referring url and siteId.
 */
-+ (CxenseInsightEventBuilder *)pageViewEventWithURL:(NSString *)url referringURL:(NSString *)referringUrl siteId:(NSString *)siteId;
++ (CxenseInsightEventBuilder *)pageViewEventWithURL:(NSString *)url
+                                       referringURL:(NSString *)referringUrl
+                                             siteId:(NSString *)siteId;
 
 @end

@@ -64,14 +64,14 @@
      */
     NSHTTPCookie *userIdCookie = nil;
     // 0. Preparation
-    for (NSHTTPCookie *obj in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:@"http://cxnews.azurewebsites.net"]]) {
+    for (NSHTTPCookie *obj in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:@"https://cxnews.azurewebsites.net"]]) {
         if ([obj.name isEqualToString:@"cX_P"]) {
             userIdCookie = obj;
         }
     }
 
     // 1. We should get 'RequestVerificationToken' from login page
-    NSString *loginPageUrl = @"http://cxnews.azurewebsites.net/Account/Login?ReturnUrl=%2F";
+    NSString *loginPageUrl = @"https://cxnews.azurewebsites.net/Account/Login?ReturnUrl=%2F";
     NSURL *verificationURL = [NSURL URLWithString:loginPageUrl];
     NSURLRequest *requestLoginPage = [NSURLRequest requestWithURL:verificationURL];
 
@@ -123,9 +123,9 @@
     NSData *requestBodyData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPBody = requestBodyData;
 
-    [request setValue:@"http://cxnews.azurewebsites.net"
+    [request setValue:@"https://cxnews.azurewebsites.net"
    forHTTPHeaderField:@"Origin"];
-    [request setValue:@"http://cxnews.azurewebsites.net/Account/Login"
+    [request setValue:@"https://cxnews.azurewebsites.net/Account/Login"
    forHTTPHeaderField:@"Referer"];
     [request setValue:@"1"
    forHTTPHeaderField:@"Upgrade-Insecure-Requests"];
@@ -141,7 +141,7 @@
     NSURLResponse *profileResponse = nil;
     NSError *profileError = nil;
 
-    NSURL *profileInterestURL = [[NSURL alloc] initWithString:@"http://cxnews.azurewebsites.net/profileinterests"];
+    NSURL *profileInterestURL = [[NSURL alloc] initWithString:@"https://cxnews.azurewebsites.net/profileinterests"];
     NSMutableURLRequest *profileInterestRequest = [NSMutableURLRequest requestWithURL:profileInterestURL];
     [profileInterestRequest setValue:@"1"
                   forHTTPHeaderField:@"Upgrade-Insecure-Requests"];

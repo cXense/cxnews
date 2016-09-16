@@ -4,18 +4,20 @@
 
 #import <Foundation/Foundation.h>
 
+@class CxenseDMPGroup;
+
 
 @interface CxenseDMPProfile : NSObject
 
 /**
 * Array of CxenseDMPGroup objects associated with the item.
 */
-@property (nonatomic, copy) NSArray *groups;
+@property(nonatomic, copy) NSArray<CxenseDMPGroup *> *groups;
 
 /**
 * The item which is to be associated with the groups.
 */
-@property (nonatomic, copy) NSString *item;
+@property(nonatomic, copy) NSString *item;
 
 /**
 * Creates and returns a CxenseDMPProfile object with the specified groups and item set.
@@ -25,6 +27,7 @@
 *
 * @return CxenseDMPProfile with specified groups and item set.
 */
-+ (CxenseDMPProfile *)profileWithGroup:(NSArray *)groups andItem:(NSString *)item;
++ (CxenseDMPProfile *)profileWithGroup:(NSArray<CxenseDMPGroup *> *)groups
+                               andItem:(NSString *)item;
 
 @end

@@ -37,8 +37,8 @@
 
     [[CXNEventsService sharedInstance] trackEventWithName:@"Chart View"
                                           forPageWithName:@"Long Term Interests"
-                                                   andUrl:@"http://cxnews.azurewebsites.net/long-term-interests"
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net/profileinterests"
+                                                   andUrl:@"https://cxnews.azurewebsites.net/long-term-interests"
+                                          andRefferingUrl:@"https://cxnews.azurewebsites.net/profileinterests"
                                         byTrackerWithName:@"LTI"];
 }
 

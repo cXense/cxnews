@@ -19,15 +19,15 @@
 -(void)setUp {
     // predefined mapping of sections names & expected URLs
     _mapping = @{
-                 @"News" : @"http://cxnews.azurewebsites.net/articles/news/",
-                 @"World" : @"http://cxnews.azurewebsites.net/articles/world/",
-                 @"Business" : @"http://cxnews.azurewebsites.net/articles/business/",
-                 @"Entertainment" : @"http://cxnews.azurewebsites.net/articles/entertainment/",
-                 @"Sports" : @"http://cxnews.azurewebsites.net/articles/sports/",
-                 @"Politics" : @"http://cxnews.azurewebsites.net/articles/politics/",
-                 @"Health" : @"http://cxnews.azurewebsites.net/articles/health/",
-                 @"Science" : @"http://cxnews.azurewebsites.net/articles/science/",
-                 @"Tech" : @"http://cxnews.azurewebsites.net/articles/tech/"
+                 @"News" : @"https://cxnews.azurewebsites.net/articles/news/",
+                 @"World" : @"https://cxnews.azurewebsites.net/articles/world/",
+                 @"Business" : @"https://cxnews.azurewebsites.net/articles/business/",
+                 @"Entertainment" : @"https://cxnews.azurewebsites.net/articles/entertainment/",
+                 @"Sports" : @"https://cxnews.azurewebsites.net/articles/sports/",
+                 @"Politics" : @"https://cxnews.azurewebsites.net/articles/politics/",
+                 @"Health" : @"https://cxnews.azurewebsites.net/articles/health/",
+                 @"Science" : @"https://cxnews.azurewebsites.net/articles/science/",
+                 @"Tech" : @"https://cxnews.azurewebsites.net/articles/tech/"
                  };
 }
 

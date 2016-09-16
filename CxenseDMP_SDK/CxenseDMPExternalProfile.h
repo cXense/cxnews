@@ -11,12 +11,12 @@
 * The group name. It is required that the group name starts with the Customer Prefix ('type'),
 * followed by dash (e.g. xyz-groupname).
 */
-@property (nonatomic, copy) NSString *group;
+@property(nonatomic, copy) NSString *group;
 
 /**
 * The item which is to be associated with the group name.
 */
-@property (nonatomic, copy) NSString *item;
+@property(nonatomic, copy) NSString *item;
 
 /**
 * Creates and returns a CxenseDMPProfile object with the specified group and item set.
@@ -28,6 +28,7 @@
 *
 * @return CxenseDMPExternalProfile with specified group and item set.
 */
-+ (CxenseDMPExternalProfile *)profileWithGroup:(NSString *)group andItem:(NSString *)item;
++ (CxenseDMPExternalProfile *)profileWithGroup:(NSString *)group
+                                       andItem:(NSString *)item;
 
 @end

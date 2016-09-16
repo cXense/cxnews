@@ -7,6 +7,7 @@
 //
 
 #import "ArticleService.h"
+#import "ATS-URL-Converter.h"
 
 @implementation ArticleService
 
@@ -74,11 +75,12 @@
                                imageRange = [imageTemp rangeOfString:@"<img src=\""];
                                imageTemp = [imageTemp substringFromIndex:imageRange.location + imageRange.length];
                                imageRange = [imageTemp rangeOfString:@"\""];
-                               model.imageUrl = [imageTemp substringToIndex:imageRange.location];
+                               model.imageUrl = [ATS_URL_Converter convertToHttps:[imageTemp substringToIndex:imageRange.location]];
 
                                // Article Url
-                               model.url = url.absoluteString;
-                               model.clickUrl = url.absoluteString;
+                               NSString *securedUrl = [ATS_URL_Converter convertToHttps:url.absoluteString];
+                               model.url = securedUrl;
+                               model.clickUrl = securedUrl;
 
                                completion(model, nil);
                            }];
@@ -98,7 +100,7 @@
 
                                NSString *rawHtml = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
-                               NSRange sectionRange = [url.absoluteString rangeOfString:@"http://cxnews.azurewebsites.net"];
+                               NSRange sectionRange = [url.absoluteString rangeOfString:@"https://cxnews.azurewebsites.net"];
                                NSString *temporary = [url.absoluteString substringFromIndex:sectionRange.location+sectionRange.length];
                                // all articles in 'news' section must be aquaired without section specifier
                                if ([temporary isEqualToString:@"/articles/news/"]) {
@@ -118,7 +120,7 @@
 
                                NSMutableSet<ArticleModel *> *result = [NSMutableSet set];
                                for (NSString *articleUrl in articleURLs) {
-                                   NSString *fullArticleUrl = [NSString stringWithFormat:@"http://cxnews.azurewebsites.net/%@", articleUrl];
+                                   NSString *fullArticleUrl = [NSString stringWithFormat:@"https://cxnews.azurewebsites.net/%@", articleUrl];
                                    NSError *error;
                                    @try {
                                        ArticleModel *article = [self articleForURL:[NSURL URLWithString:fullArticleUrl] error:&error];
@@ -141,7 +143,7 @@
 
     NSString *rawHtml = [[NSString alloc] initWithData:rawData encoding:NSUTF8StringEncoding];
 
-    NSRange sectionRange = [url.absoluteString rangeOfString:@"http://cxnews.azurewebsites.net"];
+    NSRange sectionRange = [url.absoluteString rangeOfString:@"https://cxnews.azurewebsites.net"];
     NSString *temporary = [url.absoluteString substringFromIndex:sectionRange.location+sectionRange.length];
     // all articles in 'news' section must be aquaired without section specifier
     if ([temporary isEqualToString:@"/articles/news/"]) {
@@ -161,7 +163,7 @@
 
     NSMutableSet<ArticleModel *> *result = [NSMutableSet set];
     for (NSString *articleUrl in articleURLs) {
-        NSString *fullArticleUrl = [NSString stringWithFormat:@"http://cxnews.azurewebsites.net/%@", articleUrl];
+        NSString *fullArticleUrl = [NSString stringWithFormat:@"https://cxnews.azurewebsites.net/%@", articleUrl];
         NSError *error;
         @try {
             ArticleModel *article = [self articleForURL:[NSURL URLWithString:fullArticleUrl] error:&error];
@@ -231,11 +233,12 @@
     imageRange = [imageTemp rangeOfString:@"<img src=\""];
     imageTemp = [imageTemp substringFromIndex:imageRange.location + imageRange.length];
     imageRange = [imageTemp rangeOfString:@"\""];
-    model.imageUrl = [imageTemp substringToIndex:imageRange.location];
+    model.imageUrl = [ATS_URL_Converter convertToHttps:[imageTemp substringToIndex:imageRange.location]];
     
     // Article Url
-    model.url = url.absoluteString;
-    model.clickUrl = url.absoluteString;
+    NSString *securedUrl = [ATS_URL_Converter convertToHttps:url.absoluteString];
+    model.url = securedUrl;
+    model.clickUrl = securedUrl;
     
     return model;
 }

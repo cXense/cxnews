@@ -31,7 +31,8 @@
     [super viewDidLoad];
 
     [self showActivityIndicator];
-    [[ArticleService sharedInstance] articleForURL:[NSURL URLWithString:self.url]completion:^(ArticleModel *model, NSError *error) {
+    [[ArticleService sharedInstance] articleForURL:[NSURL URLWithString:self.eventUrl]
+                                        completion:^(ArticleModel *model, NSError *error) {
         if (error || !model) {
             UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Error"
                                                                              message:@"Article could not be loaded due to some error."
@@ -64,7 +65,7 @@
     [[CXNEventsService sharedInstance] trackEventWithName:@"Article View"
                                           forPageWithName:self.headlineTextView.text
                                                    andUrl:self.eventUrl
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net"
+                                          andRefferingUrl:@"https://cxnews.azurewebsites.net"
                                         byTrackerWithName:@"Article"];
 }
 

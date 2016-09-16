@@ -13,7 +13,7 @@
 /**
  * Cx news site main URL.
  */
-static NSString *const CX_NEWS_URL = @"http://cxnews.azurewebsites.net";
+static NSString *const CX_NEWS_URL = @"https://cxnews.azurewebsites.net";
 /**
  * Cxense Content widget id.
  */

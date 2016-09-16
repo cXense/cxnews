@@ -18,10 +18,10 @@
 
 typedef NS_ENUM(NSInteger, CxenseDMPError) {
     CxenseDMPErrorIncompleteConfiguration = 10,
-    CxenseDMPErrorBadRequest              = 400,
-    CxenseDMPErrorUnauthorized            = 401,
-    CxenseDMPErrorForbidden               = 403,
-    CxenseDMPErrorUnknownRequestError     = 499
+    CxenseDMPErrorBadRequest = 400,
+    CxenseDMPErrorUnauthorized = 401,
+    CxenseDMPErrorForbidden = 403,
+    CxenseDMPErrorUnknownRequestError = 499
 };
 
 @interface CxenseDMP : NSObject
@@ -33,8 +33,11 @@ typedef NS_ENUM(NSInteger, CxenseDMPError) {
 * @param apiKey     Your API key can be obtained by clicking on your username in the top right corner
 *                   of the screen after having signed in to https://insight.cxense.com.
 */
-+ (void)setUsername:(NSString *)username apiKey:(NSString *)apiKey;
++ (void)setUsername:(NSString *)username
+             apiKey:(NSString *)apiKey;
+
 + (NSString *)username;
+
 + (NSString *)apiKey;
 
 /**
@@ -110,8 +113,8 @@ typedef NS_ENUM(NSInteger, CxenseDMPError) {
 * @param completion     Completion block which is called with an array of segments (strings) and a NSError
 *                       object if an error occurred.
 */
-+ (void)getSegmentsForUserIdentifiers:(NSArray *)identifiers
-                         siteGroupIds:(NSArray *)siteGroupIds
++ (void)getSegmentsForUserIdentifiers:(NSArray<CxenseDMPUserIdentifier *> *)identifiers
+                         siteGroupIds:(NSArray<NSString *> *)siteGroupIds
                            completion:(void (^)(NSArray *segments, NSError *error))completion;
 
 
@@ -127,7 +130,7 @@ typedef NS_ENUM(NSInteger, CxenseDMPError) {
 */
 + (void)updateUserExternalDataWithUserId:(NSString *)userId
                           identifierType:(NSString *)identifierType
-                                profiles:(NSArray *)profiles
+                                profiles:(NSArray<CxenseDMPExternalProfile *> *)profiles
                               completion:(void (^)(BOOL success, NSError *error))completion;
 
 /**
@@ -164,7 +167,9 @@ typedef NS_ENUM(NSInteger, CxenseDMPError) {
 * @param completion     Completion block which is called with a boolean value indicating if the deletion was
 *                       a success, and an NSError object if an error occurred.
 */
-+ (void)deleteUserExternalDataWithUserId:(NSString *)userId identifierType:(NSString *)identifierType completion:(void (^)(BOOL success, NSError *error))completion;
++ (void)deleteUserExternalDataWithUserId:(NSString *)userId
+                          identifierType:(NSString *)identifierType
+                              completion:(void (^)(BOOL success, NSError *error))completion;
 
 /**
 * Retrieves a registered external identity mapping for a Cxense identifier. The mapping has either been
@@ -177,7 +182,9 @@ typedef NS_ENUM(NSInteger, CxenseDMPError) {
 *                       if an error occurred.
 * @return
 */
-+ (void)getUserExternalLinkWithCxenseId:(NSString *)cxenseId identifierType:(NSString *)identifierType completion:(void (^)(CxenseDMPUserIdentifier *userIdentifier, NSError *error))completion;
++ (void)getUserExternalLinkWithCxenseId:(NSString *)cxenseId
+                         identifierType:(NSString *)identifierType
+                             completion:(void (^)(CxenseDMPUserIdentifier *userIdentifier, NSError *error))completion;
 
 /**
 * Register a new identity-mapping. If the identifier of the specified type already exists, then the cxenseId is
@@ -190,7 +197,10 @@ typedef NS_ENUM(NSInteger, CxenseDMPError) {
 * @param completion     Completion block which is called with a CxenseDMPUserIdentifier and a NSError object
 *                       if an error occurred.
 */
-+ (void)setUserExternalLinkWithUserId:(NSString *)userId identifierType:(NSString *)identifierType cxenseId:(NSString *)cxenseId completion:(void (^)(CxenseDMPUserIdentifier *userIdentifier, NSError *error))completion;
++ (void)setUserExternalLinkWithUserId:(NSString *)userId
+                       identifierType:(NSString *)identifierType
+                             cxenseId:(NSString *)cxenseId
+                           completion:(void (^)(CxenseDMPUserIdentifier *userIdentifier, NSError *error))completion;
 
 /**
 * Feed DMP events to Cxense.
@@ -199,7 +209,8 @@ typedef NS_ENUM(NSInteger, CxenseDMPError) {
 * @param completion Completion block which is called with a boolean value indicating if the request was
 *                   a success, and an NSError object if an error occurred.
 */
-+ (void)pushEvent:(CxenseDMPEvent *)event completion:(void (^)(BOOL success, NSError *error))completion;
++ (void)pushEvent:(CxenseDMPEvent *)event
+       completion:(void (^)(BOOL success, NSError *error))completion;
 
 /**
 * Feed multiple DMP events to Cxense.
@@ -208,7 +219,8 @@ typedef NS_ENUM(NSInteger, CxenseDMPError) {
 * @param completion Completion block which is called with a boolean value indicating if the request was
 *                   a success, and an NSError object if an error occurred.
 */
-+ (void)pushEvents:(NSArray *)events completion:(void (^)(BOOL success, NSError *error))completion;
++ (void)pushEvents:(NSArray<CxenseDMPEvent *> *)events
+        completion:(void (^)(BOOL success, NSError *error))completion;
 
 /**
 * Returns the default UserId for Cxense SDKs, this id is the same across all of our SDKs.

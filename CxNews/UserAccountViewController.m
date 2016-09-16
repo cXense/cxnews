@@ -77,8 +77,8 @@
 
     [[CXNEventsService sharedInstance] trackEventWithName:@"Profile View"
                                           forPageWithName:@"User Profile"
-                                                   andUrl:@"http://cxnews.azurewebsites.net/profileinterests"
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net"
+                                                   andUrl:@"https://cxnews.azurewebsites.net/profileinterests"
+                                          andRefferingUrl:@"https://cxnews.azurewebsites.net"
                                         byTrackerWithName:@"Profile"];
 
     [self updateScrollViewContentSize];
