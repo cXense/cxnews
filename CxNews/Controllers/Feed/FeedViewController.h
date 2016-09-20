@@ -12,12 +12,14 @@
 
 @interface FeedViewController : UICollectionViewController
 
-@property(weak, nonatomic) IBOutlet UIBarButtonItem *userBarButton;
-
 @property(strong, nonatomic) NSArray <ArticleModel *> *articles;
 
 @property(strong, nonatomic) NSString *section;
 
+
+/**
+ Make feed view re-render 'articles' array content.
+ */
 -(void)updateView;
 
 @end

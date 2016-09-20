@@ -20,7 +20,15 @@
 
 @interface FeedViewController ()
 
+/**
+ Rear menu button.
+ */
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+/**
+ User profile button. (if user is not logged in it shows "Login" text)
+ */
+@property(weak, nonatomic) IBOutlet UIBarButtonItem *userBarButton;
 
 @end
 
@@ -109,8 +117,12 @@
                                        NSLog(@"Image load for row#%ld has failed", (long) indexPath.row);
                                        return;
                                    }
+                                   thumbnail.alpha = 0.0;
                                    UIImage *image = [UIImage imageWithData:data];
                                    thumbnail.image = image;
+                                   [UIView animateWithDuration:1.0 animations:^{
+                                       thumbnail.alpha = 1.0;
+                                   }];
                                    [_imageDataCache setValue:image
                                                       forKey:urlString];
                                }];
@@ -160,10 +172,16 @@
                                            NSLog(@"Image load for supplementary view has failed");
                                            return;
                                        }
+
+                                       imageView.alpha = 0.0;
+
                                        UIImage *image = [UIImage imageWithData:data];
                                        imageView.image = image;
                                        [_imageDataCache setValue:image
                                                           forKey:urlString];
+                                       [UIView animateWithDuration:1.0 animations:^{
+                                           imageView.alpha = 1.0;
+                                       }];
                                    }];
         }
         supplementaryView.hidden = NO;
