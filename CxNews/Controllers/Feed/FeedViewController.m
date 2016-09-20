@@ -20,7 +20,15 @@
 
 @interface FeedViewController ()
 
+/**
+ Rear menu button.
+ */
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+/**
+ User profile button. (if user is not logged in it shows "Login" text)
+ */
+@property(weak, nonatomic) IBOutlet UIBarButtonItem *userBarButton;
 
 @end
 
