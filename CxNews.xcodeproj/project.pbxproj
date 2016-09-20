@@ -48,7 +48,6 @@
 		87A9A5201D4B335600014FC4 /* SectionLinksProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A51F1D4B335600014FC4 /* SectionLinksProvider.m */; };
 		87A9A5221D4B34EB00014FC4 /* SectionLinksProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A5211D4B34EB00014FC4 /* SectionLinksProviderTests.m */; };
 		87A9A5251D4B879200014FC4 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A5241D4B879200014FC4 /* InterestsViewController.m */; };
-		87A9A54E1D4CAC5C00014FC4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87A9A54C1D4CAC5C00014FC4 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87B267601D22DE520061F635 /* GenericPasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B2675F1D22DE520061F635 /* GenericPasswordExtension.m */; };
 		87B340EA1D4767F200929491 /* CXNEventsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B340E91D4767F200929491 /* CXNEventsService.m */; };
 		87B340EE1D479C3F00929491 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B340EC1D479C3F00929491 /* UserProfile.storyboard */; };
@@ -75,20 +74,6 @@
 			remoteInfo = CxNews;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		87A9A54F1D4CAC5C00014FC4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				87A9A54E1D4CAC5C00014FC4 /* Charts.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		431A41079166CC44352CF083 /* UserProfileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileService.h; sourceTree = "<group>"; };
@@ -166,8 +151,6 @@
 		87A9A5211D4B34EB00014FC4 /* SectionLinksProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionLinksProviderTests.m; sourceTree = "<group>"; };
 		87A9A5231D4B879200014FC4 /* InterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsViewController.h; sourceTree = "<group>"; };
 		87A9A5241D4B879200014FC4 /* InterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsViewController.m; sourceTree = "<group>"; };
-		87A9A5261D4B8ED700014FC4 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
-		87A9A54C1D4CAC5C00014FC4 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		87B2675E1D22DE290061F635 /* GenericPasswordExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GenericPasswordExtension.h; path = GenericPasswordExtension/GenericPasswordExtension.h; sourceTree = "<group>"; };
 		87B2675F1D22DE520061F635 /* GenericPasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericPasswordExtension.m; path = GenericPasswordExtension/GenericPasswordExtension.m; sourceTree = "<group>"; };
 		87B340E81D4767F200929491 /* CXNEventsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNEventsService.h; sourceTree = "<group>"; };
@@ -289,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				87EF9C401D7FF4C7007A5564 /* private_conf.plist */,
-				87A9A54C1D4CAC5C00014FC4 /* Charts.framework */,
 				8707D8601CF0887A007B1A2B /* CxNews */,
 				878742691CFEDD37000A926B /* CxNewsTests */,
 				871548321CFEAA26008C4248 /* CxNewsUITests */,
@@ -411,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				870F217F1D50B0FA00D108E5 /* CxenseDMP_SDK */,
-				87A9A5261D4B8ED700014FC4 /* Charts.framework */,
 				8701F1AE1D31004000542ACF /* libsqlite3.tbd */,
 				8717F8211CF764E6002E5948 /* CxenseContentSDK */,
 				8701F1A81D30FD6700542ACF /* CxenseInsightSDK */,
@@ -572,7 +553,6 @@
 				870FABCE1D14219F0080D8BF /* ShellScript */,
 				876AFFD31D142473008326AC /* ShellScript */,
 				87A9A51D1D4B274E00014FC4 /* ShellScript */,
-				87A9A54F1D4CAC5C00014FC4 /* Embed Frameworks */,
 				87E541E21D798A130036AB3E /* ShellScript */,
 			);
 			buildRules = (
