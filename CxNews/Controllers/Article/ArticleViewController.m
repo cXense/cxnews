@@ -137,15 +137,18 @@
             return;
         }
 
+        self.imageView.alpha = 0.0;
+
         UIImage *image = [UIImage imageWithData:data];
         self.imageView.image = image;
+        [UIView animateWithDuration:1.0 animations:^{
+            self.imageView.alpha = 1.0;
+        }];
 
         [self updateScrollViewContentSize];
 
         CGFloat multiplier = CGRectGetWidth(self.imageView.bounds) / image.size.width;
         [self.imageViewHeightConstraint setConstant:multiplier * image.size.height];
-
-        [self.view layoutSubviews];
     }];
 }
 
