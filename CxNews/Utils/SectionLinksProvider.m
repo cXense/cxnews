@@ -8,12 +8,12 @@
 
 #import "SectionLinksProvider.h"
 
+static NSDictionary<NSString *, NSString *> *section2LinkMap;
+
 @implementation SectionLinksProvider
 
-+(nullable NSString *)urlForSection:(nonnull NSString *)section; {
-    static NSDictionary<NSString *, NSString *> *section2LinkMap;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
++(void)initialize {
+    if (self == [SectionLinksProvider class]) {
         section2LinkMap = @{
                             @"News" : @"http://cxnews.azurewebsites.net/articles/news/",
                             @"World" : @"http://cxnews.azurewebsites.net/articles/world/",
@@ -25,8 +25,15 @@
                             @"Science" : @"http://cxnews.azurewebsites.net/articles/science/",
                             @"Tech" : @"http://cxnews.azurewebsites.net/articles/tech/"
                             };
-    });
+    }
+}
+
++(nullable NSString *)urlForSection:(nonnull NSString *)section; {
     return section2LinkMap[section];
+}
+
++(nonnull NSArray<NSString *> *)supportedSiteSectionURLs {
+    return section2LinkMap.allValues;
 }
 
 @end

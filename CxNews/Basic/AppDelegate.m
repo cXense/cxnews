@@ -10,6 +10,7 @@
 #import "UserService.h"
 #import "CxenseDMP.h"
 #import "ArticleServiceAdapter.h"
+#import "SectionLinksProvider.h"
 
 @import HockeySDK;
 
@@ -37,6 +38,21 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Cxense DMP SDK initialization
     [CxenseDMP setUsername:privateConfig[@"CXENSE_API_USERNAME"]
                     apiKey:privateConfig[@"CXENSE_API_KEY"]];
+
+    // Pre-fetch sections data in background
+//    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//        NSArray<NSString *> *sectionUrls = [SectionLinksProvider supportedSiteSectionURLs];
+//        [sectionUrls enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//            @try {
+//                [[ArticleServiceAdapter sharedInstance] articlesForURL:[NSURL URLWithString:obj]
+//                                                            completion:^(NSSet<ArticleModel *> * _Nullable articles, NSError * _Nullable error) {
+//                                                                // do nothing
+//                                                            }];
+//            } @catch (NSException *exception) {
+//                NSLog(@"Content loading for '%@' was finished with exception: '%@'", obj, [exception description]);
+//            }
+//        }];
+//    }];
 
     // Calculate root view controller
     NSString *rootViewControllerId = nil;
