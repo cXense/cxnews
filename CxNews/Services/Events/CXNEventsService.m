@@ -34,10 +34,20 @@
     CxenseInsightEventBuilder *builder = [CxenseInsightEventBuilder pageViewEventWithURL:pageUrl referringURL:referringUrl];
     [builder setParameter:pageName
                    forKey:@"pgn"];
+    /*
+     Following code demonstrates one of best practises of working with events custom parameters.
+     We are tracking here two vital parameters:
+     - Name of the application produced an impression
+     - Full version (major version + build number) of the application produced an impression
+     As soon as events with these custom parameters will be sended to API, Cxense Insight web-app
+     will show you statistics on your applications & their versions. This can be important if you have
+     multiple applications & version accessing same resources.
+     */
     [builder setCustomParameter:_applicationName
                          forKey:@"cxn_app"];
     [builder setCustomParameter:_applicationVersion
                          forKey:@"cxn_appv"];
+
     [[CxenseInsight trackerWithName:trackerName
                              siteId:kCxenseInsightSiteId] trackEvent:[builder build] name:eventName completion:^(NSDictionary *event, NSError *error) {
         if (error != nil) {
