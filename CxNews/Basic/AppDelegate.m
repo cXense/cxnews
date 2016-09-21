@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "UserService.h"
 #import "CxenseDMP.h"
+#import "CxenseInsight.h"
 #import "ArticleServiceAdapter.h"
 #import "SectionLinksProvider.h"
 
@@ -38,6 +39,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Cxense DMP SDK initialization
     [CxenseDMP setUsername:privateConfig[@"CXENSE_API_USERNAME"]
                     apiKey:privateConfig[@"CXENSE_API_KEY"]];
+
+    // Cxense Insight SDK initialization
+    [CxenseInsight setDispatchMode:CxenseInsightDispatchModeOnline];
 
     // Pre-fetch sections data in background
 //    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
