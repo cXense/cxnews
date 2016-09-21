@@ -8,6 +8,8 @@
 
 #import "Constants.h"
 
+double kCxenseCacheClearTimeoutInSeconds = 3600.0;
+
 float kCxenseAuthControlsCornerRadius = 18.0;
 
 float kCxenseTextContentFontSizeIPhone = 16.0;

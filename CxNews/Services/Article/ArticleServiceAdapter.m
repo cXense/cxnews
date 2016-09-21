@@ -8,6 +8,7 @@
 
 #import "ArticleServiceAdapter.h"
 #import "ArticleService.h"
+#import "Constants.h"
 
 @implementation ArticleServiceAdapter {
     ArticleService *_underlyingService;
@@ -75,6 +76,11 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
+        [NSTimer scheduledTimerWithTimeInterval:kCxenseCacheClearTimeoutInSeconds
+                                         target:instance
+                                       selector:@selector(clear)
+                                       userInfo:nil
+                                        repeats:YES];
     });
     return instance;
 }
