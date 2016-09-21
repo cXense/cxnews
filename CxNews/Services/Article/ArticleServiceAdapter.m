@@ -22,12 +22,14 @@
 
 -(void)articleForURL:(nonnull NSURL *)url
           completion:(_Nonnull SoloArticleModelCompletion)completion {
-
+    return [_underlyingService articleForURL:url
+                                  completion:completion];
 }
 
 -(void)articlesForURL:(nonnull NSURL *)url
            completion:(_Nonnull MultipleArticleModelCompletion)completion {
-
+    return [_underlyingService articlesForURL:url
+                                   completion:completion];
 }
 
 + (nonnull instancetype)sharedInstance {

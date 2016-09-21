@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ArticleModel.h"
 
-typedef void(^SoloArticleModelCompletion)( ArticleModel * _Nullable , NSError * _Nullable);
+typedef void(^SoloArticleModelCompletion)(ArticleModel * _Nullable , NSError * _Nullable);
 typedef void(^MultipleArticleModelCompletion)(NSSet<ArticleModel *> * _Nullable, NSError * _Nullable);
 
 /**
