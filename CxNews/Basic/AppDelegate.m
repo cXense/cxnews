@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "UserService.h"
 #import "CxenseDMP.h"
+#import "ArticleServiceAdapter.h"
 
 @import HockeySDK;
 
@@ -34,7 +35,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [hockeyManager.authenticator authenticateInstallation];
 
     // Cxense DMP SDK initialization
-    //TODO: Hide this. It should not presented after open sourcing the app.
     [CxenseDMP setUsername:privateConfig[@"CXENSE_API_USERNAME"]
                     apiKey:privateConfig[@"CXENSE_API_KEY"]];
 
@@ -49,6 +49,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
                                                                 bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:rootViewControllerId];
 
     return YES;
+}
+
+-(void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    [[ArticleServiceAdapter sharedInstance] clear];
 }
 
 @end

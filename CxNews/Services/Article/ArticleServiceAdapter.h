@@ -12,6 +12,11 @@
 @interface ArticleServiceAdapter : NSObject <ArticleLoader>
 
 /**
+ Removes all entries stored in in-memory cache.
+ */
+- (void) clear;
+
+/**
  Initialized instance of the service.
 
  @return initialized instance

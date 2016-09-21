@@ -64,6 +64,12 @@
     }
 }
 
+-(void)clear {
+    [_articleCache removeAllObjects];
+    [_sectionCache removeAllObjects];
+    NSLog(@"Cache clear operation has been finished");
+}
+
 + (nonnull instancetype)sharedInstance {
     static ArticleServiceAdapter * instance = nil;
     static dispatch_once_t onceToken;
