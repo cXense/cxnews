@@ -11,7 +11,7 @@
 #import "SWRevealViewController.h"
 #import "Constants.h"
 #import "CxenseInsight.h"
-#import "ArticleService.h"
+#import "ArticleServiceAdapter.h"
 #import "FeedViewController.h"
 #import "SectionLinksProvider.h"
 
@@ -61,7 +61,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [self.revealViewController revealToggle:nil];
         [self showActivityIndicator];
         // load new content async
-        [[ArticleService sharedInstance] articlesForURL:[NSURL URLWithString:stringUrl] completion:^(NSSet<ArticleModel *> *articles, NSError *error) {
+        [[ArticleServiceAdapter sharedInstance] articlesForURL:[NSURL URLWithString:stringUrl] completion:^(NSSet<ArticleModel *> *articles, NSError *error) {
             vc.articles = [articles allObjects];
             vc.section = menuItemLabel.text;
             [vc updateView];

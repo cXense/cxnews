@@ -10,7 +10,7 @@
 #import "UIViewController+Indicator.h"
 #import "CxenseInsight.h"
 #import "ArticleViewController.h"
-#import "ArticleService.h"
+#import "ArticleServiceAdapter.h"
 
 #import "CXNEventsService.h"
 
@@ -31,7 +31,7 @@
     [super viewDidLoad];
 
     [self showActivityIndicator];
-    [[ArticleService sharedInstance] articleForURL:[NSURL URLWithString:self.url]completion:^(ArticleModel *model, NSError *error) {
+    [[ArticleServiceAdapter sharedInstance] articleForURL:[NSURL URLWithString:self.url]completion:^(ArticleModel *model, NSError *error) {
         if (error || !model) {
             UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Error"
                                                                              message:@"Article could not be loaded due to some error."

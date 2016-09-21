@@ -8,6 +8,8 @@
 
 @import Foundation.NSString;
 
+extern double kCxenseCacheClearTimeoutInSeconds;
+
 extern float kCxenseAuthControlsCornerRadius;
 
 /** Article View font configuration */

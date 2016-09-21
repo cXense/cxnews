@@ -20,7 +20,7 @@
 }
 
 -(void)articleForURL:(nonnull NSURL *)url
-          completion:(void(^)(ArticleModel *model, NSError *error))completion {
+          completion:(_Nonnull SoloArticleModelCompletion)completion {
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url]
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
@@ -85,8 +85,7 @@
 }
 
 -(void)articlesForURL:(nonnull NSURL *)url
-           completion:(void(^)(NSSet<ArticleModel *> *articles, NSError *error))completion {
-
+           completion:(_Nonnull MultipleArticleModelCompletion)completion {
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url]
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
@@ -132,51 +131,8 @@
                            }];
 }
 
-//TODO: Replace this synchronous APIs by async
--(NSSet<ArticleModel *> *)articlesForURL:(NSURL *)url
-                                   error:(NSError *__autoreleasing *)error {
-    NSError *loadError;
-    NSData *rawData = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:url] returningResponse:nil error:&loadError];
-    if (loadError) return [self handleError:loadError withLogMessage:@"Section page can not be loaded" returnError:error];
-
-    NSString *rawHtml = [[NSString alloc] initWithData:rawData encoding:NSUTF8StringEncoding];
-
-    NSRange sectionRange = [url.absoluteString rangeOfString:@"http://cxnews.azurewebsites.net"];
-    NSString *temporary = [url.absoluteString substringFromIndex:sectionRange.location+sectionRange.length];
-    // all articles in 'news' section must be aquaired without section specifier
-    if ([temporary isEqualToString:@"/articles/news/"]) {
-        temporary = @"/articles/";
-    }
-
-    NSMutableSet<NSString *> *articleURLs = [NSMutableSet set];
-
-    NSRange range = [rawHtml rangeOfString:temporary];
-    while (range.location != NSNotFound) {
-        rawHtml = [rawHtml substringFromIndex:range.location];
-        NSRange rest = [rawHtml rangeOfString:@"\""];
-        [articleURLs addObject:[rawHtml substringToIndex:rest.location]];
-        rawHtml = [rawHtml substringFromIndex:range.location];
-        range = [rawHtml rangeOfString:temporary];
-    }
-
-    NSMutableSet<ArticleModel *> *result = [NSMutableSet set];
-    for (NSString *articleUrl in articleURLs) {
-        NSString *fullArticleUrl = [NSString stringWithFormat:@"http://cxnews.azurewebsites.net/%@", articleUrl];
-        NSError *error;
-        @try {
-            ArticleModel *article = [self articleForURL:[NSURL URLWithString:fullArticleUrl] error:&error];
-            if (!error) [result addObject:article];
-        } @catch (NSException *exception) {
-            NSLog(@"Cannot extract articles from %@", articleUrl);
-        }
-    }
-
-    return result;
-}
-
 - (ArticleModel *)articleForURL:(NSURL *)url
                           error:(NSError *__autoreleasing *)error{
-    //TODO: Initialize error parameter in case of error
     NSHTTPURLResponse *response;
     NSError *er;
     NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:url] returningResponse:&response error:&er];
