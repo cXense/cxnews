@@ -47,6 +47,7 @@
 		879007641D5DDCA700709591 /* InterestsProcessingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 879007631D5DDCA700709591 /* InterestsProcessingService.m */; };
 		879007661D5DDF8000709591 /* InterestsProcessingServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 879007651D5DDF8000709591 /* InterestsProcessingServiceTests.m */; };
 		8790D5531CF9A2FE0009EBFF /* RearMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8790D5521CF9A2FE0009EBFF /* RearMenuViewController.m */; };
+		87A926C51D9BC63B00299341 /* FeedViewController+InsetsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */; };
 		87A9A5201D4B335600014FC4 /* SectionLinksProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A51F1D4B335600014FC4 /* SectionLinksProvider.m */; };
 		87A9A5221D4B34EB00014FC4 /* SectionLinksProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A5211D4B34EB00014FC4 /* SectionLinksProviderTests.m */; };
 		87A9A5251D4B879200014FC4 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A5241D4B879200014FC4 /* InterestsViewController.m */; };
@@ -199,6 +200,8 @@
 		879007651D5DDF8000709591 /* InterestsProcessingServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsProcessingServiceTests.m; sourceTree = "<group>"; };
 		8790D5511CF9A2FE0009EBFF /* RearMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearMenuViewController.h; sourceTree = "<group>"; };
 		8790D5521CF9A2FE0009EBFF /* RearMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearMenuViewController.m; sourceTree = "<group>"; };
+		87A926C31D9BC63B00299341 /* FeedViewController+InsetsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedViewController+InsetsGenerator.h"; sourceTree = "<group>"; };
+		87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FeedViewController+InsetsGenerator.m"; sourceTree = "<group>"; };
 		87A9A51E1D4B335600014FC4 /* SectionLinksProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionLinksProvider.h; sourceTree = "<group>"; };
 		87A9A51F1D4B335600014FC4 /* SectionLinksProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionLinksProvider.m; sourceTree = "<group>"; };
 		87A9A5211D4B34EB00014FC4 /* SectionLinksProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionLinksProviderTests.m; sourceTree = "<group>"; };
@@ -488,6 +491,8 @@
 			children = (
 				87686F021D5F309F00351C32 /* UIViewController+Indicator.h */,
 				87686F031D5F309F00351C32 /* UIViewController+Indicator.m */,
+				87A926C31D9BC63B00299341 /* FeedViewController+InsetsGenerator.h */,
+				87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				8790D5531CF9A2FE0009EBFF /* RearMenuViewController.m in Sources */,
 				879007641D5DDCA700709591 /* InterestsProcessingService.m in Sources */,
 				87B7FF141D28EF34002D040D /* ArticleService.m in Sources */,
+				87A926C51D9BC63B00299341 /* FeedViewController+InsetsGenerator.m in Sources */,
 				8707D8631CF0887A007B1A2B /* main.m in Sources */,
 				87A9A5251D4B879200014FC4 /* InterestsViewController.m in Sources */,
 				8787424B1CFEAF5D000A926B /* AuthViewController.m in Sources */,
@@ -985,9 +991,9 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1028,9 +1034,9 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -1054,7 +1060,7 @@
 				);
 				HEADER_SEARCH_PATHS = /Users/anverbogatov/Downloads/CxenseContentSDK;
 				INFOPLIST_FILE = CxNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					/Users/anverbogatov/Downloads/CxenseContentSDK,
@@ -1086,7 +1092,7 @@
 				);
 				HEADER_SEARCH_PATHS = /Users/anverbogatov/Downloads/CxenseContentSDK;
 				INFOPLIST_FILE = CxNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					/Users/anverbogatov/Downloads/CxenseContentSDK,

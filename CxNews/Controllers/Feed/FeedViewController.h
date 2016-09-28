@@ -6,14 +6,24 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+@import UIKit;
 @class ArticleModel;
 
+/**
+ FeedViewController is responsible for showing list of article models
+ on screen.
+ */
 @interface FeedViewController : UICollectionViewController
 
+/**
+ List of article models that must be presented on screen.
+ */
 @property(strong, nonatomic) NSArray <ArticleModel *> *articles;
 
+
+/**
+ Name of the section to which presented article models belongs.
+ */
 @property(strong, nonatomic) NSString *section;
 
 
