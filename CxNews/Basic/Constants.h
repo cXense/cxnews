@@ -44,3 +44,8 @@ extern NSInteger kCxenseFeedViewCollectionViewCellTimestampTag;
 extern NSInteger kCxenseFeedViewCollectionViewSupplementaryCellImageTag;
 extern NSInteger kCxenseFeedViewCollectionViewSupplementaryCellButtonTag;
 extern NSInteger kCxenseFeedViewCollectionViewSupplementaryCellTitleTag;
+
+/** Video feed view cell's tags */
+extern NSInteger kCxenseVideoFeedTableViewCellImageTag;
+extern NSInteger kCxenseVideoFeedTableViewCellTimestampTag;
+extern NSInteger kCxenseVideoFeedTableViewCellTitleTag;

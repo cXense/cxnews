@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2333a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video Feed Table View Controller-->
+        <scene sceneID="9K5-Vf-W3s">
+            <objects>
+                <tableViewController storyboardIdentifier="video_vc" id="ATM-8W-B6o" customClass="VideoFeedTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" id="cCK-Cg-MHX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="video_cell" rowHeight="160" id="0Cj-zh-FSS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Cj-zh-FSS" id="lLW-Gt-yTb">
+                                    <frame key="frameInset" width="375" height="159"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="311" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-7g-rnA"/>
+                                        <view opaque="NO" alpha="0.44999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjh-Kb-Uva">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="pjl-Rv-Yq9"/>
+                                            </constraints>
+                                        </view>
+                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-Lj-m4d">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="313" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AirAsia: Large metal objects found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRL-JL-KJJ">
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="312" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/3/2015 12:13:54 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyu-Bh-nzs">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qRL-JL-KJJ" firstAttribute="top" secondItem="cyu-Bh-nzs" secondAttribute="bottom" constant="6" id="1Jj-ya-Fau"/>
+                                                <constraint firstAttribute="height" constant="50" id="4cD-58-a7Y"/>
+                                                <constraint firstAttribute="trailing" secondItem="qRL-JL-KJJ" secondAttribute="trailing" constant="24" id="ELT-Eg-h16"/>
+                                                <constraint firstItem="cyu-Bh-nzs" firstAttribute="top" secondItem="WNC-Lj-m4d" secondAttribute="top" id="T3p-ro-PQx"/>
+                                                <constraint firstItem="qRL-JL-KJJ" firstAttribute="leading" secondItem="WNC-Lj-m4d" secondAttribute="leading" constant="8" id="Utb-5b-unY"/>
+                                                <constraint firstItem="cyu-Bh-nzs" firstAttribute="leading" secondItem="WNC-Lj-m4d" secondAttribute="leading" constant="8" id="ddE-he-QP4"/>
+                                                <constraint firstAttribute="trailing" secondItem="cyu-Bh-nzs" secondAttribute="trailing" constant="24" id="qNy-el-xPV"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WNC-Lj-m4d" firstAttribute="bottom" secondItem="lLW-Gt-yTb" secondAttribute="bottomMargin" constant="8" id="1Jd-Iu-jjr"/>
+                                        <constraint firstItem="fjh-Kb-Uva" firstAttribute="leading" secondItem="lLW-Gt-yTb" secondAttribute="leading" id="1ze-cu-6tg"/>
+                                        <constraint firstAttribute="bottom" secondItem="fjh-Kb-Uva" secondAttribute="bottom" id="J0F-03-Gjz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="s6v-7g-rnA" secondAttribute="bottom" constant="-8" id="XhU-M3-QjY"/>
+                                        <constraint firstItem="s6v-7g-rnA" firstAttribute="leading" secondItem="lLW-Gt-yTb" secondAttribute="leadingMargin" constant="-8" id="ahh-cN-yHM"/>
+                                        <constraint firstAttribute="trailing" secondItem="fjh-Kb-Uva" secondAttribute="trailing" id="cHh-xK-c1y"/>
+                                        <constraint firstItem="WNC-Lj-m4d" firstAttribute="trailing" secondItem="lLW-Gt-yTb" secondAttribute="trailingMargin" constant="8" id="kfv-NP-RGg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="s6v-7g-rnA" secondAttribute="trailing" constant="-8" id="msL-Gc-aO8"/>
+                                        <constraint firstItem="WNC-Lj-m4d" firstAttribute="leading" secondItem="lLW-Gt-yTb" secondAttribute="leadingMargin" constant="-8" id="nBc-RM-oI7"/>
+                                        <constraint firstItem="s6v-7g-rnA" firstAttribute="top" secondItem="lLW-Gt-yTb" secondAttribute="topMargin" constant="-8" id="x68-rv-eKT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ATM-8W-B6o" id="XbJ-nF-L18"/>
+                            <outlet property="delegate" destination="ATM-8W-B6o" id="dgc-ry-ne8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iQS-h8-pcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-604" y="38.23088455772114"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="Kbr-rG-XOW">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="F7r-3z-wym" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1xS-DA-seW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="177" y="39"/>
+        </scene>
+    </scenes>
+</document>

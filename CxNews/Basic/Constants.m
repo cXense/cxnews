@@ -36,3 +36,7 @@ NSInteger kCxenseFeedViewCollectionViewCellTimestampTag = 992;
 NSInteger kCxenseFeedViewCollectionViewSupplementaryCellImageTag = 213;
 NSInteger kCxenseFeedViewCollectionViewSupplementaryCellButtonTag = 211;
 NSInteger kCxenseFeedViewCollectionViewSupplementaryCellTitleTag = 212;
+
+NSInteger kCxenseVideoFeedTableViewCellImageTag = 311;
+NSInteger kCxenseVideoFeedTableViewCellTimestampTag = 312;
+NSInteger kCxenseVideoFeedTableViewCellTitleTag = 313;
