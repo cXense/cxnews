@@ -50,6 +50,7 @@
 		87A926C51D9BC63B00299341 /* FeedViewController+InsetsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */; };
 		87A926CB1D9BD28400299341 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A926CA1D9BD28400299341 /* Video.storyboard */; };
 		87A926D61D9BDCE000299341 /* VideoFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926D51D9BDCE000299341 /* VideoFeedTableViewController.m */; };
+		87A926D91D9BEE0C00299341 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926D81D9BEE0C00299341 /* VideoModel.m */; };
 		87A9A5201D4B335600014FC4 /* SectionLinksProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A51F1D4B335600014FC4 /* SectionLinksProvider.m */; };
 		87A9A5221D4B34EB00014FC4 /* SectionLinksProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A5211D4B34EB00014FC4 /* SectionLinksProviderTests.m */; };
 		87A9A5251D4B879200014FC4 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A5241D4B879200014FC4 /* InterestsViewController.m */; };
@@ -207,6 +208,8 @@
 		87A926CA1D9BD28400299341 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
 		87A926D41D9BDCE000299341 /* VideoFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoFeedTableViewController.h; sourceTree = "<group>"; };
 		87A926D51D9BDCE000299341 /* VideoFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoFeedTableViewController.m; sourceTree = "<group>"; };
+		87A926D71D9BEE0C00299341 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		87A926D81D9BEE0C00299341 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		87A9A51E1D4B335600014FC4 /* SectionLinksProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionLinksProvider.h; sourceTree = "<group>"; };
 		87A9A51F1D4B335600014FC4 /* SectionLinksProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionLinksProvider.m; sourceTree = "<group>"; };
 		87A9A5211D4B34EB00014FC4 /* SectionLinksProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionLinksProviderTests.m; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				870F21931D50DA9D00D108E5 /* InterestModel.m */,
 				431A4B30316F410EF07D7621 /* UserModel.h */,
 				431A4A69CE1223C10FADF80D /* UserModel.m */,
+				87A926D71D9BEE0C00299341 /* VideoModel.h */,
+				87A926D81D9BEE0C00299341 /* VideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -875,6 +880,7 @@
 				87A926D61D9BDCE000299341 /* VideoFeedTableViewController.m in Sources */,
 				87B340EA1D4767F200929491 /* CXNEventsService.m in Sources */,
 				431A48EAE2D230407BBAA2BC /* RecommendationsService.m in Sources */,
+				87A926D91D9BEE0C00299341 /* VideoModel.m in Sources */,
 				87B7FF171D28EF4F002D040D /* ArticleModel.m in Sources */,
 				87060C221D04B065006E6C36 /* UserAccountViewController.m in Sources */,
 				87E9D7B11D9252B700AD515B /* ArticleServiceAdapter.m in Sources */,

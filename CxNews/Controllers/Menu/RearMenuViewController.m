@@ -47,23 +47,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     __kindof UILabel *menuItemLabel = [cell viewWithTag:kCxenseRearMenuItemTag];
 
     if ([menuItemLabel.text isEqualToString:@"Videos"]) {
-//        NSURL *videoURL = [NSURL URLWithString:@"http://ht.cdn.turner.com/cnn/big/world/2015/01/02/pkg-mclaughlin-russians-seek-gov-help-ruble-plummets.cnn_065234_640x360_900k.mp4"];
-//        AVPlayer *player = [AVPlayer playerWithURL:videoURL];
-//
-//        AVPlayerViewController *controller = [AVPlayerViewController new];
-//        controller.player = player;
-//        [player play];
-//
-//        [self addChildViewController:controller];
-//        [self.view addSubview:controller.view];
-//        controller.view.frame = self.view.frame;
-
         UIStoryboard *videoStoryboard = [UIStoryboard storyboardWithName:@"Video" bundle:[NSBundle mainBundle]];
         VideoFeedTableViewController *videoVc = [videoStoryboard instantiateViewControllerWithIdentifier:@"video_vc"];
-        [self presentViewController:videoVc animated:YES completion:nil];
-    }
-
-    if ([menuItemLabel.text isEqualToString:@"Recommended"]) {
+        UINavigationController *vc = (UINavigationController *) self.revealViewController.frontViewController;
+        [vc pushViewController:videoVc animated:YES];
+        [self.revealViewController revealToggle:nil];
+    } else if ([menuItemLabel.text isEqualToString:@"Recommended"]) {
         FeedViewController *vc = (FeedViewController *) ((UINavigationController *) self.revealViewController.frontViewController).topViewController;
         vc.articles = nil;
         vc.section = menuItemLabel.text;
