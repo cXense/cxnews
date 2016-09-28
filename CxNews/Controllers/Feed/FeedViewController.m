@@ -17,6 +17,7 @@
 #import "ArticleModel.h"
 #import "Reco2ArticleConverter.h"
 #import "CXNEventsService.h"
+#import "FeedViewController+InsetsGenerator.h"
 
 @interface FeedViewController ()
 
@@ -29,6 +30,11 @@
  User profile button. (if user is not logged in it shows "Login" text)
  */
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *userBarButton;
+
+/**
+ Collection view itself which renders feed content.
+ */
+@property (strong, nonatomic) IBOutlet UICollectionView *ibFeedCollectionView;
 
 @end
 
@@ -51,6 +57,11 @@
         [self.sidebarButton setAction:@selector(revealToggle:)];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+
+    // Configure UICollectionView insets dynamically
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) [self.ibFeedCollectionView collectionViewLayout];
+    layout.sectionInset = [FeedViewController calculateEdgeInsets];
+    [layout invalidateLayout];
 
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self
