@@ -8,6 +8,7 @@
 
 #import "VideoFeedTableViewController.h"
 #import "Constants.h"
+#import "VideoService.h"
 
 @interface VideoFeedTableViewController ()
 
@@ -17,7 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    VideoService *videoSerivce = [VideoService sharedInstance];
+    [videoSerivce availableVideosWithCompleteion:^(NSArray<VideoModel *> *videos, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Error appeared during videos load: %@", [error description]);
+        }
+
+        
+    }];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
