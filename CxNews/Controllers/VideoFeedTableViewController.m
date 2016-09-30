@@ -14,10 +14,14 @@
 
 @end
 
-@implementation VideoFeedTableViewController
+@implementation VideoFeedTableViewController {
+    NSArray<VideoModel *> *_videoRepository;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self setTitle:@"Videos"];
 
     VideoService *videoSerivce = [VideoService sharedInstance];
     [videoSerivce availableVideosWithCompleteion:^(NSArray<VideoModel *> *videos, NSError *error) {
@@ -25,7 +29,8 @@
             NSLog(@"Error appeared during videos load: %@", [error description]);
         }
 
-        
+        _videoRepository = videos;
+        [self.tableView reloadData];
     }];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -35,11 +40,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -47,22 +47,38 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [_videoRepository count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"video_cell" forIndexPath:indexPath];
-    
+
+    VideoModel *rowModel = _videoRepository[indexPath.row];
+
     UIImageView *imageView = [cell viewWithTag:kCxenseVideoFeedTableViewCellImageTag];
-    imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://i2.cdn.turner.com/cnn/dam/assets/150103043419-nr-stevens-two-large-metal-objects-00030211-t3-entertainment.jpg"]]];
+    imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:rowModel.imageUrl]]];
+
+
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]
+                                                   initWithData:[rowModel.title dataUsingEncoding:NSUTF8StringEncoding]
+                                                   options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType}
+                                                   documentAttributes:nil
+                                                   error:nil];
+    float fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
+    [attributedString addAttribute:NSFontAttributeName
+                             value:[UIFont fontWithName:@"Helvetica Bold" size:fontSize]
+                             range:NSMakeRange(0, attributedString.string.length)];
+    [attributedString addAttribute:NSForegroundColorAttributeName
+                             value:[UIColor whiteColor]
+                             range:NSMakeRange(0, attributedString.string.length)];
 
     UILabel *title = [cell viewWithTag:kCxenseVideoFeedTableViewCellTitleTag];
     title.alpha = 1.0;
-    title.text = @"AirAsia search thwarted by rough seas";
+    title.attributedText = attributedString;
 
     UILabel *timestamp = [cell viewWithTag:kCxenseVideoFeedTableViewCellTimestampTag];
     timestamp.alpha = 1.0;
-    timestamp.text = @"1/3/2015 9:37:41 AM";
+    timestamp.text = rowModel.timestamp;
     
     return cell;
 }

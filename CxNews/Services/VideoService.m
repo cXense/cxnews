@@ -23,10 +23,42 @@
         return;
     }
 
-    NSRange range = [fullHtml rangeOfString:@"href=\"/Videos/CNN/"];
-    
+    NSMutableArray<VideoModel *> *result = [NSMutableArray array];
 
-    NSLog(@"%@", fullHtml);
+    NSString *temp = [NSString stringWithString:fullHtml];
+    NSRange range;
+
+    while ((range = [temp rangeOfString:@"/Videos/CNN/"]).location != NSNotFound) {
+        temp = [temp substringFromIndex:range.location];
+        NSRange urlEnd = [temp rangeOfString:@"\">"];
+        NSString *videoUrl = [temp substringToIndex:urlEnd.location];
+        temp = [temp substringFromIndex:urlEnd.location + urlEnd.length];
+
+        range = [temp rangeOfString:@"src=\""];
+        temp = [temp substringFromIndex:range.location + range.length];
+        urlEnd = [temp rangeOfString:@"\""];
+        NSString *thumbnailUrl = [temp substringToIndex:urlEnd.location];
+
+        range = [temp rangeOfString:@"font-weight: 300;\">"];
+        temp = [temp substringFromIndex:range.location + range.length];
+        urlEnd = [temp rangeOfString:@"</"];
+        NSString *timestamp = [temp substringToIndex:urlEnd.location];
+
+        range = [temp rangeOfString:@"padding-bottom: 4px;\">"];
+        temp = [temp substringFromIndex:range.location + range.length];
+        urlEnd = [temp rangeOfString:@"</"];
+        NSString *title = [temp substringToIndex:urlEnd.location];
+
+        VideoModel *model = [VideoModel new];
+        model.videoPageUrl = [NSString stringWithFormat:@"https://cxnews.azuerwebsites.net%@", videoUrl];
+        model.imageUrl = thumbnailUrl;
+        model.title = title;
+        model.timestamp = timestamp;
+
+        [result addObject:model];
+    }
+
+    completion(result, nil);
 }
 
 + (instancetype)sharedInstance {

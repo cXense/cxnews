@@ -15,6 +15,11 @@
 @interface VideoModel : NSObject
 
 /**
+ String with URL that points to page with video player.
+ */
+@property NSString *videoPageUrl;
+
+/**
  String with URL that points to video's thumbnail image.
  */
 @property NSString *imageUrl;
