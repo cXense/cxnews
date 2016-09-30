@@ -20,17 +20,31 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Cj-zh-FSS" id="lLW-Gt-yTb">
-                                    <frame key="frameInset" width="375" height="160"/>
+                                    <frame key="frameInset" width="375" height="159"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="311" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-7g-rnA"/>
-                                        <view opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjh-Kb-Uva">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLh-JN-qke" userLabel="Play button space">
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="y1v-Si-dkL">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="HFN-bs-MLb"/>
+                                                        <constraint firstAttribute="width" constant="50" id="gJ9-uG-g0s"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="y1v-Si-dkL" firstAttribute="centerX" secondItem="uLh-JN-qke" secondAttribute="centerX" id="Y6Z-eb-AlL"/>
+                                                <constraint firstItem="y1v-Si-dkL" firstAttribute="centerY" secondItem="uLh-JN-qke" secondAttribute="centerY" id="s2p-Du-IsH"/>
+                                            </constraints>
+                                        </view>
+                                        <view opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjh-Kb-Uva" userLabel="Background">
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="pjl-Rv-Yq9"/>
                                             </constraints>
                                         </view>
-                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-Lj-m4d">
+                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-Lj-m4d" userLabel="Text container">
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="313" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AirAsia: Large metal objects found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRL-JL-KJJ">
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
@@ -57,10 +71,14 @@
                                     <constraints>
                                         <constraint firstItem="WNC-Lj-m4d" firstAttribute="bottom" secondItem="lLW-Gt-yTb" secondAttribute="bottomMargin" constant="8" id="1Jd-Iu-jjr"/>
                                         <constraint firstItem="fjh-Kb-Uva" firstAttribute="leading" secondItem="lLW-Gt-yTb" secondAttribute="leading" id="1ze-cu-6tg"/>
+                                        <constraint firstAttribute="trailing" secondItem="uLh-JN-qke" secondAttribute="trailing" id="GSS-1p-hgA"/>
+                                        <constraint firstItem="uLh-JN-qke" firstAttribute="top" secondItem="lLW-Gt-yTb" secondAttribute="top" id="IUU-6g-k0c"/>
                                         <constraint firstAttribute="bottom" secondItem="fjh-Kb-Uva" secondAttribute="bottom" id="J0F-03-Gjz"/>
+                                        <constraint firstItem="uLh-JN-qke" firstAttribute="leading" secondItem="lLW-Gt-yTb" secondAttribute="leading" id="Npb-Wk-CbJ"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="s6v-7g-rnA" secondAttribute="bottom" constant="-8" id="XhU-M3-QjY"/>
                                         <constraint firstItem="s6v-7g-rnA" firstAttribute="leading" secondItem="lLW-Gt-yTb" secondAttribute="leadingMargin" constant="-8" id="ahh-cN-yHM"/>
                                         <constraint firstAttribute="trailing" secondItem="fjh-Kb-Uva" secondAttribute="trailing" id="cHh-xK-c1y"/>
+                                        <constraint firstItem="uLh-JN-qke" firstAttribute="bottom" secondItem="fjh-Kb-Uva" secondAttribute="top" id="e7P-3A-ZQm"/>
                                         <constraint firstItem="WNC-Lj-m4d" firstAttribute="trailing" secondItem="lLW-Gt-yTb" secondAttribute="trailingMargin" constant="8" id="kfv-NP-RGg"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="s6v-7g-rnA" secondAttribute="trailing" constant="-8" id="msL-Gc-aO8"/>
                                         <constraint firstItem="WNC-Lj-m4d" firstAttribute="leading" secondItem="lLW-Gt-yTb" secondAttribute="leadingMargin" constant="-8" id="nBc-RM-oI7"/>
@@ -88,4 +106,7 @@
             <point key="canvasLocation" x="177" y="39"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play" width="32" height="32"/>
+    </resources>
 </document>
