@@ -26,6 +26,15 @@ typedef void(^VideoServiceCompletion)(NSArray<VideoModel *> *videos, NSError *er
 
 
 /**
+ Extracts exact url that points to video content from specified page with video.
+
+ @param videoPageUrl URL that points to page with video
+
+ @return video url
+ */
+-(NSString *)urlWithVideoFromPage:(NSString *)videoPageUrl;
+
+/**
  Returns initialized instance of the service.
 
  @return instance

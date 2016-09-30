@@ -50,7 +50,7 @@
         NSString *title = [temp substringToIndex:urlEnd.location];
 
         VideoModel *model = [VideoModel new];
-        model.videoPageUrl = [NSString stringWithFormat:@"https://cxnews.azuerwebsites.net%@", videoUrl];
+        model.videoPageUrl = [NSString stringWithFormat:@"https://cxnews.azurewebsites.net%@", videoUrl];
         model.imageUrl = thumbnailUrl;
         model.title = title;
         model.timestamp = timestamp;
@@ -60,6 +60,24 @@
 
     completion(result, nil);
 }
+
+-(NSString *)urlWithVideoFromPage:(NSString *)videoPageUrl {
+    NSError *error = nil;
+    NSString *fullHtml = [NSString stringWithContentsOfURL:[NSURL URLWithString:videoPageUrl]
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:&error];
+    if (error != nil) {
+        NSLog(@"Failure: %@", [error description]);
+        return nil;
+    }
+
+    NSRange range = [fullHtml rangeOfString:@"<video"];
+    NSString *temp = [fullHtml substringFromIndex:range.location+range.length];
+    range = [temp rangeOfString:@"src=\""];
+    temp = [temp substringFromIndex:range.location+range.length];
+    NSRange endRange = [temp rangeOfString:@"\""];
+    return [temp substringToIndex:endRange.location];
+};
 
 + (instancetype)sharedInstance {
     static VideoService* instance;

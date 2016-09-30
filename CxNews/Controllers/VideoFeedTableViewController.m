@@ -9,6 +9,8 @@
 #import "VideoFeedTableViewController.h"
 #import "Constants.h"
 #import "VideoService.h"
+@import AVKit.AVPlayerViewController;
+@import AVFoundation.AVPlayer;
 
 @interface VideoFeedTableViewController ()
 
@@ -83,48 +85,17 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    VideoModel *model = _videoRepository[indexPath.row];
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+    NSString *urlToVideoContent = [[VideoService sharedInstance] urlWithVideoFromPage:model.videoPageUrl];
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Video" bundle:[NSBundle mainBundle]];
+    AVPlayerViewController* playerVc = [storyboard instantiateViewControllerWithIdentifier:@"av_vc"];
+    AVPlayer *player = [AVPlayer playerWithURL:[NSURL URLWithString:urlToVideoContent]];
+    playerVc.player = player;
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    [self presentViewController:playerVc animated:YES completion:nil];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
