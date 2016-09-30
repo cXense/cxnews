@@ -23,7 +23,7 @@
         return;
     }
 
-    NSMutableArray<VideoModel *> *result = [NSMutableArray array];
+    NSMutableSet<VideoModel *> *result = [NSMutableSet set];
 
     NSString *temp = [NSString stringWithString:fullHtml];
     NSRange range;

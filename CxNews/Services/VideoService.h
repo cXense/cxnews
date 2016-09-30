@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VideoModel.h"
 
-typedef void(^VideoServiceCompletion)(NSArray<VideoModel *> *videos, NSError *error);
+typedef void(^VideoServiceCompletion)(NSSet<VideoModel *> *videos, NSError *error);
 
 /**
  VideoService is responsible for loading descriptors of 
