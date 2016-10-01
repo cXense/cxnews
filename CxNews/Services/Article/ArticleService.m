@@ -7,6 +7,8 @@
 //
 
 #import "ArticleService.h"
+#import "ArticleModel.h"
+#import "ArticleLoader.h"
 
 @implementation ArticleService
 

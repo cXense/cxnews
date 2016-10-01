@@ -3,7 +3,7 @@
 // Copyright (c) 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 typedef NS_ENUM(NSInteger, AuthorizationResult) {
     OK,

@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "VideoService.h"
 #import "VideoFeedTableViewController+CellHeightGenerator.h"
+#import "VideoModel.h"
 @import AVKit.AVPlayerViewController;
 @import AVFoundation.AVPlayer;
 

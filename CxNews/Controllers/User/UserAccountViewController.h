@@ -6,7 +6,7 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface UserAccountViewController : UIViewController
 

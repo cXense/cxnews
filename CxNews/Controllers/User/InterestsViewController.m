@@ -8,9 +8,11 @@
 
 #import "InterestsViewController.h"
 #import "UserService.h"
+#import "InterestModel.h"
 #import "CXNEventsService.h"
 #import "UserProfileService.h"
 #import "UIViewController+Indicator.h"
+@import Charts;
 
 @interface InterestsViewController ()
 

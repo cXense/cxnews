@@ -3,11 +3,11 @@
 // Copyright (c) 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import AdSupport;
+
 #import "UserService.h"
 #import "Constants.h"
-
-@import AdSupport;
 
 @implementation UserService {
     NSString *_userExternalId;

@@ -3,9 +3,9 @@
 // Copyright (c) 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "InterestModel.h"
+@import Foundation;
 
+@class InterestModel;
 @class UserModel;
 
 static NSString *kUserDataURL = @"http://cxcrm.azurewebsites.net/Customer/Details";

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 /** Represents user interests category with weight and children interest categories */
 @interface InterestModel : NSObject

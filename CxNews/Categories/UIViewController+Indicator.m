@@ -6,6 +6,7 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
+@import UIKit.UIActivityIndicatorView;
 #import "UIViewController+Indicator.h"
 #import "Constants.h"
 

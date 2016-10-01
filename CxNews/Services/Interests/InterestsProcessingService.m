@@ -7,6 +7,7 @@
 //
 
 #import "InterestsProcessingService.h"
+#import "InterestModel.h"
 
 @implementation InterestsProcessingService
 

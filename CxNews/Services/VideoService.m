@@ -7,6 +7,7 @@
 //
 
 #import "VideoService.h"
+#import "VideoModel.h"
 
 @implementation VideoService
 

@@ -11,10 +11,10 @@
 #import "CxenseInsight.h"
 #import "ArticleViewController.h"
 #import "ArticleServiceAdapter.h"
-
+#import "ArticleModel.h"
 #import "CXNEventsService.h"
 
-#import <Social/Social.h>
+@import Social;
 
 @interface ArticleViewController()
 

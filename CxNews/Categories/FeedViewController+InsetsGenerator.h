@@ -6,7 +6,7 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import "FeedViewController.h"
+#import "FeedViewController.h";
 
 /**
  Extends FeedViewController and adds ability to calculate edge insets

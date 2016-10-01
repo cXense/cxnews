@@ -15,15 +15,9 @@
 
 @import HockeySDK;
 
-@interface AppDelegate ()
-
-@end
-
 @implementation AppDelegate
 
-
-- (BOOL)          application:(UIApplication *)application
-didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"Application '%@' has been launched with options = '%@'", [application description], [launchOptions description]);
 
     NSString *pathToConfig = [[NSBundle mainBundle] pathForResource:@"private_conf" ofType:@"plist"];
@@ -44,19 +38,19 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [CxenseInsight setDispatchMode:CxenseInsightDispatchModeOnline];
 
     // Pre-fetch sections data in background
-//    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//        NSArray<NSString *> *sectionUrls = [SectionLinksProvider supportedSiteSectionURLs];
-//        [sectionUrls enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            @try {
-//                [[ArticleServiceAdapter sharedInstance] articlesForURL:[NSURL URLWithString:obj]
-//                                                            completion:^(NSSet<ArticleModel *> * _Nullable articles, NSError * _Nullable error) {
-//                                                                // do nothing
-//                                                            }];
-//            } @catch (NSException *exception) {
-//                NSLog(@"Content loading for '%@' was finished with exception: '%@'", obj, [exception description]);
-//            }
-//        }];
-//    }];
+    //    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+    //        NSArray<NSString *> *sectionUrls = [SectionLinksProvider supportedSiteSectionURLs];
+    //        [sectionUrls enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    //            @try {
+    //                [[ArticleServiceAdapter sharedInstance] articlesForURL:[NSURL URLWithString:obj]
+    //                                                            completion:^(NSSet<ArticleModel *> * _Nullable articles, NSError * _Nullable error) {
+    //                                                                // do nothing
+    //                                                            }];
+    //            } @catch (NSException *exception) {
+    //                NSLog(@"Content loading for '%@' was finished with exception: '%@'", obj, [exception description]);
+    //            }
+    //        }];
+    //    }];
 
     // Calculate root view controller
     NSString *rootViewControllerId = nil;

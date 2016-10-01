@@ -5,6 +5,7 @@
 
 #import "UserProfileService.h"
 #import "UserModel.h"
+#import "InterestModel.h"
 #import "CxenseDMP.h"
 #import "InterestsProcessingService.h"
 

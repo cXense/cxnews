@@ -7,7 +7,6 @@
 //
 
 #import "ArticleModel.h"
-#import "CxenseContentRecommendation.h"
 
 @implementation ArticleModel
 
