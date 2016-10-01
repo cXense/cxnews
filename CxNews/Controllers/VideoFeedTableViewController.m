@@ -9,6 +9,7 @@
 #import "VideoFeedTableViewController.h"
 #import "Constants.h"
 #import "VideoService.h"
+#import "VideoFeedTableViewController+CellHeightGenerator.h"
 @import AVKit.AVPlayerViewController;
 @import AVFoundation.AVPlayer;
 
@@ -44,6 +45,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_videoRepository count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForVideoCell];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
