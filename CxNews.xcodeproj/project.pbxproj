@@ -44,10 +44,15 @@
 		8787424B1CFEAF5D000A926B /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787424A1CFEAF5D000A926B /* AuthViewController.m */; };
 		878742731CFEDD5A000A926B /* UserServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 878742721CFEDD5A000A926B /* UserServiceTests.m */; };
 		87874DE61D41F7EF00A24AFD /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87874DE41D41F7EF00A24AFD /* Article.storyboard */; };
+		8788F5561D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8788F5551D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.m */; };
 		879007641D5DDCA700709591 /* InterestsProcessingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 879007631D5DDCA700709591 /* InterestsProcessingService.m */; };
 		879007661D5DDF8000709591 /* InterestsProcessingServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 879007651D5DDF8000709591 /* InterestsProcessingServiceTests.m */; };
 		8790D5531CF9A2FE0009EBFF /* RearMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8790D5521CF9A2FE0009EBFF /* RearMenuViewController.m */; };
 		87A926C51D9BC63B00299341 /* FeedViewController+InsetsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */; };
+		87A926CB1D9BD28400299341 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A926CA1D9BD28400299341 /* Video.storyboard */; };
+		87A926D61D9BDCE000299341 /* VideoFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926D51D9BDCE000299341 /* VideoFeedTableViewController.m */; };
+		87A926D91D9BEE0C00299341 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926D81D9BEE0C00299341 /* VideoModel.m */; };
+		87A926DD1D9BEF0500299341 /* VideoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926DC1D9BEF0500299341 /* VideoService.m */; };
 		87A9A5201D4B335600014FC4 /* SectionLinksProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A51F1D4B335600014FC4 /* SectionLinksProvider.m */; };
 		87A9A5221D4B34EB00014FC4 /* SectionLinksProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A5211D4B34EB00014FC4 /* SectionLinksProviderTests.m */; };
 		87A9A5251D4B879200014FC4 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A9A5241D4B879200014FC4 /* InterestsViewController.m */; };
@@ -195,6 +200,8 @@
 		8787426C1CFEDD37000A926B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		878742721CFEDD5A000A926B /* UserServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserServiceTests.m; sourceTree = "<group>"; };
 		87874DE51D41F7EF00A24AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Article.storyboard; sourceTree = "<group>"; };
+		8788F5541D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VideoFeedTableViewController+CellHeightGenerator.h"; sourceTree = "<group>"; };
+		8788F5551D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VideoFeedTableViewController+CellHeightGenerator.m"; sourceTree = "<group>"; };
 		879007621D5DDCA700709591 /* InterestsProcessingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsProcessingService.h; sourceTree = "<group>"; };
 		879007631D5DDCA700709591 /* InterestsProcessingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsProcessingService.m; sourceTree = "<group>"; };
 		879007651D5DDF8000709591 /* InterestsProcessingServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsProcessingServiceTests.m; sourceTree = "<group>"; };
@@ -202,6 +209,13 @@
 		8790D5521CF9A2FE0009EBFF /* RearMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearMenuViewController.m; sourceTree = "<group>"; };
 		87A926C31D9BC63B00299341 /* FeedViewController+InsetsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedViewController+InsetsGenerator.h"; sourceTree = "<group>"; };
 		87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FeedViewController+InsetsGenerator.m"; sourceTree = "<group>"; };
+		87A926CA1D9BD28400299341 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
+		87A926D41D9BDCE000299341 /* VideoFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoFeedTableViewController.h; sourceTree = "<group>"; };
+		87A926D51D9BDCE000299341 /* VideoFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoFeedTableViewController.m; sourceTree = "<group>"; };
+		87A926D71D9BEE0C00299341 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		87A926D81D9BEE0C00299341 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		87A926DB1D9BEF0500299341 /* VideoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoService.h; sourceTree = "<group>"; };
+		87A926DC1D9BEF0500299341 /* VideoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoService.m; sourceTree = "<group>"; };
 		87A9A51E1D4B335600014FC4 /* SectionLinksProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionLinksProvider.h; sourceTree = "<group>"; };
 		87A9A51F1D4B335600014FC4 /* SectionLinksProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionLinksProvider.m; sourceTree = "<group>"; };
 		87A9A5211D4B34EB00014FC4 /* SectionLinksProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionLinksProviderTests.m; sourceTree = "<group>"; };
@@ -275,6 +289,8 @@
 				870F21931D50DA9D00D108E5 /* InterestModel.m */,
 				431A4B30316F410EF07D7621 /* UserModel.h */,
 				431A4A69CE1223C10FADF80D /* UserModel.m */,
+				87A926D71D9BEE0C00299341 /* VideoModel.h */,
+				87A926D81D9BEE0C00299341 /* VideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +406,7 @@
 		8707D8811CF0C73F007B1A2B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				87A926D01D9BDCC200299341 /* Video */,
 				87B7FF0D1D28EA91002D040D /* Article */,
 				878742481CFEAF2B000A926B /* Authorization */,
 				431A43D157579E805B3350CE /* Feed */,
@@ -402,6 +419,7 @@
 		8707D8821CF0C754007B1A2B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				87A926DA1D9BEEE600299341 /* Video */,
 				87B7FF111D28EF1C002D040D /* Article */,
 				87B340E71D4767B000929491 /* Events */,
 				879007611D5DDC2E00709591 /* Interests */,
@@ -489,10 +507,12 @@
 		87686F011D5F304300351C32 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				87686F021D5F309F00351C32 /* UIViewController+Indicator.h */,
-				87686F031D5F309F00351C32 /* UIViewController+Indicator.m */,
 				87A926C31D9BC63B00299341 /* FeedViewController+InsetsGenerator.h */,
 				87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */,
+				87686F021D5F309F00351C32 /* UIViewController+Indicator.h */,
+				87686F031D5F309F00351C32 /* UIViewController+Indicator.m */,
+				8788F5541D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.h */,
+				8788F5551D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -567,6 +587,24 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		87A926D01D9BDCC200299341 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				87A926D41D9BDCE000299341 /* VideoFeedTableViewController.h */,
+				87A926D51D9BDCE000299341 /* VideoFeedTableViewController.m */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
+		87A926DA1D9BEEE600299341 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				87A926DB1D9BEF0500299341 /* VideoService.h */,
+				87A926DC1D9BEF0500299341 /* VideoService.m */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
 		87B2675D1D22DE100061F635 /* GenericPasswordExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +630,7 @@
 				8707D86F1CF0887A007B1A2B /* LaunchScreen.storyboard */,
 				8707D86A1CF0887A007B1A2B /* Main.storyboard */,
 				87B340EC1D479C3F00929491 /* UserProfile.storyboard */,
+				87A926CA1D9BD28400299341 /* Video.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -608,11 +647,11 @@
 		87B7FF111D28EF1C002D040D /* Article */ = {
 			isa = PBXGroup;
 			children = (
+				87E9D7B51D9252FB00AD515B /* ArticleLoader.h */,
 				87B7FF121D28EF34002D040D /* ArticleService.h */,
 				87B7FF131D28EF34002D040D /* ArticleService.m */,
 				87E9D7AF1D9252B700AD515B /* ArticleServiceAdapter.h */,
 				87E9D7B01D9252B700AD515B /* ArticleServiceAdapter.m */,
-				87E9D7B51D9252FB00AD515B /* ArticleLoader.h */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -769,6 +808,7 @@
 				8717F82B1CF76534002E5948 /* CxenseContentContext.h in Resources */,
 				8717F82C1CF76534002E5948 /* CxenseContentRecommendation.h in Resources */,
 				8717F82D1CF76534002E5948 /* CxenseContentUser.h in Resources */,
+				87A926CB1D9BD28400299341 /* Video.storyboard in Resources */,
 				8717F82E1CF76534002E5948 /* CxenseContentWidget.h in Resources */,
 				8717F82F1CF76534002E5948 /* libCxenseContentSDK.a in Resources */,
 				8707D8711CF0887A007B1A2B /* LaunchScreen.storyboard in Resources */,
@@ -845,6 +885,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8707D8661CF0887A007B1A2B /* AppDelegate.m in Sources */,
+				87A926DD1D9BEF0500299341 /* VideoService.m in Sources */,
 				8790D5531CF9A2FE0009EBFF /* RearMenuViewController.m in Sources */,
 				879007641D5DDCA700709591 /* InterestsProcessingService.m in Sources */,
 				87B7FF141D28EF34002D040D /* ArticleService.m in Sources */,
@@ -855,8 +896,11 @@
 				87B7FF101D28EAC3002D040D /* ArticleViewController.m in Sources */,
 				8717F8371CF76725002E5948 /* SWRevealViewController.m in Sources */,
 				87668A2D1D0333D700AC1B4F /* Constants.m in Sources */,
+				8788F5561D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.m in Sources */,
+				87A926D61D9BDCE000299341 /* VideoFeedTableViewController.m in Sources */,
 				87B340EA1D4767F200929491 /* CXNEventsService.m in Sources */,
 				431A48EAE2D230407BBAA2BC /* RecommendationsService.m in Sources */,
+				87A926D91D9BEE0C00299341 /* VideoModel.m in Sources */,
 				87B7FF171D28EF4F002D040D /* ArticleModel.m in Sources */,
 				87060C221D04B065006E6C36 /* UserAccountViewController.m in Sources */,
 				87E9D7B11D9252B700AD515B /* ArticleServiceAdapter.m in Sources */,

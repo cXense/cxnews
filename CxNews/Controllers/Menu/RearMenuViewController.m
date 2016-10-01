@@ -14,10 +14,10 @@
 #import "ArticleServiceAdapter.h"
 #import "FeedViewController.h"
 #import "SectionLinksProvider.h"
+#import "VideoFeedTableViewController.h"
 
-@interface RearMenuViewController ()
-
-@end
+@import AVKit;
+@import AVFoundation;
 
 @implementation RearMenuViewController {
 @private
@@ -46,7 +46,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     __kindof UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     __kindof UILabel *menuItemLabel = [cell viewWithTag:kCxenseRearMenuItemTag];
 
-    if ([menuItemLabel.text isEqualToString:@"Recommended"]) {
+    if ([menuItemLabel.text isEqualToString:@"Videos"]) {
+        UIStoryboard *videoStoryboard = [UIStoryboard storyboardWithName:@"Video" bundle:[NSBundle mainBundle]];
+        VideoFeedTableViewController *videoVc = [videoStoryboard instantiateViewControllerWithIdentifier:@"video_vc"];
+        UINavigationController *vc = (UINavigationController *) self.revealViewController.frontViewController;
+        [vc pushViewController:videoVc animated:YES];
+        [self.revealViewController revealToggle:nil];
+    } else if ([menuItemLabel.text isEqualToString:@"Recommended"]) {
         FeedViewController *vc = (FeedViewController *) ((UINavigationController *) self.revealViewController.frontViewController).topViewController;
         vc.articles = nil;
         vc.section = menuItemLabel.text;
