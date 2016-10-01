@@ -57,8 +57,15 @@
     VideoModel *rowModel = _videoRepository[indexPath.row];
 
     UIImageView *imageView = [cell viewWithTag:kCxenseVideoFeedTableViewCellImageTag];
-    imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:rowModel.imageUrl]]];
-
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:rowModel.imageUrl]]
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+                               if (connectionError) {
+                                   NSLog(@"Error happend while video thumbnail load: %@", [connectionError description]);
+                                   return;
+                               }
+                               imageView.image = [UIImage imageWithData:data];
+                           }];
 
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]
                                                    initWithData:[rowModel.title dataUsingEncoding:NSUTF8StringEncoding]
@@ -80,7 +87,7 @@
     UILabel *timestamp = [cell viewWithTag:kCxenseVideoFeedTableViewCellTimestampTag];
     timestamp.alpha = 1.0;
     timestamp.text = rowModel.timestamp;
-    
+
     return cell;
 }
 
@@ -93,7 +100,7 @@
     AVPlayerViewController* playerVc = [storyboard instantiateViewControllerWithIdentifier:@"av_vc"];
     AVPlayer *player = [AVPlayer playerWithURL:[NSURL URLWithString:urlToVideoContent]];
     playerVc.player = player;
-
+    
     [self presentViewController:playerVc animated:YES completion:nil];
 }
 
