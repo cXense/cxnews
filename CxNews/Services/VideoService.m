@@ -12,7 +12,6 @@
 @implementation VideoService
 
 -(void)availableVideosWithCompleteion:(VideoServiceCompletion)completion {
-    NSURLSession *urlSession = [NSURLSession sharedSession];
     NSURL *videoSectinUrl = [NSURL URLWithString:@"https://cxnews.azurewebsites.net/videos/videos"];
 
     NSError *error = nil;
