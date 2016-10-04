@@ -20,7 +20,6 @@
 @import AVFoundation;
 
 @implementation RearMenuViewController {
-@private
     __weak IBOutlet UISearchBar *searchBar;
 }
 

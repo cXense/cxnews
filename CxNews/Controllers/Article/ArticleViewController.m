@@ -18,7 +18,11 @@
 
 @interface ArticleViewController()
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *sectionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *headlineTextView;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
@@ -146,9 +150,6 @@
         }];
 
         [self updateScrollViewContentSize];
-
-        CGFloat multiplier = CGRectGetWidth(self.imageView.bounds) / image.size.width;
-        [self.imageViewHeightConstraint setConstant:multiplier * image.size.height];
     }];
 }
 

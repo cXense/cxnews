@@ -14,10 +14,6 @@
 @import AVKit.AVPlayerViewController;
 @import AVFoundation.AVPlayer;
 
-@interface VideoFeedTableViewController ()
-
-@end
-
 @implementation VideoFeedTableViewController {
     NSArray<VideoModel *> *_videoRepository;
 }
@@ -46,10 +42,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_videoRepository count];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self heightForVideoCell];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -90,6 +82,12 @@
     timestamp.text = rowModel.timestamp;
 
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForVideoCell];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
