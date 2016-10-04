@@ -36,14 +36,14 @@
      */
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     [self.view addSubview:webView];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://cxnews.azurewebsites.net"]]];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kCxenseSiteBaseUrl]]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[CXNEventsService sharedInstance] trackEventWithName:@"Auth View"
                                           forPageWithName:@"Login page"
-                                                   andUrl:@"http://cxnews.azurewebsites.net/Account/Login"
+                                                   andUrl:[NSString stringWithFormat:@"/Account/Login", kCxenseSiteBaseUrl]
                                           andRefferingUrl:nil
                                         byTrackerWithName:@"Auth"];
 }
@@ -113,7 +113,7 @@
 # pragma mark - Password share extension
 
 - (IBAction)handlePasswordExtensionTap:(UIButton *)sender {
-    [[GenericPasswordExtension sharedExtension] findLoginForURLString:@"http://cxnews.azurewebsites.net"
+    [[GenericPasswordExtension sharedExtension] findLoginForURLString:kCxenseSiteBaseUrl
                                                     forViewController:self
                                                                sender:sender
                                                            completion:^(NSDictionary *loginDict, NSError *error) {

@@ -25,11 +25,11 @@
     [body addObject:@"Test timestamp"];
 
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [parameters setValue:@"http://www.example.com/image" forKey:@"dominantthumbnail"];
+    [parameters setValue:@"https://www.example.com/image" forKey:@"dominantthumbnail"];
     [parameters setValue:@"Test Headline" forKey:@"title"];
     [parameters setValue:body forKey:@"body"];
-    [parameters setValue:@"http://www.example.com/article" forKey:@"url"];
-    [parameters setValue:@"http://api.example.com/article" forKey:@"click_url"];
+    [parameters setValue:@"https://www.example.com/article" forKey:@"url"];
+    [parameters setValue:@"https://api.example.com/article" forKey:@"click_url"];
 
     reco = [[CxenseContentRecommendation alloc] initWithRecommendationDictionary:parameters];
 }

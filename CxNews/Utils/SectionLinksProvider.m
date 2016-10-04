@@ -7,6 +7,7 @@
 //
 
 #import "SectionLinksProvider.h"
+#import "Constants.h"
 
 static NSDictionary<NSString *, NSString *> *section2LinkMap;
 
@@ -15,15 +16,15 @@ static NSDictionary<NSString *, NSString *> *section2LinkMap;
 +(void)initialize {
     if (self == [SectionLinksProvider class]) {
         section2LinkMap = @{
-                            @"News" : @"http://cxnews.azurewebsites.net/articles/news/",
-                            @"World" : @"http://cxnews.azurewebsites.net/articles/world/",
-                            @"Business" : @"http://cxnews.azurewebsites.net/articles/business/",
-                            @"Entertainment" : @"http://cxnews.azurewebsites.net/articles/entertainment/",
-                            @"Sports" : @"http://cxnews.azurewebsites.net/articles/sports/",
-                            @"Politics" : @"http://cxnews.azurewebsites.net/articles/politics/",
-                            @"Health" : @"http://cxnews.azurewebsites.net/articles/health/",
-                            @"Science" : @"http://cxnews.azurewebsites.net/articles/science/",
-                            @"Tech" : @"http://cxnews.azurewebsites.net/articles/tech/"
+                            @"News" : [NSString stringWithFormat:@"%@/articles/news/", kCxenseSiteBaseUrl],
+                            @"World" : [NSString stringWithFormat:@"%@/articles/world/", kCxenseSiteBaseUrl],
+                            @"Business" : [NSString stringWithFormat:@"%@/articles/business/", kCxenseSiteBaseUrl],
+                            @"Entertainment" : [NSString stringWithFormat:@"%@/articles/entertainment/", kCxenseSiteBaseUrl],
+                            @"Sports" : [NSString stringWithFormat:@"%@/articles/sports/", kCxenseSiteBaseUrl],
+                            @"Politics" : [NSString stringWithFormat:@"%@/articles/politics/", kCxenseSiteBaseUrl],
+                            @"Health" : [NSString stringWithFormat:@"%@/articles/health/", kCxenseSiteBaseUrl],
+                            @"Science" : [NSString stringWithFormat:@"%@/articles/science/", kCxenseSiteBaseUrl],
+                            @"Tech" : [NSString stringWithFormat:@"%@/articles/tech/", kCxenseSiteBaseUrl]
                             };
     }
 }

@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "ArticleService.h"
+#import "Constants.h"
 
 @interface ArticleServiceTests : XCTestCase
 
@@ -16,7 +17,7 @@
 @implementation ArticleServiceTests
 
 - (void)testPerformanceExample {
-    NSURL *techSectionUrl = [NSURL URLWithString:@"http://cxnews.azurewebsites.net/articles/tech/"];
+    NSURL *techSectionUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/articles/tech/", kCxenseSiteBaseUrl]];
     ArticleService *service = [ArticleService sharedInstance];
     [self measureBlock:^{
         NSSet<ArticleModel *> *result = [service articlesForURL:techSectionUrl error:nil];

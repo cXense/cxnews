@@ -10,6 +10,8 @@
 @import Foundation.NSDate;
 @import CoreGraphics.CGBase;
 
+extern NSString *kCxenseSiteBaseUrl;
+
 extern NSTimeInterval kCxenseCacheClearTimeoutInSeconds;
 
 extern CGFloat kCxenseAuthControlsCornerRadius;

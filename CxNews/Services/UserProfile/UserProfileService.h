@@ -8,7 +8,7 @@
 @class InterestModel;
 @class UserModel;
 
-static NSString *kUserDataURL = @"http://cxcrm.azurewebsites.net/Customer/Details";
+static NSString *kUserDataURL = @"https://cxcrm.azurewebsites.net/Customer/Details";
 
 @interface UserProfileService : NSObject
 

@@ -9,6 +9,7 @@
 #import "RecommendationsService.h"
 #import "CxenseContent.h"
 #import "UserService.h"
+#import "Constants.h"
 
 @implementation RecommendationsService
 
@@ -23,7 +24,7 @@
     [CxenseContent setDefaultUser:defUser];
 
     CxenseContentContext *context = [[CxenseContentContext alloc] init];
-    [context setUrl:CX_NEWS_URL];
+    [context setUrl:kCxenseSiteBaseUrl];
 
     CxenseContentWidget *widget = [CxenseContent widgetWithId:CXENSE_CONTENT_WIDGET_ID
                                                       context:context

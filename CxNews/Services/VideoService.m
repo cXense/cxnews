@@ -8,11 +8,12 @@
 
 #import "VideoService.h"
 #import "VideoModel.h"
+#import "Constants.h"
 
 @implementation VideoService
 
 -(void)availableVideosWithCompleteion:(VideoServiceCompletion)completion {
-    NSURL *videoSectinUrl = [NSURL URLWithString:@"https://cxnews.azurewebsites.net/videos/videos"];
+    NSURL *videoSectinUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/videos/videos", kCxenseSiteBaseUrl]];
 
     NSError *error = nil;
     NSString *fullHtml = [NSString stringWithContentsOfURL:videoSectinUrl
@@ -50,7 +51,7 @@
         NSString *title = [temp substringToIndex:urlEnd.location];
 
         VideoModel *model = [VideoModel new];
-        model.videoPageUrl = [NSString stringWithFormat:@"https://cxnews.azurewebsites.net%@", videoUrl];
+        model.videoPageUrl = [NSString stringWithFormat:@"%@%@", kCxenseSiteBaseUrl, videoUrl];
         model.imageUrl = thumbnailUrl;
         model.title = title;
         model.timestamp = timestamp;

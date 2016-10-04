@@ -8,6 +8,8 @@
 
 #import "Constants.h"
 
+NSString *kCxenseSiteBaseUrl = @"https://cxnews.azurewebsites.net";
+
 NSTimeInterval kCxenseCacheClearTimeoutInSeconds = 3600.0;
 
 CGFloat kCxenseAuthControlsCornerRadius = 18.0;

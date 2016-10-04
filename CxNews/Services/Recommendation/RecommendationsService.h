@@ -11,10 +11,6 @@
 #import "CxenseContentRecommendation.h"
 
 /**
- * Cx news site main URL.
- */
-static NSString *const CX_NEWS_URL = @"http://cxnews.azurewebsites.net";
-/**
  * Cxense Content widget id.
  */
 static NSString *const CXENSE_CONTENT_WIDGET_ID = @"bb70b171687ed2aa35ae1197fbed5109cacc8c57";

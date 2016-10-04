@@ -12,6 +12,7 @@
 #import "UserProfileService.h"
 #import "UserModel.h"
 #import "CXNEventsService.h"
+#import "Constants.h"
 
 @interface UserAccountViewController()
 
@@ -88,8 +89,8 @@
 
     [[CXNEventsService sharedInstance] trackEventWithName:@"Profile View"
                                           forPageWithName:@"User Profile"
-                                                   andUrl:@"http://cxnews.azurewebsites.net/profileinterests"
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net"
+                                                   andUrl:[NSString stringWithFormat:@"%@/profileinterests", kCxenseSiteBaseUrl]
+                                          andRefferingUrl:kCxenseSiteBaseUrl
                                         byTrackerWithName:@"Profile"];
 
     [self updateScrollViewContentSize];

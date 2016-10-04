@@ -12,6 +12,7 @@
 #import "CXNEventsService.h"
 #import "UserProfileService.h"
 #import "UIViewController+Indicator.h"
+#import "Constants.h"
 @import Charts;
 
 @interface InterestsViewController ()
@@ -39,8 +40,8 @@
 
     [[CXNEventsService sharedInstance] trackEventWithName:@"Chart View"
                                           forPageWithName:@"Long Term Interests"
-                                                   andUrl:@"http://cxnews.azurewebsites.net/long-term-interests"
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net/profileinterests"
+                                                   andUrl:[NSString stringWithFormat:@"%@/long-term-interests", kCxenseSiteBaseUrl]
+                                          andRefferingUrl:[NSString stringWithFormat:@"%@/profileinterests", kCxenseSiteBaseUrl]
                                         byTrackerWithName:@"LTI"];
 }
 
