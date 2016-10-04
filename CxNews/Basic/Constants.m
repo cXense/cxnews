@@ -8,7 +8,7 @@
 
 #import "Constants.h"
 
-double kCxenseCacheClearTimeoutInSeconds = 3600.0;
+NSTimeInterval kCxenseCacheClearTimeoutInSeconds = 3600.0;
 
 CGFloat kCxenseAuthControlsCornerRadius = 18.0;
 

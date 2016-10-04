@@ -7,9 +7,10 @@
 //
 
 @import Foundation.NSString;
+@import Foundation.NSDate;
 @import CoreGraphics.CGBase;
 
-extern double kCxenseCacheClearTimeoutInSeconds;
+extern NSTimeInterval kCxenseCacheClearTimeoutInSeconds;
 
 extern CGFloat kCxenseAuthControlsCornerRadius;
 
