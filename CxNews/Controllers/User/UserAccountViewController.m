@@ -15,7 +15,18 @@
 
 @interface UserAccountViewController()
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property(weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property(weak, nonatomic) IBOutlet UILabel *labelName;
+@property(weak, nonatomic) IBOutlet UILabel *labelEmail;
+@property(weak, nonatomic) IBOutlet UILabel *labelGender;
+@property(weak, nonatomic) IBOutlet UILabel *labelBirthYear;
+@property(weak, nonatomic) IBOutlet UILabel *labelExternalId;
+@property(weak, nonatomic) IBOutlet UILabel *labelLocation;
+
+@property(weak, nonatomic) IBOutlet UIImageView *rearAvatar;
+@property(weak, nonatomic) IBOutlet UIImageView *frontAvatar;
+
+- (IBAction)handleLogout:(UIButton *)sender;
 
 
 @end

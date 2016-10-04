@@ -77,7 +77,7 @@
     NSMutableArray *xVals = [NSMutableArray array];
     NSMutableArray *yVals = [NSMutableArray array];
     NSMutableArray *colors = [NSMutableArray array];
-    int cnt = 0;
+    NSInteger cnt = 0;
     for (InterestModel *interest in interests) {
         // BarChartDataSet will be rendered in reverse order, that's why we need to add children first
         if (interest.children) {

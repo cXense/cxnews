@@ -65,7 +65,7 @@
                                                    options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType}
                                                    documentAttributes:nil
                                                    error:nil];
-    float fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
+    CGFloat fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
     [attributedString addAttribute:NSFontAttributeName
                              value:[UIFont fontWithName:@"Helvetica Bold" size:fontSize]
                              range:NSMakeRange(0, attributedString.string.length)];

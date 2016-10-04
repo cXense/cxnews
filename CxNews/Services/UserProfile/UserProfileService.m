@@ -28,10 +28,10 @@
         return userData;
     }
 
-    NSURL *userProfileUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@?rnd=%d",
+    NSURL *userProfileUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@?rnd=%lu",
                                                   kUserDataURL,
                                                   externalId,
-                                                  (int) [[NSDate date] timeIntervalSince1970]]];
+                                                  (NSUInteger) [[NSDate date] timeIntervalSince1970]]];
     NSURLRequest *request = [NSURLRequest requestWithURL:userProfileUrl];
     NSURLResponse *response = nil;
     NSError *error = nil;

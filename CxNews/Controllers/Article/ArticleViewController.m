@@ -104,7 +104,7 @@
                                                    documentAttributes:nil
                                                    error:nil];
 
-    float fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseHeadlineFontSizeIPhone : kCxenseHeadlineFontSizeIPad;
+    CGFloat fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseHeadlineFontSizeIPhone : kCxenseHeadlineFontSizeIPad;
 
     [attributedString addAttribute:NSFontAttributeName
                              value:[UIFont fontWithName:@"Helvetica Bold" size:fontSize]
@@ -124,7 +124,7 @@
     // Add fake text to article content's tail. This is needed only to have article that is looks like real (because of insufficient of real text).
     [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:kCxenseFakeTextContent]];
 
-    float fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
+    CGFloat fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
 
     [attributedString addAttribute:NSFontAttributeName
                              value:[UIFont fontWithName:@"Helvetica" size:fontSize]
