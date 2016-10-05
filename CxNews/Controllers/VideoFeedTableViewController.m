@@ -101,6 +101,7 @@
     playerVc.player = player;
     
     [self presentViewController:playerVc animated:YES completion:nil];
+    [playerVc.player play];
 }
 
 @end
