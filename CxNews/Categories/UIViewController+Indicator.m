@@ -13,12 +13,15 @@
 @implementation UIViewController (Indicator)
 
 -(void)showActivityIndicator {
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
-    indicator.center = self.view.center;
-    indicator.tag = kCxenseActivityIndicatorTag;
-    [self.view addSubview:indicator];
-    [indicator bringSubviewToFront:self.view];
+    UIActivityIndicatorView *indicator = [self.view viewWithTag:kCxenseActivityIndicatorTag];
+    if (!indicator) {
+        indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+        indicator.center = self.view.center;
+        indicator.tag = kCxenseActivityIndicatorTag;
+        [self.view addSubview:indicator];
+        [indicator bringSubviewToFront:self.view];
+    }
     [indicator startAnimating];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
