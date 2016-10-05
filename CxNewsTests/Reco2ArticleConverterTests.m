@@ -7,7 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ArticleModel.h"
 #import "Reco2ArticleConverter.h"
+#import "CxenseContentRecommendation.h"
 
 @interface Reco2ArticleConverterTests : XCTestCase
 
