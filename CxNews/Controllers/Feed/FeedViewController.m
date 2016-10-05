@@ -13,7 +13,6 @@
 #import "SWRevealViewController.h"
 #import "UserService.h"
 #import "Constants.h"
-#import "CxenseInsight.h"
 #import "ArticleModel.h"
 #import "Reco2ArticleConverter.h"
 #import "CXNEventsService.h"

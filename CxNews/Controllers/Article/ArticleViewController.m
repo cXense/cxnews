@@ -8,7 +8,6 @@
 
 #import "Constants.h"
 #import "UIViewController+Indicator.h"
-#import "CxenseInsight.h"
 #import "ArticleViewController.h"
 #import "ArticleServiceAdapter.h"
 #import "ArticleModel.h"

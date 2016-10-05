@@ -7,6 +7,8 @@
 //
 
 #import "Reco2ArticleConverter.h"
+#import "CxenseContentRecommendation.h"
+#import "ArticleModel.h"
 
 @implementation Reco2ArticleConverter
 

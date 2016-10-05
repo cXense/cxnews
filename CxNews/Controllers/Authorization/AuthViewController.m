@@ -9,7 +9,6 @@
 #import "AuthViewController.h"
 #import "UserService.h"
 #import "SWRevealViewController.h"
-#import "CxenseInsight.h"
 #import "GenericPasswordExtension.h"
 #import "CXNEventsService.h"
 #import "Constants.h"

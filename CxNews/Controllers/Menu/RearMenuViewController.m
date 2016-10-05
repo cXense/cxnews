@@ -10,7 +10,6 @@
 #import "RearMenuViewController.h"
 #import "SWRevealViewController.h"
 #import "Constants.h"
-#import "CxenseInsight.h"
 #import "ArticleServiceAdapter.h"
 #import "FeedViewController.h"
 #import "SectionLinksProvider.h"
