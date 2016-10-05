@@ -25,7 +25,7 @@
 
     VideoService *videoSerivce = [VideoService sharedInstance];
     [videoSerivce availableVideosWithCompleteion:^(NSSet<VideoModel *> *videos, NSError *error) {
-        if (error != nil) {
+        if (error) {
             NSLog(@"Error appeared during videos load: %@", [error description]);
         }
 

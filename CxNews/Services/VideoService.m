@@ -19,7 +19,7 @@
     NSString *fullHtml = [NSString stringWithContentsOfURL:videoSectinUrl
                                                   encoding:NSUTF8StringEncoding
                                                      error:&error];
-    if (error != nil) {
+    if (error) {
         completion(nil, error);
         return;
     }
@@ -67,7 +67,7 @@
     NSString *fullHtml = [NSString stringWithContentsOfURL:[NSURL URLWithString:videoPageUrl]
                                                   encoding:NSUTF8StringEncoding
                                                      error:&error];
-    if (error != nil) {
+    if (error) {
         NSLog(@"Failure: %@", [error description]);
         return nil;
     }

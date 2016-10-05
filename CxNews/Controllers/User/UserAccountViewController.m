@@ -59,7 +59,7 @@
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:userData.avatarUrl]]
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                               if (error != nil) {
+                               if (error) {
                                    if (error.code == -1002) {
                                        self.frontAvatar.image = [UIImage imageNamed:@"anonymus"];
                                        [self dismissActivityIndicator];
