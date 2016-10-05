@@ -26,7 +26,7 @@
     CxenseContentContext *context = [[CxenseContentContext alloc] init];
     [context setUrl:kCxenseSiteBaseUrl];
 
-    CxenseContentWidget *widget = [CxenseContent widgetWithId:CXENSE_CONTENT_WIDGET_ID
+    CxenseContentWidget *widget = [CxenseContent widgetWithId:kCxenseWidgetId
                                                       context:context
                                                          user:defUser];
 

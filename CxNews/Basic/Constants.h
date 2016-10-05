@@ -10,7 +10,10 @@
 @import Foundation.NSDate;
 @import CoreGraphics.CGBase;
 
+extern NSString *kCxenseCrmBaseUrl;
 extern NSString *kCxenseSiteBaseUrl;
+
+extern NSString *kCxenseWidgetId;
 
 extern NSTimeInterval kCxenseCacheClearTimeoutInSeconds;
 

@@ -8,7 +8,10 @@
 
 #import "Constants.h"
 
+NSString *kCxenseCrmBaseUrl = @"https://cxcrm.azurewebsites.net/Customer/Details";
 NSString *kCxenseSiteBaseUrl = @"https://cxnews.azurewebsites.net";
+
+NSString *kCxenseWidgetId = @"bb70b171687ed2aa35ae1197fbed5109cacc8c57";
 
 NSTimeInterval kCxenseCacheClearTimeoutInSeconds = 3600.0;
 

@@ -60,7 +60,8 @@
     }
 
     /*
-     Following lines of code just a continuation of workaround of API absense. After cookie storage was initialized in a very firts view controller
+     Following lines of code are workaround of API absense.
+     After cookie storage was initialized in initial view controller
      */
     NSHTTPCookie *userIdCookie = nil;
     // 0. Preparation
@@ -83,11 +84,9 @@
                                                      error:&loginPageError];
 
     // Please close your eyes - some raw HTML parsing over here...
-    // dumb logic for searching '__RequestVerificationToken' of login form
     NSString *loginFormHtml = [[NSString alloc] initWithData:data
                                                     encoding:NSUTF8StringEncoding];
     NSString *formVerificationToken = [self verificationTokenFromHtml:loginFormHtml];
-
 
     NSDictionary *dictionary = [loginPageResponse allHeaderFields];
 
@@ -138,9 +137,6 @@
                           returningResponse:&res
                                       error:&error];
 
-    NSURLResponse *profileResponse = nil;
-    NSError *profileError = nil;
-
     NSURL *profileInterestURL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/profileinterests", kCxenseSiteBaseUrl]];
     NSMutableURLRequest *profileInterestRequest = [NSMutableURLRequest requestWithURL:profileInterestURL];
     [profileInterestRequest setValue:@"1"
@@ -153,6 +149,8 @@
     [profileInterestRequest addValue:cookieString
                   forHTTPHeaderField:@"Cookie"];
 
+    NSURLResponse *profileResponse;
+    NSError *profileError;
     NSData *profileData = [NSURLConnection sendSynchronousRequest:profileInterestRequest
                                                 returningResponse:&profileResponse
                                                             error:&profileError];
@@ -176,7 +174,6 @@
     tempString2 = [tempString2 substringToIndex:range2.location];
 
     NSLog(@"CXENSE USER PROFILE ID: %@", tempString2);
-
 
     NSRange range3 = [profileInterestPage rangeOfString:@"EXTERNAL USER ID"];
     if (range3.location == NSNotFound) {

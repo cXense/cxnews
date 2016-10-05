@@ -8,6 +8,7 @@
 #import "InterestModel.h"
 #import "CxenseDMP.h"
 #import "InterestsProcessingService.h"
+#import "Constants.h"
 
 @implementation UserProfileService {
     NSMutableDictionary<NSString *, UserModel *> *dataCache;
@@ -29,24 +30,23 @@
     }
 
     NSURL *userProfileUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@?rnd=%lu",
-                                                  kUserDataURL,
+                                                  kCxenseCrmBaseUrl,
                                                   externalId,
                                                   (NSUInteger) [[NSDate date] timeIntervalSince1970]]];
     NSURLRequest *request = [NSURLRequest requestWithURL:userProfileUrl];
-    NSURLResponse *response = nil;
-    NSError *error = nil;
+    NSURLResponse *response;
+    NSError *error;
     NSData *data = [NSURLConnection sendSynchronousRequest:request
                                          returningResponse:&response
                                                      error:&error];
-    if (error != nil) {
-        NSLog(@"Problems while receiving user data: %@", error);
+    if (error) {
+        NSLog(@"Problems while receiving user data: %@", [error description]);
         return nil;
     }
 
     NSString *userPageHtml = [[NSString alloc] initWithData:data
                                                    encoding:NSUTF8StringEncoding];
-    userData = [[UserModel alloc] init];
-
+    userData = [UserModel new];
     userData.name = [self userNameFromHtml:userPageHtml];
     userData.email = [self userEmailFromHtml:userPageHtml];
     userData.gender = [self userGenderFromHtml:userPageHtml];
@@ -88,7 +88,7 @@
     static dispatch_once_t token;
     static UserProfileService *instance = nil;
     dispatch_once(&token, ^() {
-        instance = [[UserProfileService alloc] init];
+        instance = [UserProfileService new];
     });
     return instance;
 }

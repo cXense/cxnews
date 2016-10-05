@@ -43,7 +43,7 @@
     [super viewWillAppear:animated];
     [[CXNEventsService sharedInstance] trackEventWithName:@"Auth View"
                                           forPageWithName:@"Login page"
-                                                   andUrl:[NSString stringWithFormat:@"/Account/Login", kCxenseSiteBaseUrl]
+                                                   andUrl:[NSString stringWithFormat:@"%@/Account/Login", kCxenseSiteBaseUrl]
                                           andRefferingUrl:nil
                                         byTrackerWithName:@"Auth"];
 }
