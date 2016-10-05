@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
 
 @end
 
@@ -32,6 +34,14 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+
+    // clean up storyboard placeholders
+    self.sectionLabel.text = @"";
+    self.timestampLabel.text = @"";
+    self.headlineTextView.text = @"";
+    self.contentTextView.text = @"";
+    self.twitterButton.hidden = YES;
+    self.facebookButton.hidden = YES;
 
     [self showActivityIndicator];
     [[ArticleServiceAdapter sharedInstance] articleForURL:[NSURL URLWithString:self.url]completion:^(ArticleModel *model, NSError *error) {
@@ -56,6 +66,8 @@
 
             self.sectionLabel.text = model.section;
             self.timestampLabel.text = model.timestamp;
+            self.twitterButton.hidden = NO;
+            self.facebookButton.hidden = NO;
         }
 
         [self dismissActivityIndicator];
