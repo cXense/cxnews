@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2333a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2338c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -158,11 +158,13 @@
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="cLz-4r-dGC" id="RFV-vY-1BS"/>
+                        <outlet property="facebookButton" destination="vfM-sV-dAI" id="Sd6-UJ-70o"/>
                         <outlet property="headlineTextView" destination="6xK-O6-rND" id="HYC-Pg-DaO"/>
                         <outlet property="imageView" destination="7em-g7-k2h" id="nf9-sh-fhw"/>
                         <outlet property="scrollView" destination="9xR-HK-iSj" id="Af5-DL-vvC"/>
                         <outlet property="sectionLabel" destination="Aem-6V-eKY" id="btl-qk-vX4"/>
                         <outlet property="timestampLabel" destination="IV0-wf-6Ic" id="9AK-HB-ISP"/>
+                        <outlet property="twitterButton" destination="Duc-vW-lSs" id="mdg-ot-6Oh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58a-Ni-Bdp" userLabel="First Responder" sceneMemberID="firstResponder"/>

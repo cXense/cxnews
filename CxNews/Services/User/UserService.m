@@ -3,11 +3,11 @@
 // Copyright (c) 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import AdSupport;
+
 #import "UserService.h"
 #import "Constants.h"
-
-@import AdSupport;
 
 @implementation UserService {
     NSString *_userExternalId;
@@ -60,18 +60,19 @@
     }
 
     /*
-     Following lines of code just a continuation of workaround of API absense. After cookie storage was initialized in a very firts view controller
+     Following lines of code are workaround of API absense.
+     After cookie storage was initialized in initial view controller
      */
     NSHTTPCookie *userIdCookie = nil;
     // 0. Preparation
-    for (NSHTTPCookie *obj in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:@"http://cxnews.azurewebsites.net"]]) {
+    for (NSHTTPCookie *obj in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:kCxenseSiteBaseUrl]]) {
         if ([obj.name isEqualToString:@"cX_P"]) {
             userIdCookie = obj;
         }
     }
 
     // 1. We should get 'RequestVerificationToken' from login page
-    NSString *loginPageUrl = @"http://cxnews.azurewebsites.net/Account/Login?ReturnUrl=%2F";
+    NSString *loginPageUrl = [NSString stringWithFormat:@"%@/Account/Login?ReturnUrl=%%2F", kCxenseSiteBaseUrl];
     NSURL *verificationURL = [NSURL URLWithString:loginPageUrl];
     NSURLRequest *requestLoginPage = [NSURLRequest requestWithURL:verificationURL];
 
@@ -83,11 +84,9 @@
                                                      error:&loginPageError];
 
     // Please close your eyes - some raw HTML parsing over here...
-    // dumb logic for searching '__RequestVerificationToken' of login form
     NSString *loginFormHtml = [[NSString alloc] initWithData:data
                                                     encoding:NSUTF8StringEncoding];
     NSString *formVerificationToken = [self verificationTokenFromHtml:loginFormHtml];
-
 
     NSDictionary *dictionary = [loginPageResponse allHeaderFields];
 
@@ -123,9 +122,9 @@
     NSData *requestBodyData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPBody = requestBodyData;
 
-    [request setValue:@"http://cxnews.azurewebsites.net"
+    [request setValue:kCxenseSiteBaseUrl
    forHTTPHeaderField:@"Origin"];
-    [request setValue:@"http://cxnews.azurewebsites.net/Account/Login"
+    [request setValue:[NSString stringWithFormat:@"%@/Account/Login", kCxenseSiteBaseUrl]
    forHTTPHeaderField:@"Referer"];
     [request setValue:@"1"
    forHTTPHeaderField:@"Upgrade-Insecure-Requests"];
@@ -138,10 +137,7 @@
                           returningResponse:&res
                                       error:&error];
 
-    NSURLResponse *profileResponse = nil;
-    NSError *profileError = nil;
-
-    NSURL *profileInterestURL = [[NSURL alloc] initWithString:@"http://cxnews.azurewebsites.net/profileinterests"];
+    NSURL *profileInterestURL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/profileinterests", kCxenseSiteBaseUrl]];
     NSMutableURLRequest *profileInterestRequest = [NSMutableURLRequest requestWithURL:profileInterestURL];
     [profileInterestRequest setValue:@"1"
                   forHTTPHeaderField:@"Upgrade-Insecure-Requests"];
@@ -153,6 +149,8 @@
     [profileInterestRequest addValue:cookieString
                   forHTTPHeaderField:@"Cookie"];
 
+    NSURLResponse *profileResponse;
+    NSError *profileError;
     NSData *profileData = [NSURLConnection sendSynchronousRequest:profileInterestRequest
                                                 returningResponse:&profileResponse
                                                             error:&profileError];
@@ -176,7 +174,6 @@
     tempString2 = [tempString2 substringToIndex:range2.location];
 
     NSLog(@"CXENSE USER PROFILE ID: %@", tempString2);
-
 
     NSRange range3 = [profileInterestPage rangeOfString:@"EXTERNAL USER ID"];
     if (range3.location == NSNotFound) {

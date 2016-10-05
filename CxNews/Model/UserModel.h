@@ -3,9 +3,7 @@
 // Copyright (c) 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@class UIImage;
+@import Foundation.NSString;
 
 /**
  * Instances of that class describe information about current user.

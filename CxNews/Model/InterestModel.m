@@ -11,7 +11,7 @@
 @implementation InterestModel
 
 -(instancetype)initWithCategory:(NSString *)category
-                      andWeight:(float)weight {
+                      andWeight:(CGFloat)weight {
     self = [super init];
     if (self) {
         self.category = category;
@@ -21,7 +21,7 @@
 }
 
 -(NSString *)description{
-    return [NSString stringWithFormat:@"InterestModel: name='%@' weight(%)='%@' children='%@'", self.category, self.weight, self.children];
+    return [NSString stringWithFormat:@"InterestModel: name='%@' weight(%%)='%.2f' children='%@'", self.category, self.weight, self.children];
 }
 
 -(NSComparisonResult)compare:(InterestModel *)other {

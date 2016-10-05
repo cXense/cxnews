@@ -6,8 +6,7 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <Charts/Charts-Swift.h>
+@import UIKit;
 
 @interface InterestsViewController : UIViewController
 

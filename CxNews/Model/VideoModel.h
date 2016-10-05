@@ -6,8 +6,7 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
+@import Foundation.NSString;
 
 /**
  Represents video item in the application.

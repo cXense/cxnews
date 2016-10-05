@@ -6,9 +6,9 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "ArticleModel.h"
 #import "ArticleLoader.h"
+@import Foundation;
+@class ArticleModel;
 
 /**
  ArticleService provides articles content from CxNews web site.

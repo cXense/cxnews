@@ -8,18 +8,23 @@
 
 #import "Constants.h"
 #import "UIViewController+Indicator.h"
-#import "CxenseInsight.h"
 #import "ArticleViewController.h"
 #import "ArticleServiceAdapter.h"
-
+#import "ArticleModel.h"
 #import "CXNEventsService.h"
 
-#import <Social/Social.h>
+@import Social;
 
 @interface ArticleViewController()
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *sectionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *headlineTextView;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
 
 @end
 
@@ -29,6 +34,14 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+
+    // clean up storyboard placeholders
+    self.sectionLabel.text = @"";
+    self.timestampLabel.text = @"";
+    self.headlineTextView.text = @"";
+    self.contentTextView.text = @"";
+    self.twitterButton.hidden = YES;
+    self.facebookButton.hidden = YES;
 
     [self showActivityIndicator];
     [[ArticleServiceAdapter sharedInstance] articleForURL:[NSURL URLWithString:self.url]completion:^(ArticleModel *model, NSError *error) {
@@ -53,6 +66,8 @@
 
             self.sectionLabel.text = model.section;
             self.timestampLabel.text = model.timestamp;
+            self.twitterButton.hidden = NO;
+            self.facebookButton.hidden = NO;
         }
 
         [self dismissActivityIndicator];
@@ -64,7 +79,7 @@
     [[CXNEventsService sharedInstance] trackEventWithName:@"Article View"
                                           forPageWithName:self.headlineTextView.text
                                                    andUrl:self.eventUrl
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net"
+                                          andRefferingUrl:kCxenseSiteBaseUrl
                                         byTrackerWithName:@"Article"];
 }
 
@@ -100,7 +115,7 @@
                                                    documentAttributes:nil
                                                    error:nil];
 
-    float fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseHeadlineFontSizeIPhone : kCxenseHeadlineFontSizeIPad;
+    CGFloat fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseHeadlineFontSizeIPhone : kCxenseHeadlineFontSizeIPad;
 
     [attributedString addAttribute:NSFontAttributeName
                              value:[UIFont fontWithName:@"Helvetica Bold" size:fontSize]
@@ -120,7 +135,7 @@
     // Add fake text to article content's tail. This is needed only to have article that is looks like real (because of insufficient of real text).
     [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:kCxenseFakeTextContent]];
 
-    float fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
+    CGFloat fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
 
     [attributedString addAttribute:NSFontAttributeName
                              value:[UIFont fontWithName:@"Helvetica" size:fontSize]
@@ -146,9 +161,6 @@
         }];
 
         [self updateScrollViewContentSize];
-
-        CGFloat multiplier = CGRectGetWidth(self.imageView.bounds) / image.size.width;
-        [self.imageViewHeightConstraint setConstant:multiplier * image.size.height];
     }];
 }
 

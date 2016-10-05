@@ -6,24 +6,16 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-#import "CxenseContentRecommendation.h"
-
-/**
- * Cx news site main URL.
- */
-static NSString *const CX_NEWS_URL = @"http://cxnews.azurewebsites.net";
-/**
- * Cxense Content widget id.
- */
-static NSString *const CXENSE_CONTENT_WIDGET_ID = @"bb70b171687ed2aa35ae1197fbed5109cacc8c57";
+@import Foundation;
 
 @interface RecommendationsService : NSObject
 
 /**
- * Request content recommendations from Cxense Content API
- * and return it as array of CxenseContentRecommendation descriptors.
+ Request content recommendations from Cxense Content API
+ and return it as array of CxenseContentRecommendation descriptors.
+
+ @param externalId Cxense user external id
+ @param callback   callback that will be invoked as soon as recommendations will be loaded
  */
 - (void)fetchRecommendationsForUserWithExternalId:(NSString *)externalId
                                      withCallback:(void (^)(BOOL success, NSArray *items, NSError *error))callback;

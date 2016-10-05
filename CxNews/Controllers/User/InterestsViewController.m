@@ -8,9 +8,12 @@
 
 #import "InterestsViewController.h"
 #import "UserService.h"
+#import "InterestModel.h"
 #import "CXNEventsService.h"
 #import "UserProfileService.h"
 #import "UIViewController+Indicator.h"
+#import "Constants.h"
+@import Charts;
 
 @interface InterestsViewController ()
 
@@ -37,8 +40,8 @@
 
     [[CXNEventsService sharedInstance] trackEventWithName:@"Chart View"
                                           forPageWithName:@"Long Term Interests"
-                                                   andUrl:@"http://cxnews.azurewebsites.net/long-term-interests"
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net/profileinterests"
+                                                   andUrl:[NSString stringWithFormat:@"%@/long-term-interests", kCxenseSiteBaseUrl]
+                                          andRefferingUrl:[NSString stringWithFormat:@"%@/profileinterests", kCxenseSiteBaseUrl]
                                         byTrackerWithName:@"LTI"];
 }
 
@@ -75,7 +78,7 @@
     NSMutableArray *xVals = [NSMutableArray array];
     NSMutableArray *yVals = [NSMutableArray array];
     NSMutableArray *colors = [NSMutableArray array];
-    int cnt = 0;
+    NSInteger cnt = 0;
     for (InterestModel *interest in interests) {
         // BarChartDataSet will be rendered in reverse order, that's why we need to add children first
         if (interest.children) {

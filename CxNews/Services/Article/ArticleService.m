@@ -7,6 +7,9 @@
 //
 
 #import "ArticleService.h"
+#import "ArticleModel.h"
+#import "ArticleLoader.h"
+#import "Constants.h"
 
 @implementation ArticleService
 
@@ -97,7 +100,7 @@
 
                                NSString *rawHtml = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
-                               NSRange sectionRange = [url.absoluteString rangeOfString:@"http://cxnews.azurewebsites.net"];
+                               NSRange sectionRange = [url.absoluteString rangeOfString:kCxenseSiteBaseUrl];
                                NSString *temporary = [url.absoluteString substringFromIndex:sectionRange.location+sectionRange.length];
                                // all articles in 'news' section must be aquaired without section specifier
                                if ([temporary isEqualToString:@"/articles/news/"]) {
@@ -117,7 +120,7 @@
 
                                NSMutableSet<ArticleModel *> *result = [NSMutableSet set];
                                for (NSString *articleUrl in articleURLs) {
-                                   NSString *fullArticleUrl = [NSString stringWithFormat:@"http://cxnews.azurewebsites.net/%@", articleUrl];
+                                   NSString *fullArticleUrl = [NSString stringWithFormat:@"%@%@", kCxenseSiteBaseUrl, articleUrl];
                                    NSError *error;
                                    @try {
                                        ArticleModel *article = [self articleForURL:[NSURL URLWithString:fullArticleUrl] error:&error];

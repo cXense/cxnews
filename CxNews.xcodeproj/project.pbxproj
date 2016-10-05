@@ -62,7 +62,6 @@
 		87B7FF101D28EAC3002D040D /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF0F1D28EAC3002D040D /* ArticleViewController.m */; };
 		87B7FF141D28EF34002D040D /* ArticleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF131D28EF34002D040D /* ArticleService.m */; };
 		87B7FF171D28EF4F002D040D /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF161D28EF4F002D040D /* ArticleModel.m */; };
-		87CB583E1D365D6800F11C80 /* ArticleServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CB583D1D365D6800F11C80 /* ArticleServiceTests.m */; };
 		87E9D7B11D9252B700AD515B /* ArticleServiceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E9D7B01D9252B700AD515B /* ArticleServiceAdapter.m */; };
 		87EF9C411D7FF4C7007A5564 /* private_conf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87EF9C401D7FF4C7007A5564 /* private_conf.plist */; };
 /* End PBXBuildFile section */
@@ -232,7 +231,6 @@
 		87B7FF131D28EF34002D040D /* ArticleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleService.m; sourceTree = "<group>"; };
 		87B7FF151D28EF4F002D040D /* ArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
 		87B7FF161D28EF4F002D040D /* ArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
-		87CB583D1D365D6800F11C80 /* ArticleServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleServiceTests.m; sourceTree = "<group>"; };
 		87E9D7AF1D9252B700AD515B /* ArticleServiceAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleServiceAdapter.h; sourceTree = "<group>"; };
 		87E9D7B01D9252B700AD515B /* ArticleServiceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleServiceAdapter.m; sourceTree = "<group>"; };
 		87E9D7B51D9252FB00AD515B /* ArticleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleLoader.h; sourceTree = "<group>"; };
@@ -558,7 +556,6 @@
 		878742691CFEDD37000A926B /* CxNewsTests */ = {
 			isa = PBXGroup;
 			children = (
-				87CB583D1D365D6800F11C80 /* ArticleServiceTests.m */,
 				8787426C1CFEDD37000A926B /* Info.plist */,
 				879007651D5DDF8000709591 /* InterestsProcessingServiceTests.m */,
 				87110AC11D3E13C300451251 /* Reco2ArticleConverterTests.m */,
@@ -931,7 +928,6 @@
 				877391091D06EB8E009D3A83 /* UserDataServiceTests.m in Sources */,
 				87110AC21D3E13C300451251 /* Reco2ArticleConverterTests.m in Sources */,
 				87A9A5221D4B34EB00014FC4 /* SectionLinksProviderTests.m in Sources */,
-				87CB583E1D365D6800F11C80 /* ArticleServiceTests.m in Sources */,
 				879007661D5DDF8000709591 /* InterestsProcessingServiceTests.m in Sources */,
 				878742731CFEDD5A000A926B /* UserServiceTests.m in Sources */,
 			);

@@ -10,7 +10,6 @@
 #import "RearMenuViewController.h"
 #import "SWRevealViewController.h"
 #import "Constants.h"
-#import "CxenseInsight.h"
 #import "ArticleServiceAdapter.h"
 #import "FeedViewController.h"
 #import "SectionLinksProvider.h"
@@ -20,7 +19,6 @@
 @import AVFoundation;
 
 @implementation RearMenuViewController {
-@private
     __weak IBOutlet UISearchBar *searchBar;
 }
 
@@ -36,8 +34,7 @@
 
 #pragma mark - Table view data source
 
-- (void)      tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         // Ignore cell with search bar
         return;

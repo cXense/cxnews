@@ -7,16 +7,23 @@
 //
 
 @import Foundation.NSString;
+@import Foundation.NSDate;
+@import CoreGraphics.CGBase;
 
-extern double kCxenseCacheClearTimeoutInSeconds;
+extern NSString *kCxenseCrmBaseUrl;
+extern NSString *kCxenseSiteBaseUrl;
 
-extern float kCxenseAuthControlsCornerRadius;
+extern NSString *kCxenseWidgetId;
+
+extern NSTimeInterval kCxenseCacheClearTimeoutInSeconds;
+
+extern CGFloat kCxenseAuthControlsCornerRadius;
 
 /** Article View font configuration */
-extern float kCxenseTextContentFontSizeIPhone;
-extern float kCxenseTextContentFontSizeIPad;
-extern float kCxenseHeadlineFontSizeIPhone;
-extern float kCxenseHeadlineFontSizeIPad;
+extern CGFloat kCxenseTextContentFontSizeIPhone;
+extern CGFloat kCxenseTextContentFontSizeIPad;
+extern CGFloat kCxenseHeadlineFontSizeIPhone;
+extern CGFloat kCxenseHeadlineFontSizeIPad;
 
 /** Lorem Ipsum template. Can be used in places where original text is not enough. */
 extern NSString *kCxenseFakeTextContent;

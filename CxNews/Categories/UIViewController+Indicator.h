@@ -6,8 +6,6 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-@import UIKit.UIActivityIndicatorView;
 @import UIKit.UIViewController;
 
 @interface UIViewController (Indicator)

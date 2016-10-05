@@ -13,7 +13,6 @@
 #import "SWRevealViewController.h"
 #import "UserService.h"
 #import "Constants.h"
-#import "CxenseInsight.h"
 #import "ArticleModel.h"
 #import "Reco2ArticleConverter.h"
 #import "CXNEventsService.h"
@@ -87,7 +86,7 @@
 
     [[CXNEventsService sharedInstance] trackEventWithName:@"Feed View"
                                           forPageWithName:@"Recommendations"
-                                                   andUrl:@"http://cxnews.azurewebsites.net"
+                                                   andUrl:kCxenseSiteBaseUrl
                                           andRefferingUrl:nil
                                         byTrackerWithName:@"Feed"];
 }
@@ -101,13 +100,11 @@
 
 #pragma mark - UICollectionViewDataSource methods
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView
-     numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.articles.count - 1;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reco_cell"
                                                                            forIndexPath:indexPath];
 

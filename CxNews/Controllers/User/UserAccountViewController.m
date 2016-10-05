@@ -12,11 +12,22 @@
 #import "UserProfileService.h"
 #import "UserModel.h"
 #import "CXNEventsService.h"
+#import "Constants.h"
 
 @interface UserAccountViewController()
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property(weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property(weak, nonatomic) IBOutlet UILabel *labelName;
+@property(weak, nonatomic) IBOutlet UILabel *labelEmail;
+@property(weak, nonatomic) IBOutlet UILabel *labelGender;
+@property(weak, nonatomic) IBOutlet UILabel *labelBirthYear;
+@property(weak, nonatomic) IBOutlet UILabel *labelExternalId;
+@property(weak, nonatomic) IBOutlet UILabel *labelLocation;
 
+@property(weak, nonatomic) IBOutlet UIImageView *rearAvatar;
+@property(weak, nonatomic) IBOutlet UIImageView *frontAvatar;
+
+- (IBAction)handleLogout:(UIButton *)sender;
 
 @end
 
@@ -47,7 +58,7 @@
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:userData.avatarUrl]]
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                               if (error != nil) {
+                               if (error) {
                                    if (error.code == -1002) {
                                        self.frontAvatar.image = [UIImage imageNamed:@"anonymus"];
                                        [self dismissActivityIndicator];
@@ -77,8 +88,8 @@
 
     [[CXNEventsService sharedInstance] trackEventWithName:@"Profile View"
                                           forPageWithName:@"User Profile"
-                                                   andUrl:@"http://cxnews.azurewebsites.net/profileinterests"
-                                          andRefferingUrl:@"http://cxnews.azurewebsites.net"
+                                                   andUrl:[NSString stringWithFormat:@"%@/profileinterests", kCxenseSiteBaseUrl]
+                                          andRefferingUrl:kCxenseSiteBaseUrl
                                         byTrackerWithName:@"Profile"];
 
     [self updateScrollViewContentSize];

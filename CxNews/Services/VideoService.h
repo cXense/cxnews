@@ -6,8 +6,8 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "VideoModel.h"
+@import Foundation;
+@class VideoModel;
 
 typedef void(^VideoServiceCompletion)(NSSet<VideoModel *> *videos, NSError *error);
 

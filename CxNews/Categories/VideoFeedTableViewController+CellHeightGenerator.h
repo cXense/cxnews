@@ -8,9 +8,8 @@
 
 #import "VideoFeedTableViewController.h"
 
-
 /**
- Cell Height Generator is responsible for dynamic calculation of 
+ Cell Height Generator is responsible for dynamic calculation of
  cell's height for video feed table view controller.
  */
 @interface VideoFeedTableViewController (CellHeightGenerator)

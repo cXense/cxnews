@@ -6,8 +6,8 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "ArticleModel.h"
+@import Foundation;
+@class ArticleModel;
 
 typedef void(^SoloArticleModelCompletion)(ArticleModel * _Nullable , NSError * _Nullable);
 typedef void(^MultipleArticleModelCompletion)(NSSet<ArticleModel *> * _Nullable, NSError * _Nullable);

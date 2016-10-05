@@ -7,18 +7,19 @@
 //
 
 #import "VideoService.h"
+#import "VideoModel.h"
+#import "Constants.h"
 
 @implementation VideoService
 
 -(void)availableVideosWithCompleteion:(VideoServiceCompletion)completion {
-    NSURLSession *urlSession = [NSURLSession sharedSession];
-    NSURL *videoSectinUrl = [NSURL URLWithString:@"https://cxnews.azurewebsites.net/videos/videos"];
+    NSURL *videoSectinUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/videos/videos", kCxenseSiteBaseUrl]];
 
     NSError *error = nil;
     NSString *fullHtml = [NSString stringWithContentsOfURL:videoSectinUrl
                                                   encoding:NSUTF8StringEncoding
                                                      error:&error];
-    if (error != nil) {
+    if (error) {
         completion(nil, error);
         return;
     }
@@ -50,7 +51,7 @@
         NSString *title = [temp substringToIndex:urlEnd.location];
 
         VideoModel *model = [VideoModel new];
-        model.videoPageUrl = [NSString stringWithFormat:@"https://cxnews.azurewebsites.net%@", videoUrl];
+        model.videoPageUrl = [NSString stringWithFormat:@"%@%@", kCxenseSiteBaseUrl, videoUrl];
         model.imageUrl = thumbnailUrl;
         model.title = title;
         model.timestamp = timestamp;
@@ -66,7 +67,7 @@
     NSString *fullHtml = [NSString stringWithContentsOfURL:[NSURL URLWithString:videoPageUrl]
                                                   encoding:NSUTF8StringEncoding
                                                      error:&error];
-    if (error != nil) {
+    if (error) {
         NSLog(@"Failure: %@", [error description]);
         return nil;
     }

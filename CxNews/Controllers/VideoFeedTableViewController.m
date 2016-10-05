@@ -10,12 +10,9 @@
 #import "Constants.h"
 #import "VideoService.h"
 #import "VideoFeedTableViewController+CellHeightGenerator.h"
+#import "VideoModel.h"
 @import AVKit.AVPlayerViewController;
 @import AVFoundation.AVPlayer;
-
-@interface VideoFeedTableViewController ()
-
-@end
 
 @implementation VideoFeedTableViewController {
     NSArray<VideoModel *> *_videoRepository;
@@ -28,7 +25,7 @@
 
     VideoService *videoSerivce = [VideoService sharedInstance];
     [videoSerivce availableVideosWithCompleteion:^(NSSet<VideoModel *> *videos, NSError *error) {
-        if (error != nil) {
+        if (error) {
             NSLog(@"Error appeared during videos load: %@", [error description]);
         }
 
@@ -45,10 +42,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_videoRepository count];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self heightForVideoCell];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,7 +65,7 @@
                                                    options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType}
                                                    documentAttributes:nil
                                                    error:nil];
-    float fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
+    CGFloat fontSize = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? kCxenseTextContentFontSizeIPhone : kCxenseTextContentFontSizeIPad;
     [attributedString addAttribute:NSFontAttributeName
                              value:[UIFont fontWithName:@"Helvetica Bold" size:fontSize]
                              range:NSMakeRange(0, attributedString.string.length)];
@@ -91,6 +84,12 @@
     return cell;
 }
 
+#pragma mark - Table view delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForVideoCell];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     VideoModel *model = _videoRepository[indexPath.row];
 
@@ -102,6 +101,7 @@
     playerVc.player = player;
     
     [self presentViewController:playerVc animated:YES completion:nil];
+    [playerVc.player play];
 }
 
 @end
