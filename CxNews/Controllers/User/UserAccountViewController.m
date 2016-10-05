@@ -29,7 +29,6 @@
 
 - (IBAction)handleLogout:(UIButton *)sender;
 
-
 @end
 
 @implementation UserAccountViewController

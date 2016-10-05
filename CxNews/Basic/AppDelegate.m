@@ -12,6 +12,8 @@
 #import "CxenseInsight.h"
 #import "ArticleServiceAdapter.h"
 #import "SectionLinksProvider.h"
+#import "UserProfileService.h"
+#import "UserModel.h"
 
 @import HockeySDK;
 
@@ -36,6 +38,15 @@
 
     // Cxense Insight SDK initialization
     [CxenseInsight setDispatchMode:CxenseInsightDispatchModeOnline];
+
+    // Pre-fetch user data if logged in
+    if ([[UserService sharedInstance] isUserAuthorized]) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            UserProfileService *userDataService = [UserProfileService sharedInstance];
+            // this operation initializes cache with user data
+            [userDataService dataForUserWithExternalId:[[UserService sharedInstance] userExternalId]];
+        }];
+    }
 
     // Calculate root view controller
     NSString *rootViewControllerId = nil;
