@@ -94,6 +94,7 @@
     VideoModel *model = _videoRepository[indexPath.row];
 
     NSString *urlToVideoContent = [[VideoService sharedInstance] urlWithVideoFromPage:model.videoPageUrl];
+    NSLog(@"Video content will be played: %@", urlToVideoContent);
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Video" bundle:[NSBundle mainBundle]];
     AVPlayerViewController* playerVc = [storyboard instantiateViewControllerWithIdentifier:@"av_vc"];

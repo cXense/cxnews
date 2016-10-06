@@ -9,6 +9,7 @@
 #import "VideoService.h"
 #import "VideoModel.h"
 #import "Constants.h"
+#import "NSString+HTML.h"
 
 @implementation VideoService
 
@@ -64,7 +65,7 @@
 
 -(NSString *)urlWithVideoFromPage:(NSString *)videoPageUrl {
     NSError *error = nil;
-    NSString *fullHtml = [NSString stringWithContentsOfURL:[NSURL URLWithString:videoPageUrl]
+    NSString *fullHtml = [NSString stringWithContentsOfURL:[NSURL URLWithString:[videoPageUrl kv_decodeHTMLCharacterEntities]]
                                                   encoding:NSUTF8StringEncoding
                                                      error:&error];
     if (error) {

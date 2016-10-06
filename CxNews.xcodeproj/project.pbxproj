@@ -41,6 +41,7 @@
 		876AFFD81D1424A6008326AC /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876AFFD51D1424A6008326AC /* HockeySDK.framework */; };
 		876AFFD91D1424A7008326AC /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 876AFFD71D1424A6008326AC /* HockeySDKResources.bundle */; };
 		877391091D06EB8E009D3A83 /* UserDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 877391081D06EB8E009D3A83 /* UserDataServiceTests.m */; };
+		877DA1331DA6C8F800BDFD79 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 877DA1321DA6C8F800BDFD79 /* NSString+HTML.m */; };
 		8787424B1CFEAF5D000A926B /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787424A1CFEAF5D000A926B /* AuthViewController.m */; };
 		878742731CFEDD5A000A926B /* UserServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 878742721CFEDD5A000A926B /* UserServiceTests.m */; };
 		87874DE61D41F7EF00A24AFD /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87874DE41D41F7EF00A24AFD /* Article.storyboard */; };
@@ -193,6 +194,8 @@
 		876AFFD51D1424A6008326AC /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		876AFFD71D1424A6008326AC /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		877391081D06EB8E009D3A83 /* UserDataServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataServiceTests.m; sourceTree = "<group>"; };
+		877DA1311DA6C8F800BDFD79 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		877DA1321DA6C8F800BDFD79 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		878742491CFEAF5D000A926B /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		8787424A1CFEAF5D000A926B /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		878742681CFEDD37000A926B /* CxNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CxNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -511,6 +514,8 @@
 				87686F031D5F309F00351C32 /* UIViewController+Indicator.m */,
 				8788F5541D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.h */,
 				8788F5551D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.m */,
+				877DA1311DA6C8F800BDFD79 /* NSString+HTML.h */,
+				877DA1321DA6C8F800BDFD79 /* NSString+HTML.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 				87E9D7B11D9252B700AD515B /* ArticleServiceAdapter.m in Sources */,
 				87B267601D22DE520061F635 /* GenericPasswordExtension.m in Sources */,
 				87A9A5201D4B335600014FC4 /* SectionLinksProvider.m in Sources */,
+				877DA1331DA6C8F800BDFD79 /* NSString+HTML.m in Sources */,
 				87060C1E1D03F882006E6C36 /* FeedViewController.m in Sources */,
 				870F21941D50DA9D00D108E5 /* InterestModel.m in Sources */,
 				431A4F711F82037FCD967E27 /* UserService.m in Sources */,
