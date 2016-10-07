@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "SectionLinksProvider.h"
+#import "Constants.h"
 
 @interface SectionLinksProviderTests : XCTestCase
 @end
@@ -19,15 +20,15 @@
 -(void)setUp {
     // predefined mapping of sections names & expected URLs
     _mapping = @{
-                 @"News" : @"https://cxnews.azurewebsites.net/articles/news/",
-                 @"World" : @"https://cxnews.azurewebsites.net/articles/world/",
-                 @"Business" : @"https://cxnews.azurewebsites.net/articles/business/",
-                 @"Entertainment" : @"https://cxnews.azurewebsites.net/articles/entertainment/",
-                 @"Sports" : @"https://cxnews.azurewebsites.net/articles/sports/",
-                 @"Politics" : @"https://cxnews.azurewebsites.net/articles/politics/",
-                 @"Health" : @"https://cxnews.azurewebsites.net/articles/health/",
-                 @"Science" : @"https://cxnews.azurewebsites.net/articles/science/",
-                 @"Tech" : @"https://cxnews.azurewebsites.net/articles/tech/"
+                 @"News" : [NSString stringWithFormat:@"%@/articles/news/", kCxenseSiteBaseUrl],
+                 @"World" : [NSString stringWithFormat:@"%@/articles/world/", kCxenseSiteBaseUrl],
+                 @"Business" : [NSString stringWithFormat:@"%@/articles/business/", kCxenseSiteBaseUrl],
+                 @"Entertainment" : [NSString stringWithFormat:@"%@/articles/entertainment/", kCxenseSiteBaseUrl],
+                 @"Sports" : [NSString stringWithFormat:@"%@/articles/sports/", kCxenseSiteBaseUrl],
+                 @"Politics" : [NSString stringWithFormat:@"%@/articles/politics/", kCxenseSiteBaseUrl],
+                 @"Health" : [NSString stringWithFormat:@"%@/articles/health/", kCxenseSiteBaseUrl],
+                 @"Science" : [NSString stringWithFormat:@"%@/articles/science/", kCxenseSiteBaseUrl],
+                 @"Tech" : [NSString stringWithFormat:@"%@/articles/tech/", kCxenseSiteBaseUrl]
                  };
 }
 

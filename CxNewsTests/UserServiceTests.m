@@ -37,7 +37,7 @@
 
     AuthorizationResult result = [userService authWithLogin:@"takashi.kodama@cxense.com"
                                                 andPassword:@"extraordinary"];
-    XCTAssertTrue(result == OK);
+    XCTAssertTrue(result == 0);
     XCTAssertNotNil([[NSUserDefaults standardUserDefaults] stringForKey:kCxenseExternalUserId]);
     XCTAssertNotNil([[NSUserDefaults standardUserDefaults] stringForKey:kCxenseUserProfileId]);
     XCTAssertNotNil([userService userProfileId]);

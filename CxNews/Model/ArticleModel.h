@@ -6,9 +6,7 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@class CxenseContentRecommendation;
+@import Foundation.NSString;
 
 /**
  * ArticleModel is a simple representation of article and its content.
