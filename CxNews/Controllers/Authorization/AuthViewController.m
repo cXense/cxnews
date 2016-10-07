@@ -15,6 +15,8 @@
 
 @implementation AuthViewController
 
+#pragma mark View Controller lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -52,6 +54,8 @@
     [[CXNEventsService sharedInstance] trackActiveTimeOfEventWithName:@"Auth View"
                                                           trackerName:@"Auth"];
 }
+
+#pragma mark UI events handling
 
 - (IBAction)submitButtonPressed:(UIButton *)sender {
     if (self.emailTextField.text.length == 0) {
