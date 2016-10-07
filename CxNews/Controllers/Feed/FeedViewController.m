@@ -116,7 +116,11 @@
     UIImageView *thumbnail = [cell viewWithTag:kCxenseFeedViewCollectionViewCellImageTag];
 
     if ([_imageDataCache valueForKey:urlString] != nil) {
+        thumbnail.alpha = 0.0;
         thumbnail.image = [_imageDataCache valueForKey:urlString];
+        [UIView animateWithDuration:1.0 animations:^{
+            thumbnail.alpha = 1.0;
+        }];
     } else {
         [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageUrl]
                                            queue:[NSOperationQueue mainQueue]
