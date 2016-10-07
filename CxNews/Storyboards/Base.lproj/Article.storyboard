@@ -18,8 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xR-HK-iSj">
-                                <frame key="frameInset" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xR-HK-iSj">
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7em-g7-k2h">
                                         <constraints>
@@ -132,6 +131,7 @@
                                     <constraint firstItem="7em-g7-k2h" firstAttribute="centerX" secondItem="cqh-Pa-KR4" secondAttribute="centerX" id="akG-Ny-rqk"/>
                                     <constraint firstAttribute="trailing" secondItem="7em-g7-k2h" secondAttribute="trailing" id="fmu-I8-qac"/>
                                     <constraint firstItem="cLz-4r-dGC" firstAttribute="top" secondItem="jij-JE-OJX" secondAttribute="bottom" constant="10" id="nJX-6D-AIo"/>
+                                    <constraint firstAttribute="bottom" secondItem="cqh-Pa-KR4" secondAttribute="bottom" constant="45" id="vZC-QB-B0j"/>
                                     <constraint firstItem="cqh-Pa-KR4" firstAttribute="top" secondItem="cLz-4r-dGC" secondAttribute="bottom" constant="8" id="vnM-wN-nql"/>
                                 </constraints>
                                 <variation key="default">

@@ -162,18 +162,7 @@
         [UIView animateWithDuration:1.0 animations:^{
             self.imageView.alpha = 1.0;
         }];
-
-        [self updateScrollViewContentSize];
     }];
-}
-
--(void)updateScrollViewContentSize {
-    CGRect contentRect = CGRectZero;
-    for (UIView *subview in self.scrollView.subviews) {
-        contentRect = CGRectUnion(contentRect, subview.frame);
-    }
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
-                                             contentRect.size.height <= self.view.frame.size.height ? self.view.frame.size.height + 20 : contentRect.size.height);
 }
 
 #pragma mark - Util methods
