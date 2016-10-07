@@ -62,13 +62,13 @@
         vc.articles = [NSArray array];
         [vc updateView];
         [self.revealViewController revealToggle:nil];
-        [self showActivityIndicator];
+        [vc showActivityIndicator];
         // load new content async
         [[ArticleServiceAdapter sharedInstance] articlesForURL:[NSURL URLWithString:stringUrl] completion:^(NSSet<ArticleModel *> *articles, NSError *error) {
             vc.articles = [articles allObjects];
             vc.section = menuItemLabel.text;
             [vc updateView];
-            [self dismissActivityIndicator];
+            [vc dismissActivityIndicator];
         }];
     }
 
