@@ -35,13 +35,7 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
 
-    // clean up storyboard placeholders
-    self.sectionLabel.text = @"";
-    self.timestampLabel.text = @"";
-    self.headlineTextView.text = @"";
-    self.contentTextView.text = @"";
-    self.twitterButton.hidden = YES;
-    self.facebookButton.hidden = YES;
+    [self cleanupUI];
 
     [self showActivityIndicator];
     [[ArticleServiceAdapter sharedInstance] articleForURL:[NSURL URLWithString:self.url]completion:^(ArticleModel *model, NSError *error) {
@@ -107,6 +101,15 @@
 }
 
 #pragma mark - UI components setup
+
+-(void)cleanupUI {
+    self.sectionLabel.text = @"";
+    self.timestampLabel.text = @"";
+    self.headlineTextView.text = @"";
+    self.contentTextView.text = @"";
+    self.twitterButton.hidden = YES;
+    self.facebookButton.hidden = YES;
+}
 
 -(void)updateHeadlineWithText:(NSString *)headline {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]

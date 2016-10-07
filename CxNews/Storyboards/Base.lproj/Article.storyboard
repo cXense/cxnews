@@ -18,22 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xR-HK-iSj">
-                                <frame key="frameInset" width="600" height="600"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xR-HK-iSj">
+                                <frame key="frameInset" width="375" height="667"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7em-g7-k2h">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7em-g7-k2h">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="B7b-99-ZKQ">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="500"/>
                                             </constraint>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jij-JE-OJX" userLabel="Header View">
-                                        <rect key="frame" x="10" y="308" width="580" height="89"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jij-JE-OJX" userLabel="Header View">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" misplaced="YES" text="POLITICS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aem-6V-eKY">
-                                                <frame key="frameInset" width="580" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="POLITICS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aem-6V-eKY">
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.18823529410000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -41,8 +38,7 @@
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" text="Friday, May 13, 2016 8:04 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IV0-wf-6Ic">
-                                                <frame key="frameInset" minY="72" width="580" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Friday, May 13, 2016 8:04 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IV0-wf-6Ic">
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -50,8 +46,7 @@
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                 </variation>
                                             </label>
-                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Obama's Horishima trip rekindles decades-old controversis" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xK-O6-rND">
-                                                <frame key="frameInset" minY="25" width="580" height="39"/>
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Obama's Horishima trip rekindles decades-old controversis" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xK-O6-rND">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -81,14 +76,13 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLz-4r-dGC">
-                                        <rect key="frame" x="10" y="407" width="580" height="34.5"/>
+                                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLz-4r-dGC">
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                         </accessibility>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content">In this Sept. 8, 1945 file photo, an allied correspondent stands in the rubble in front of the shell of a building that once was a movie theater in Hiroshima, Japan, a month after the first atomic bomb ever used in warfare was dropped by the U.S. on Monday, Aug. 6, 1945. In a moment seven decades in the making, President Barack Obama this month will become the first sitting American president to visit Hiroshima, where the U.S. dropped an atomic bomb during World War II, decimating a city and exploding the world into the Atomic Age. </string>
+                                                <string key="content">In this Sept. 8, 1945 file photo, an allied correspondent stands in the rubble in front of the shell of a building that once was a movie theater in Hiroshima, Japan, a month after the first atomic bomb ever used in warfare was dropped by the U.S. on Monday, Aug. 6, 1945.</string>
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.53938356164383561" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="16" name="Helvetica"/>
@@ -98,8 +92,7 @@
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqh-Pa-KR4" userLabel="Sharing Container View">
-                                        <rect key="frame" x="238" y="450" width="124" height="57"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqh-Pa-KR4" userLabel="Sharing Container View">
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-sV-dAI">
                                                 <frame key="frameInset" minX="67" width="57" height="57"/>
@@ -150,10 +143,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9xR-HK-iSj" secondAttribute="trailing" id="9Zt-nI-no8"/>
-                            <constraint firstItem="9xR-HK-iSj" firstAttribute="top" secondItem="7Yy-zV-Sbl" secondAttribute="top" id="DhY-jq-vKs"/>
-                            <constraint firstItem="9xR-HK-iSj" firstAttribute="leading" secondItem="7Yy-zV-Sbl" secondAttribute="leading" id="H3y-sL-S3Y"/>
-                            <constraint firstItem="rbL-KP-NXj" firstAttribute="top" secondItem="9xR-HK-iSj" secondAttribute="bottom" id="JSZ-WG-7sT"/>
+                            <constraint firstAttribute="trailing" secondItem="9xR-HK-iSj" secondAttribute="trailing" id="Ekc-iq-naq"/>
+                            <constraint firstItem="9xR-HK-iSj" firstAttribute="leading" secondItem="7Yy-zV-Sbl" secondAttribute="leading" id="TuT-Sj-TkN"/>
+                            <constraint firstItem="rbL-KP-NXj" firstAttribute="top" secondItem="9xR-HK-iSj" secondAttribute="bottom" id="jnG-jJ-oT8"/>
+                            <constraint firstItem="9xR-HK-iSj" firstAttribute="top" secondItem="7Yy-zV-Sbl" secondAttribute="top" id="laP-Ji-bi3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -169,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58a-Ni-Bdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140" y="1092"/>
+            <point key="canvasLocation" x="2140" y="1091.6041979010495"/>
         </scene>
     </scenes>
     <resources>
