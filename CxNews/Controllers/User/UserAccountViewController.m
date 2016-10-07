@@ -82,7 +82,6 @@
                                self.frontAvatar.layer.borderWidth = 2.0;
                                self.frontAvatar.layer.masksToBounds = YES;
 
-                               [self updateScrollViewContentSize];
                                [self dismissActivityIndicator];
                            }];
 
@@ -91,8 +90,6 @@
                                                    andUrl:[NSString stringWithFormat:@"%@/profileinterests", kCxenseSiteBaseUrl]
                                           andRefferingUrl:kCxenseSiteBaseUrl
                                         byTrackerWithName:@"Profile"];
-
-    [self updateScrollViewContentSize];
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
@@ -106,17 +103,6 @@
 - (IBAction)handleLogout:(UIButton *)sender {
     [[UserService sharedInstance] logout];
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-#pragma MARK: Utility methods
-
--(void)updateScrollViewContentSize {
-    CGRect contentRect = CGRectZero;
-    for (UIView *subview in self.scrollView.subviews) {
-        contentRect = CGRectUnion(contentRect, subview.frame);
-    }
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width,
-                                             contentRect.size.height <= self.view.frame.size.height ? self.view.frame.size.height + 20 : contentRect.size.height);
 }
 
 @end
