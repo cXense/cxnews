@@ -4,11 +4,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class CxenseDMPUserIdentifier;
+@class CxenseDMPCustomParameter;
+
 @protocol CxenseDMPDictionaryRepresentation <NSObject>
 /**
  * Returns a dictionary (JSON) representation of the object implementing the protocol.
  */
-- (NSDictionary *)dictionaryRepresentation;
+- (NSDictionary<NSString *, id> *)dictionaryRepresentation;
 @end
 
 @interface CxenseDMPEvent : NSObject <CxenseDMPDictionaryRepresentation>
@@ -16,46 +19,46 @@
 /**
 * Array of CxenseDMPUserIdentifier objects.
 */
-@property (nonatomic, strong) NSArray *userIds;
+@property(nonatomic, strong) NSArray<CxenseDMPUserIdentifier *> *userIds;
 
 /**
 * A value uniquely identifying the page request. That this value must be identical to rnd of the analytics event.
 */
-@property (nonatomic, strong) NSString *prnd;
+@property(nonatomic, strong) NSString *prnd;
 
 /**
 * A value uniquely identifying the action. Multiple actions on the same page view, must have distinct rnd values.
 */
-@property (nonatomic, strong) NSString *rnd;
+@property(nonatomic, strong) NSString *rnd;
 
 /**
 * The analytics site identifier to be associated with the events.
 */
-@property (nonatomic, strong) NSString *siteId;
+@property(nonatomic, strong) NSString *siteId;
 
 /**
 * Differentiates various DMP applications used by the customer. Must be prefixed by the customer prefix.
 */
-@property (nonatomic, strong) NSString *origin;
+@property(nonatomic, strong) NSString *origin;
 
 /**
 * Differentiates various event types, e.g., "click", "impression", "conversion", etc.
 */
-@property (nonatomic, strong) NSString *type;
+@property(nonatomic, strong) NSString *type;
 
 /**
 * An optional list of matching segments to be reported (array of ids (strings)).
 *
 * Optional.
 */
-@property (nonatomic, strong) NSArray *segmentIds;
+@property(nonatomic, strong) NSArray<NSString *> *segmentIds;
 
 /**
 * An optional list of customer-defined parameters. Array of CxenseDMPCustomParameter objects.
 *
 * Optional.
 */
-@property (nonatomic, strong) NSArray *customParameters;
+@property(nonatomic, strong) NSArray<CxenseDMPCustomParameter *> *customParameters;
 
 /**
 *   Creates and return a CxenseDMPEvent object with the specified parameters set. All parameters
@@ -72,7 +75,11 @@
 *   @return CxenseDMPEvent object with the specified (all required) parameters. To create an event
 *           with the optional parameters set, use the other convenience method.
 */
-+ (CxenseDMPEvent *)eventWithUserIds:(NSArray *)userIds prnd:(NSString *)prnd siteId:(NSString *)siteId origin:(NSString *)origin type:(NSString *)type;
++ (CxenseDMPEvent *)eventWithUserIds:(NSArray<CxenseDMPUserIdentifier *> *)userIds
+                                prnd:(NSString *)prnd
+                              siteId:(NSString *)siteId
+                              origin:(NSString *)origin
+                                type:(NSString *)type;
 
 /**
 * Creates and return a CxenseDMPEvent object with the specified parameters set. Required parameters
@@ -96,6 +103,13 @@
 * @return CxenseDMPEvent object with the specified (all required) parameters. To create an event with the optional
 *         parameters set, use the other convenience method.
 */
-+ (CxenseDMPEvent *)eventWithUserIds:(NSArray *)userIds prnd:(NSString *)prnd rnd:(NSString *)rnd siteId:(NSString *)siteId origin:(NSString *)origin type:(NSString *)type segmentIds:(NSArray *)segmentIds customParameters:(NSArray *)customParameters;
++ (CxenseDMPEvent *)eventWithUserIds:(NSArray<CxenseDMPUserIdentifier *> *)userIds
+                                prnd:(NSString *)prnd
+                                 rnd:(NSString *)rnd
+                              siteId:(NSString *)siteId
+                              origin:(NSString *)origin
+                                type:(NSString *)type
+                          segmentIds:(NSArray<NSString *> *)segmentIds
+                    customParameters:(NSArray<CxenseDMPCustomParameter *> *)customParameters;
 
 @end

@@ -9,6 +9,7 @@
 #import "Reco2ArticleConverter.h"
 #import "CxenseContentRecommendation.h"
 #import "ArticleModel.h"
+#import "ATS-URL-Converter.h"
 
 @implementation Reco2ArticleConverter
 
@@ -24,8 +25,8 @@
     ArticleModel *model = [[ArticleModel alloc] init];
     model.imageUrl = [reco data][@"dominantthumbnail"];
     model.headline = [reco data][@"title"];
-    model.clickUrl = reco.clickUrl;
-    model.url = reco.url;
+    model.clickUrl = [ATS_URL_Converter convertToHttps:reco.clickUrl];
+    model.url = [ATS_URL_Converter convertToHttps:reco.url];
     model.timestamp = reco.data[@"body"][1];
     model.section = reco.data[@"body"][0];
     return model;

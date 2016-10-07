@@ -35,7 +35,8 @@
  *
  *  @return CxenseContentWidget A CxenseContentWidget with a specified widgetId and any default user/contexts set.
  */
-+ (CxenseContentWidget *)widgetWithId:(NSString *)widgetId context:(CxenseContentContext *)context;
++ (CxenseContentWidget *)widgetWithId:(NSString *)widgetId
+                              context:(CxenseContentContext *)context;
 
 /**
  *  Create a context with default user (if set) and a provided context
@@ -46,6 +47,8 @@
  *
  *  @return CxenseContentWidget A CxenseContentWidget with a specified widgetId, context and user.
  */
-+ (CxenseContentWidget *)widgetWithId:(NSString *)widgetId context:(CxenseContentContext *)context user:(CxenseContentUser *)user;
++ (CxenseContentWidget *)widgetWithId:(NSString *)widgetId
+                              context:(CxenseContentContext *)context
+                                 user:(CxenseContentUser *)user;
 
 @end

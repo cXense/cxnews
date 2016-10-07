@@ -10,12 +10,12 @@
 /**
 * The parameter name, e.g., "campaign", "adspace" or "creative".
 */
-@property (nonatomic, copy) NSString *group;
+@property(nonatomic, copy) NSString *group;
 
 /**
 * The parameter value.
 */
-@property (nonatomic, copy) NSString *item;
+@property(nonatomic, copy) NSString *item;
 
 /**
 *   Creates and return a Custom Parameter object.
@@ -25,6 +25,7 @@
 *
 *   @return CxenseDMPCustomParameter object with the specified group and item set.
 */
-+ (CxenseDMPCustomParameter *)parameterWithGroup:(NSString *)group item:(NSString *)item;
++ (CxenseDMPCustomParameter *)parameterWithGroup:(NSString *)group
+                                            item:(NSString *)item;
 
 @end

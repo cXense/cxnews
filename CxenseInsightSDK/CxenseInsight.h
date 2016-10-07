@@ -41,12 +41,19 @@ typedef NS_ENUM(NSInteger, CxenseInsightNetworkRestriction) {
 
 @protocol CxenseInsightLocation <NSObject>
 - (double)latitude;
+
 - (double)longitude;
+
 - (double)altitude;
+
 - (double)horizontalAccuracy;
+
 - (double)verticalAccuracy;
+
 - (double)speed;
+
 - (double)course;
+
 - (NSDate *)timestamp;
 @end
 
@@ -69,7 +76,8 @@ typedef NS_ENUM(NSInteger, CxenseInsightNetworkRestriction) {
 * to Cxense Insight. Subsequent calls to this method with the same name will return the same
 * instance. The tracker is retained by the library.
 */
-+ (CxenseInsightTracker *)trackerWithName:(NSString *)name siteId:(NSString *)siteId;
++ (CxenseInsightTracker *)trackerWithName:(NSString *)name
+                                   siteId:(NSString *)siteId;
 
 /**
 * Set an appropriate Dispatch Mode to be used by the library. When in Online mode the library
@@ -119,6 +127,7 @@ typedef NS_ENUM(NSInteger, CxenseInsightNetworkRestriction) {
 *  Default value: 300 (5 minutes)
 */
 + (void)setDispatchInterval:(NSInteger)interval;
+
 + (NSInteger)dispatchInterval;
 
 /**
@@ -131,6 +140,7 @@ typedef NS_ENUM(NSInteger, CxenseInsightNetworkRestriction) {
 * Default value: WebView's default User-Agent.
 */
 + (void)setUserAgent:(NSString *)userAgent;
+
 + (NSString *)userAgent;
 
 /**

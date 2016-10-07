@@ -5,6 +5,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol CxenseInsightLocation;
+
 @interface CxenseInsightTracker : NSObject
 
 /**
@@ -13,7 +14,8 @@
 *
 * Setting default parameters can be useful when you need to include custom parameters on all events.
 */
-- (void)setParameter:(NSString *)parameter forKey:(NSString *)key;
+- (void)setParameter:(NSString *)parameter
+              forKey:(NSString *)key;
 
 /**
 * Retrieves the parameter value for the specified key.
@@ -38,6 +40,7 @@
 * for tracking to function properly.
 */
 - (void)setSiteId:(NSString *)siteId;
+
 - (NSString *)siteId;
 
 /**
@@ -73,7 +76,9 @@
 *                   can use the returned event object to retrieve the 'rnd' value for use with Cxense DMP
 *                   events.
 */
-- (void)trackEvent:(NSDictionary *)event name:(NSString *)name completion:(void (^)(NSDictionary *event, NSError *error))completion;
+- (void)trackEvent:(NSDictionary *)event
+              name:(NSString *)name
+        completion:(void (^)(NSDictionary *event, NSError *error))completion;
 
 /**
 * Track the active time for an event. This requires that the event had a name set when it was tracked.
@@ -92,7 +97,8 @@
 *                   active.
 * @param name       The name that was used when tracking the event.
 */
-- (void)trackActiveTime:(NSTimeInterval)activeTime forEvent:(NSString *)name;
+- (void)trackActiveTime:(NSTimeInterval)activeTime
+               forEvent:(NSString *)name;
 
 /**
 * @function setExternalUserId:withType:
