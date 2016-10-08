@@ -154,7 +154,6 @@
                         <outlet property="facebookButton" destination="vfM-sV-dAI" id="Sd6-UJ-70o"/>
                         <outlet property="headlineTextView" destination="6xK-O6-rND" id="HYC-Pg-DaO"/>
                         <outlet property="imageView" destination="7em-g7-k2h" id="nf9-sh-fhw"/>
-                        <outlet property="scrollView" destination="9xR-HK-iSj" id="Af5-DL-vvC"/>
                         <outlet property="sectionLabel" destination="Aem-6V-eKY" id="btl-qk-vX4"/>
                         <outlet property="timestampLabel" destination="IV0-wf-6Ic" id="9AK-HB-ISP"/>
                         <outlet property="twitterButton" destination="Duc-vW-lSs" id="mdg-ot-6Oh"/>
