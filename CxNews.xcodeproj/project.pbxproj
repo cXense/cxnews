@@ -11,7 +11,6 @@
 		431A4618405D97B8785C7A5B /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A4A69CE1223C10FADF80D /* UserModel.m */; };
 		431A48EAE2D230407BBAA2BC /* RecommendationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A49689C3434FA5F7682DE /* RecommendationsService.m */; };
 		431A4F711F82037FCD967E27 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A4D9911F510C6A017BE26 /* UserService.m */; };
-		8701F1AD1D30FD6700542ACF /* libCxenseInsightSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8701F1AC1D30FD6700542ACF /* libCxenseInsightSDK.a */; };
 		8701F1AF1D31004000542ACF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8701F1AE1D31004000542ACF /* libsqlite3.tbd */; };
 		87060C1E1D03F882006E6C36 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87060C1D1D03F882006E6C36 /* FeedViewController.m */; };
 		87060C221D04B065006E6C36 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87060C211D04B064006E6C36 /* UserAccountViewController.m */; };
@@ -21,26 +20,13 @@
 		8707D86E1CF0887A007B1A2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8707D86D1CF0887A007B1A2B /* Assets.xcassets */; };
 		8707D8711CF0887A007B1A2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8707D86F1CF0887A007B1A2B /* LaunchScreen.storyboard */; };
 		8707D87D1CF088F0007B1A2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8707D87C1CF088F0007B1A2B /* UIKit.framework */; };
-		870F218A1D50B0FA00D108E5 /* libCxenseDMPSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 870F21891D50B0FA00D108E5 /* libCxenseDMPSDK.a */; };
 		870F21941D50DA9D00D108E5 /* InterestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 870F21931D50DA9D00D108E5 /* InterestModel.m */; };
 		87107E3F1DA7B39400111FAD /* ATS-URL-Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87107E3E1DA7B39400111FAD /* ATS-URL-Converter.m */; };
 		87110AC01D3E126100451251 /* Reco2ArticleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87110ABF1D3E126100451251 /* Reco2ArticleConverter.m */; };
 		87110AC21D3E13C300451251 /* Reco2ArticleConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87110AC11D3E13C300451251 /* Reco2ArticleConverterTests.m */; };
 		871548341CFEAA26008C4248 /* CxNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 871548331CFEAA26008C4248 /* CxNewsUITests.m */; };
-		8717F8291CF76505002E5948 /* libCxenseContentSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8717F8271CF764E6002E5948 /* libCxenseContentSDK.a */; };
-		8717F82A1CF76534002E5948 /* CxenseContent.h in Resources */ = {isa = PBXBuildFile; fileRef = 8717F8221CF764E6002E5948 /* CxenseContent.h */; };
-		8717F82B1CF76534002E5948 /* CxenseContentContext.h in Resources */ = {isa = PBXBuildFile; fileRef = 8717F8231CF764E6002E5948 /* CxenseContentContext.h */; };
-		8717F82C1CF76534002E5948 /* CxenseContentRecommendation.h in Resources */ = {isa = PBXBuildFile; fileRef = 8717F8241CF764E6002E5948 /* CxenseContentRecommendation.h */; };
-		8717F82D1CF76534002E5948 /* CxenseContentUser.h in Resources */ = {isa = PBXBuildFile; fileRef = 8717F8251CF764E6002E5948 /* CxenseContentUser.h */; };
-		8717F82E1CF76534002E5948 /* CxenseContentWidget.h in Resources */ = {isa = PBXBuildFile; fileRef = 8717F8261CF764E6002E5948 /* CxenseContentWidget.h */; };
-		8717F82F1CF76534002E5948 /* libCxenseContentSDK.a in Resources */ = {isa = PBXBuildFile; fileRef = 8717F8271CF764E6002E5948 /* libCxenseContentSDK.a */; };
-		8717F8371CF76725002E5948 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8717F8361CF76725002E5948 /* SWRevealViewController.m */; };
 		87668A2D1D0333D700AC1B4F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 87668A2C1D0333D700AC1B4F /* Constants.m */; };
 		87686F041D5F309F00351C32 /* UIViewController+Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 87686F031D5F309F00351C32 /* UIViewController+Indicator.m */; };
-		8768E8841D914DD60008E035 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8768E87D1D914DAB0008E035 /* Charts.framework */; };
-		8768E8851D914DD60008E035 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8768E87D1D914DAB0008E035 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		876AFFD81D1424A6008326AC /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876AFFD51D1424A6008326AC /* HockeySDK.framework */; };
-		876AFFD91D1424A7008326AC /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 876AFFD71D1424A6008326AC /* HockeySDKResources.bundle */; };
 		877391091D06EB8E009D3A83 /* UserDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 877391081D06EB8E009D3A83 /* UserDataServiceTests.m */; };
 		877DA1331DA6C8F800BDFD79 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 877DA1321DA6C8F800BDFD79 /* NSString+HTML.m */; };
 		8787424B1CFEAF5D000A926B /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787424A1CFEAF5D000A926B /* AuthViewController.m */; };
@@ -66,6 +52,7 @@
 		87B7FF171D28EF4F002D040D /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF161D28EF4F002D040D /* ArticleModel.m */; };
 		87E9D7B11D9252B700AD515B /* ArticleServiceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E9D7B01D9252B700AD515B /* ArticleServiceAdapter.m */; };
 		87EF9C411D7FF4C7007A5564 /* private_conf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87EF9C401D7FF4C7007A5564 /* private_conf.plist */; };
+		D27A3B40950E1ABD902E163A /* Pods_CxNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927580671ADB2F124D879EA6 /* Pods_CxNews.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,20 +107,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8768E8651D91460B0008E035 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8768E8851D914DD60008E035 /* Charts.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		431A41079166CC44352CF083 /* UserProfileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileService.h; sourceTree = "<group>"; };
 		431A41AD88038411AA599C98 /* UserProfileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileService.m; sourceTree = "<group>"; };
@@ -143,6 +116,7 @@
 		431A4B30316F410EF07D7621 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		431A4BEDA4A7EAE7D8B3F734 /* RecommendationsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendationsService.h; sourceTree = "<group>"; };
 		431A4D9911F510C6A017BE26 /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
+		7E5D3E79D1CF933B9FF8C2CA /* Pods-CxNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CxNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-CxNews/Pods-CxNews.release.xcconfig"; sourceTree = "<group>"; };
 		8701F1A91D30FD6700542ACF /* CxenseInsight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseInsight.h; sourceTree = "<group>"; };
 		8701F1AA1D30FD6700542ACF /* CxenseInsightEventBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseInsightEventBuilder.h; sourceTree = "<group>"; };
 		8701F1AB1D30FD6700542ACF /* CxenseInsightTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseInsightTracker.h; sourceTree = "<group>"; };
@@ -161,16 +135,6 @@
 		8707D8701CF0887A007B1A2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8707D8721CF0887A007B1A2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8707D87C1CF088F0007B1A2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		870F21801D50B0FA00D108E5 /* CxenseDMP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMP.h; sourceTree = "<group>"; };
-		870F21811D50B0FA00D108E5 /* CxenseDMPCustomParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMPCustomParameter.h; sourceTree = "<group>"; };
-		870F21821D50B0FA00D108E5 /* CxenseDMPEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMPEvent.h; sourceTree = "<group>"; };
-		870F21831D50B0FA00D108E5 /* CxenseDMPExternalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMPExternalData.h; sourceTree = "<group>"; };
-		870F21841D50B0FA00D108E5 /* CxenseDMPExternalProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMPExternalProfile.h; sourceTree = "<group>"; };
-		870F21851D50B0FA00D108E5 /* CxenseDMPGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMPGroup.h; sourceTree = "<group>"; };
-		870F21861D50B0FA00D108E5 /* CxenseDMPProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMPProfile.h; sourceTree = "<group>"; };
-		870F21871D50B0FA00D108E5 /* CxenseDMPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMPUser.h; sourceTree = "<group>"; };
-		870F21881D50B0FA00D108E5 /* CxenseDMPUserIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CxenseDMPUserIdentifier.h; sourceTree = "<group>"; };
-		870F21891D50B0FA00D108E5 /* libCxenseDMPSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCxenseDMPSDK.a; sourceTree = "<group>"; };
 		870F21921D50DA9D00D108E5 /* InterestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestModel.h; sourceTree = "<group>"; };
 		870F21931D50DA9D00D108E5 /* InterestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestModel.m; sourceTree = "<group>"; };
 		87107E3D1DA7B39400111FAD /* ATS-URL-Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ATS-URL-Converter.h"; sourceTree = "<group>"; };
@@ -241,6 +205,8 @@
 		87E9D7B01D9252B700AD515B /* ArticleServiceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleServiceAdapter.m; sourceTree = "<group>"; };
 		87E9D7B51D9252FB00AD515B /* ArticleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleLoader.h; sourceTree = "<group>"; };
 		87EF9C401D7FF4C7007A5564 /* private_conf.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = private_conf.plist; sourceTree = "<group>"; };
+		8B5802A33F8A619F3C025DD5 /* Pods-CxNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CxNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CxNews/Pods-CxNews.debug.xcconfig"; sourceTree = "<group>"; };
+		927580671ADB2F124D879EA6 /* Pods_CxNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CxNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,11 +216,7 @@
 			files = (
 				8701F1AF1D31004000542ACF /* libsqlite3.tbd in Frameworks */,
 				8707D87D1CF088F0007B1A2B /* UIKit.framework in Frameworks */,
-				870F218A1D50B0FA00D108E5 /* libCxenseDMPSDK.a in Frameworks */,
-				8768E8841D914DD60008E035 /* Charts.framework in Frameworks */,
-				8701F1AD1D30FD6700542ACF /* libCxenseInsightSDK.a in Frameworks */,
-				8717F8291CF76505002E5948 /* libCxenseContentSDK.a in Frameworks */,
-				876AFFD81D1424A6008326AC /* HockeySDK.framework in Frameworks */,
+				D27A3B40950E1ABD902E163A /* Pods_CxNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +237,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C88801F058B6BB824FE0D69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B5802A33F8A619F3C025DD5 /* Pods-CxNews.debug.xcconfig */,
+				7E5D3E79D1CF933B9FF8C2CA /* Pods-CxNews.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		431A422405770335C64F103A /* Recommendation */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +329,7 @@
 				8707D85F1CF0887A007B1A2B /* Products */,
 				8707D87C1CF088F0007B1A2B /* UIKit.framework */,
 				87EF9C401D7FF4C7007A5564 /* private_conf.plist */,
+				2C88801F058B6BB824FE0D69 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -434,23 +406,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		870F217F1D50B0FA00D108E5 /* CxenseDMP_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				870F21801D50B0FA00D108E5 /* CxenseDMP.h */,
-				870F21811D50B0FA00D108E5 /* CxenseDMPCustomParameter.h */,
-				870F21821D50B0FA00D108E5 /* CxenseDMPEvent.h */,
-				870F21831D50B0FA00D108E5 /* CxenseDMPExternalData.h */,
-				870F21841D50B0FA00D108E5 /* CxenseDMPExternalProfile.h */,
-				870F21851D50B0FA00D108E5 /* CxenseDMPGroup.h */,
-				870F21861D50B0FA00D108E5 /* CxenseDMPProfile.h */,
-				870F21871D50B0FA00D108E5 /* CxenseDMPUser.h */,
-				870F21881D50B0FA00D108E5 /* CxenseDMPUserIdentifier.h */,
-				870F21891D50B0FA00D108E5 /* libCxenseDMPSDK.a */,
-			);
-			path = CxenseDMP_SDK;
-			sourceTree = "<group>";
-		};
 		87110ABD1D3E123A00451251 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,13 +432,13 @@
 			isa = PBXGroup;
 			children = (
 				8768E8751D914DAB0008E035 /* Charts.xcodeproj */,
-				870F217F1D50B0FA00D108E5 /* CxenseDMP_SDK */,
 				8701F1AE1D31004000542ACF /* libsqlite3.tbd */,
 				8717F8211CF764E6002E5948 /* CxenseContentSDK */,
 				8701F1A81D30FD6700542ACF /* CxenseInsightSDK */,
 				87B2675D1D22DE100061F635 /* GenericPasswordExtension */,
 				876AFFD41D1424A6008326AC /* HockeySDK.embeddedframework */,
 				8717F8341CF76725002E5948 /* SWRevealViewController */,
+				927580671ADB2F124D879EA6 /* Pods_CxNews.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -670,13 +625,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8707D8751CF0887A007B1A2B /* Build configuration list for PBXNativeTarget "CxNews" */;
 			buildPhases = (
+				0DCF75583A2FFFAE2DFB1E24 /* [CP] Check Pods Manifest.lock */,
 				8707D85A1CF0887A007B1A2B /* Sources */,
 				8707D85B1CF0887A007B1A2B /* Frameworks */,
 				8707D85C1CF0887A007B1A2B /* Resources */,
 				870FABCE1D14219F0080D8BF /* ShellScript */,
-				876AFFD31D142473008326AC /* ShellScript */,
 				87A9A51D1D4B274E00014FC4 /* ShellScript */,
-				8768E8651D91460B0008E035 /* Embed Frameworks */,
+				3CD506F2BE23F4BFF35DFAC5 /* [CP] Embed Pods Frameworks */,
+				4158DDCF9E6542DF349D67E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -736,15 +692,18 @@
 					8707D85D1CF0887A007B1A2B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = S73T3DVCL9;
+						LastSwiftMigration = 0800;
 					};
 					871548301CFEAA26008C4248 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 69682L2WL8;
+						LastSwiftMigration = 0800;
 						TestTargetID = 8707D85D1CF0887A007B1A2B;
 					};
 					878742671CFEDD37000A926B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 69682L2WL8;
+						LastSwiftMigration = 0800;
 						TestTargetID = 8707D85D1CF0887A007B1A2B;
 					};
 				};
@@ -811,15 +770,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8717F82A1CF76534002E5948 /* CxenseContent.h in Resources */,
-				8717F82B1CF76534002E5948 /* CxenseContentContext.h in Resources */,
-				8717F82C1CF76534002E5948 /* CxenseContentRecommendation.h in Resources */,
-				8717F82D1CF76534002E5948 /* CxenseContentUser.h in Resources */,
 				87A926CB1D9BD28400299341 /* Video.storyboard in Resources */,
-				8717F82E1CF76534002E5948 /* CxenseContentWidget.h in Resources */,
-				8717F82F1CF76534002E5948 /* libCxenseContentSDK.a in Resources */,
 				8707D8711CF0887A007B1A2B /* LaunchScreen.storyboard in Resources */,
-				876AFFD91D1424A7008326AC /* HockeySDKResources.bundle in Resources */,
 				87EF9C411D7FF4C7007A5564 /* private_conf.plist in Resources */,
 				8707D86E1CF0887A007B1A2B /* Assets.xcassets in Resources */,
 				87B340EE1D479C3F00929491 /* UserProfile.storyboard in Resources */,
@@ -845,6 +797,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0DCF75583A2FFFAE2DFB1E24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3CD506F2BE23F4BFF35DFAC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CxNews/Pods-CxNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4158DDCF9E6542DF349D67E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CxNews/Pods-CxNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		870FABCE1D14219F0080D8BF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -857,19 +854,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
-		};
-		876AFFD31D142473008326AC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
 		87A9A51D1D4B274E00014FC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -901,7 +885,6 @@
 				87A9A5251D4B879200014FC4 /* InterestsViewController.m in Sources */,
 				8787424B1CFEAF5D000A926B /* AuthViewController.m in Sources */,
 				87B7FF101D28EAC3002D040D /* ArticleViewController.m in Sources */,
-				8717F8371CF76725002E5948 /* SWRevealViewController.m in Sources */,
 				87668A2D1D0333D700AC1B4F /* Constants.m in Sources */,
 				8788F5561D9F9B4400950664 /* VideoFeedTableViewController+CellHeightGenerator.m in Sources */,
 				87A926D61D9BDCE000299341 /* VideoFeedTableViewController.m in Sources */,
@@ -1103,8 +1086,9 @@
 		};
 		8707D8761CF0887A007B1A2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B5802A33F8A619F3C025DD5 /* Pods-CxNews.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1112,31 +1096,26 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				HEADER_SEARCH_PATHS = /Users/anverbogatov/Downloads/CxenseContentSDK;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CxNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					/Users/anverbogatov/Downloads/CxenseContentSDK,
-					"$(PROJECT_DIR)/CxenseContentSDK",
-					"$(PROJECT_DIR)/SDK",
-					"$(PROJECT_DIR)/CxenseInsightSDK",
-					"$(PROJECT_DIR)/CxenseDMP_SDK",
-				);
-				OTHER_LDFLAGS = "-ObjC";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cxense.cx-news";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		8707D8771CF0887A007B1A2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E5D3E79D1CF933B9FF8C2CA /* Pods-CxNews.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1144,23 +1123,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				HEADER_SEARCH_PATHS = /Users/anverbogatov/Downloads/CxenseContentSDK;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CxNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					/Users/anverbogatov/Downloads/CxenseContentSDK,
-					"$(PROJECT_DIR)/CxenseContentSDK",
-					"$(PROJECT_DIR)/SDK",
-					"$(PROJECT_DIR)/CxenseInsightSDK",
-					"$(PROJECT_DIR)/CxenseDMP_SDK",
-				);
-				OTHER_LDFLAGS = "-ObjC";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cxense.cx-news";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1172,6 +1145,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anverbogatov.CxNewsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CxNews;
 			};
 			name = Debug;
@@ -1183,6 +1157,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anverbogatov.CxNewsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CxNews;
 			};
 			name = Release;
@@ -1195,6 +1170,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anverbogatov.CxNewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CxNews.app/CxNews";
 			};
 			name = Debug;
@@ -1207,6 +1183,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anverbogatov.CxNewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CxNews.app/CxNews";
 			};
 			name = Release;
