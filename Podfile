@@ -4,6 +4,7 @@ use_frameworks!
 
 target :CxNews do
   pod 'Charts', '~> 3.0'
+  pod 'HockeySDK'
   pod 'SWRevealViewController', '~>2'
 
   # Used in CxNews for loading user profiles

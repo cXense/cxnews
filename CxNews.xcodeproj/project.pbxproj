@@ -11,7 +11,6 @@
 		431A4618405D97B8785C7A5B /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A4A69CE1223C10FADF80D /* UserModel.m */; };
 		431A48EAE2D230407BBAA2BC /* RecommendationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A49689C3434FA5F7682DE /* RecommendationsService.m */; };
 		431A4F711F82037FCD967E27 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A4D9911F510C6A017BE26 /* UserService.m */; };
-		8701F1AD1D30FD6700542ACF /* libCxenseInsightSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8701F1AC1D30FD6700542ACF /* libCxenseInsightSDK.a */; };
 		8701F1AF1D31004000542ACF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8701F1AE1D31004000542ACF /* libsqlite3.tbd */; };
 		87060C1E1D03F882006E6C36 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87060C1D1D03F882006E6C36 /* FeedViewController.m */; };
 		87060C221D04B065006E6C36 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87060C211D04B064006E6C36 /* UserAccountViewController.m */; };
@@ -26,12 +25,8 @@
 		87110AC01D3E126100451251 /* Reco2ArticleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87110ABF1D3E126100451251 /* Reco2ArticleConverter.m */; };
 		87110AC21D3E13C300451251 /* Reco2ArticleConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87110AC11D3E13C300451251 /* Reco2ArticleConverterTests.m */; };
 		871548341CFEAA26008C4248 /* CxNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 871548331CFEAA26008C4248 /* CxNewsUITests.m */; };
-		8717F8291CF76505002E5948 /* libCxenseContentSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8717F8271CF764E6002E5948 /* libCxenseContentSDK.a */; };
 		87668A2D1D0333D700AC1B4F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 87668A2C1D0333D700AC1B4F /* Constants.m */; };
 		87686F041D5F309F00351C32 /* UIViewController+Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 87686F031D5F309F00351C32 /* UIViewController+Indicator.m */; };
-		8768E8841D914DD60008E035 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8768E87D1D914DAB0008E035 /* Charts.framework */; };
-		876AFFD81D1424A6008326AC /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876AFFD51D1424A6008326AC /* HockeySDK.framework */; };
-		876AFFD91D1424A7008326AC /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 876AFFD71D1424A6008326AC /* HockeySDKResources.bundle */; };
 		877391091D06EB8E009D3A83 /* UserDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 877391081D06EB8E009D3A83 /* UserDataServiceTests.m */; };
 		877DA1331DA6C8F800BDFD79 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 877DA1321DA6C8F800BDFD79 /* NSString+HTML.m */; };
 		8787424B1CFEAF5D000A926B /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787424A1CFEAF5D000A926B /* AuthViewController.m */; };
@@ -221,10 +216,6 @@
 			files = (
 				8701F1AF1D31004000542ACF /* libsqlite3.tbd in Frameworks */,
 				8707D87D1CF088F0007B1A2B /* UIKit.framework in Frameworks */,
-				8768E8841D914DD60008E035 /* Charts.framework in Frameworks */,
-				8701F1AD1D30FD6700542ACF /* libCxenseInsightSDK.a in Frameworks */,
-				8717F8291CF76505002E5948 /* libCxenseContentSDK.a in Frameworks */,
-				876AFFD81D1424A6008326AC /* HockeySDK.framework in Frameworks */,
 				D27A3B40950E1ABD902E163A /* Pods_CxNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,7 +630,6 @@
 				8707D85B1CF0887A007B1A2B /* Frameworks */,
 				8707D85C1CF0887A007B1A2B /* Resources */,
 				870FABCE1D14219F0080D8BF /* ShellScript */,
-				876AFFD31D142473008326AC /* ShellScript */,
 				87A9A51D1D4B274E00014FC4 /* ShellScript */,
 				3CD506F2BE23F4BFF35DFAC5 /* [CP] Embed Pods Frameworks */,
 				4158DDCF9E6542DF349D67E8 /* [CP] Copy Pods Resources */,
@@ -782,7 +772,6 @@
 			files = (
 				87A926CB1D9BD28400299341 /* Video.storyboard in Resources */,
 				8707D8711CF0887A007B1A2B /* LaunchScreen.storyboard in Resources */,
-				876AFFD91D1424A7008326AC /* HockeySDKResources.bundle in Resources */,
 				87EF9C411D7FF4C7007A5564 /* private_conf.plist in Resources */,
 				8707D86E1CF0887A007B1A2B /* Assets.xcassets in Resources */,
 				87B340EE1D479C3F00929491 /* UserProfile.storyboard in Resources */,
@@ -865,19 +854,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
-		};
-		876AFFD31D142473008326AC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
 		87A9A51D1D4B274E00014FC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
