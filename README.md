@@ -11,7 +11,7 @@
 #### What CxNews is not?
 
 * It is not an application ready to be published and distributed in AppStore
-* It is not place from which you should download Cxense mobile SDKs. **Attention**: this project contains obsolete builds of Cxense mobile SDKs only for demonstration purposes. In general case, **you should not** use them in your projects. Latest versions of SDKs with latest features and fixes can be downloaded from https://www.cxense.com
+* It is not place from which you should download Cxense mobile SDKs. **Attention**: this project contains obsolete builds of Cxense mobile SDKs only for demonstration purposes. In general case, **you should not** use them in your projects. Latest versions of SDKs with latest features and fixes can be downloaded from https://www.cxense.com or resolved from Cocoapods repository
 
 ---
 
@@ -19,15 +19,19 @@
 
 You will need an Xcode 7 and iOS simulators with iOS8+ versions. Before you can launch the app you need to do some manual operations. 
 
-	##### Project configuration
+#### Project configuration
 
 1) Open **Terminal** and navigate to project's root folder
 
-2) Create file with name "*private_conf.plist*" by using following command:
+2) Since application uses Cocoapods for managing dependencies, you will need to execute following command to resolve all dependencies:
+
+`pod install`
+
+3) Create file with name "*private_conf.plist*" by using following command:
 
 `touch private_conf.plist`
 
-3) Open it in any text editor and paste following text:
+4) Open it in any text editor and paste following text:
 
 ~~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -44,16 +48,8 @@ You will need an Xcode 7 and iOS simulators with iOS8+ versions. Before you can 
 </plist>
 ~~~~
 
-4) Replace placeholders (specified in '#' signs) by your own configuration
+5) Replace placeholders (specified in '#' signs) by your own configuration
 
-5) Save it.
-
-##### Dependencies resolve
-
-Our project uses **Carthage** as primary dependency management system. Use following command to checkout and build project's dependencies:
-
-`carthage update --platform ios`
-
-
+6) Save it.
 
 After these actions you will be able to run the application on your device or in simulator.
