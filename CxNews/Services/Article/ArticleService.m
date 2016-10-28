@@ -8,7 +8,6 @@
 
 #import "ArticleService.h"
 #import "ArticleModel.h"
-#import "ArticleLoader.h"
 #import "Constants.h"
 #import "ATS-URL-Converter.h"
 

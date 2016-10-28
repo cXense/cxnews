@@ -15,9 +15,6 @@
 #import "SectionLinksProvider.h"
 #import "VideoFeedTableViewController.h"
 
-@import AVKit;
-@import AVFoundation;
-
 @implementation RearMenuViewController {
     __weak IBOutlet UISearchBar *searchBar;
 }

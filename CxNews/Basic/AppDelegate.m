@@ -11,9 +11,7 @@
 #import "CxenseDMP.h"
 #import "CxenseInsight.h"
 #import "ArticleServiceAdapter.h"
-#import "SectionLinksProvider.h"
 #import "UserProfileService.h"
-#import "UserModel.h"
 
 @import HockeySDK;
 
