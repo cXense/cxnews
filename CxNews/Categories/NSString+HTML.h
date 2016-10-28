@@ -16,6 +16,5 @@
 @interface NSString (HTML)
 
 - (NSString *)kv_decodeHTMLCharacterEntities;
-- (NSString *)kv_encodeHTMLCharacterEntities;
 
 @end
