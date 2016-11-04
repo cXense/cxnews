@@ -12,6 +12,7 @@
 #import "CxenseInsight.h"
 #import "ArticleServiceAdapter.h"
 #import "UserProfileService.h"
+#import "CXNEventsService.h"
 
 @import HockeySDK;
 
@@ -56,11 +57,52 @@
     self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main"
                                                                 bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:rootViewControllerId];
 
+    [self setupWatchConnectivity];
+    
     return YES;
 }
 
 -(void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
     [[ArticleServiceAdapter sharedInstance] clear];
+}
+
+#pragma mark - WatchConnectivity delegate
+
+-(void)sessionDidBecomeInactive:(WCSession *)session {
+    NSLog(@"Session become inactive");
+}
+
+-(void)sessionDidDeactivate:(WCSession *)session {
+    NSLog(@"Session did deactive");
+}
+
+-(void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
+    if (error) {
+        NSLog(@"Error happened: %@", [error description]);
+        return;
+    }
+    
+    NSLog(@"Activation state: %ld", (long)activationState);
+}
+
+-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message {
+    NSLog(@"Message received: %@", [message description]);
+}
+
+-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
+    NSLog(@"Message received2: %@", [message description]);
+    [[CXNEventsService sharedInstance] trackEventWithName:@"Apple Watch" forPageWithName:@"Apple Watch like page" andUrl:@"https://apple.watch.ru" andRefferingUrl:@"http://cxnews.com" byTrackerWithName:@"Watch OS Tracker"];
+}
+
+#pragma mark WatchConnectivity utils
+-(void)setupWatchConnectivity {
+    NSLog(@"WC setup started");
+    if ([WCSession isSupported]) {
+        NSLog(@"WC is supported");
+        WCSession *wcSession = [WCSession defaultSession];
+        wcSession.delegate = self;
+        [wcSession activateSession];
+    }
 }
 
 @end
