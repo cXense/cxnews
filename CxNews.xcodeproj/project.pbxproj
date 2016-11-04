@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431A403D587023FA24D76AC9 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A40149FC6844D43AECB05 /* EventModel.m */; };
 		431A418861855E77026AC488 /* UserProfileService.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A41AD88038411AA599C98 /* UserProfileService.m */; };
 		431A4618405D97B8785C7A5B /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A4A69CE1223C10FADF80D /* UserModel.m */; };
 		431A48EAE2D230407BBAA2BC /* RecommendationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A49689C3434FA5F7682DE /* RecommendationsService.m */; };
 		431A4F711F82037FCD967E27 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A4D9911F510C6A017BE26 /* UserService.m */; };
+		431A4FA8BA1B65E24048F106 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431A40149FC6844D43AECB05 /* EventModel.m */; };
 		8701F1AF1D31004000542ACF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8701F1AE1D31004000542ACF /* libsqlite3.tbd */; };
 		87060C1E1D03F882006E6C36 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87060C1D1D03F882006E6C36 /* FeedViewController.m */; };
 		87060C221D04B065006E6C36 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87060C211D04B064006E6C36 /* UserAccountViewController.m */; };
@@ -154,8 +156,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		431A40149FC6844D43AECB05 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		431A41079166CC44352CF083 /* UserProfileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileService.h; sourceTree = "<group>"; };
 		431A41AD88038411AA599C98 /* UserProfileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileService.m; sourceTree = "<group>"; };
+		431A42BC48DF52E832FE3833 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		431A49689C3434FA5F7682DE /* RecommendationsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendationsService.m; sourceTree = "<group>"; };
 		431A4A067FCCE3216715F99A /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
 		431A4A69CE1223C10FADF80D /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
@@ -352,6 +356,15 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		431A48E7119F836D6712D095 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				431A40149FC6844D43AECB05 /* EventModel.m */,
+				431A42BC48DF52E832FE3833 /* EventModel.h */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		431A4AF76720A844B5AC14EB /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +418,7 @@
 				8707D87C1CF088F0007B1A2B /* UIKit.framework */,
 				87EF9C401D7FF4C7007A5564 /* private_conf.plist */,
 				2C88801F058B6BB824FE0D69 /* Pods */,
+				431A48E7119F836D6712D095 /* Shared */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1081,6 +1095,7 @@
 				87110AC01D3E126100451251 /* Reco2ArticleConverter.m in Sources */,
 				87107E3F1DA7B39400111FAD /* ATS-URL-Converter.m in Sources */,
 				87686F041D5F309F00351C32 /* UIViewController+Indicator.m in Sources */,
+				431A403D587023FA24D76AC9 /* EventModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1098,6 +1113,7 @@
 			files = (
 				87ED4FC01DCA37F3003EB478 /* ExtensionDelegate.m in Sources */,
 				872B5D6F1DC8B38900CAB911 /* InterfaceController.m in Sources */,
+				431A4FA8BA1B65E24048F106 /* EventModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

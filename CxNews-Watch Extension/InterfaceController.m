@@ -7,6 +7,7 @@
 //
 
 #import "InterfaceController.h"
+#import "EventModel.h"
 @import WatchConnectivity;
 
 @interface InterfaceController ()
@@ -32,19 +33,19 @@
 }
 
 - (IBAction)tapLikeButton {
-    WKAlertAction *action = [WKAlertAction new];
-    
-//    [self presentAlertControllerWithTitle:@"Notification" message:@"Like button was pressed" preferredStyle:WKAlertControllerStyleAlert actions:[NSArray arrayWithObject:action]];
-    
-    NSDictionary<NSString *, id>* params = [NSDictionary dictionaryWithObject:@"Value" forKey:@"Key"];
-    
+    EventModel *event = [EventModel modelWithEventName:@"Apple Watch"
+                                              pageName:@"Apple Watch like page"
+                                                   url:@"https://apple.watch.ru"
+                                          referringUrl:@"http://cxnews.com"
+                                           trackerName:@"Watch OS Tracker"];
     NSLog(@"Like button was tapped");
     
-    [[WCSession defaultSession] sendMessage:params replyHandler:^(NSDictionary<NSString *,id> * _Nonnull replyMessage) {
-        NSLog(@"Hello world");
-    } errorHandler:^(NSError * _Nonnull error) {
-        NSLog(@"Error: %@", [error description]);
-    }];
+    [[WCSession defaultSession] sendMessageData:[NSKeyedArchiver archivedDataWithRootObject:event]
+                                   replyHandler:^(NSData *replyMessageData) {
+                                       NSLog(@"Hello world");
+                                   } errorHandler:^(NSError *error) {
+                                       NSLog(@"Error: %@", [error description]);
+                                   }];
 }
 
 @end
