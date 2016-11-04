@@ -58,6 +58,7 @@
 		87B7FF101D28EAC3002D040D /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF0F1D28EAC3002D040D /* ArticleViewController.m */; };
 		87B7FF141D28EF34002D040D /* ArticleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF131D28EF34002D040D /* ArticleService.m */; };
 		87B7FF171D28EF4F002D040D /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF161D28EF4F002D040D /* ArticleModel.m */; };
+		87DCCF131DCC771A009DC7A4 /* NewsRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DCCF121DCC771A009DC7A4 /* NewsRowController.m */; };
 		87E9D7B11D9252B700AD515B /* ArticleServiceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E9D7B01D9252B700AD515B /* ArticleServiceAdapter.m */; };
 		87ED4FC01DCA37F3003EB478 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87ED4FBF1DCA37F3003EB478 /* ExtensionDelegate.m */; };
 		87EF9C411D7FF4C7007A5564 /* private_conf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87EF9C401D7FF4C7007A5564 /* private_conf.plist */; };
@@ -262,6 +263,8 @@
 		87B7FF131D28EF34002D040D /* ArticleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleService.m; sourceTree = "<group>"; };
 		87B7FF151D28EF4F002D040D /* ArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
 		87B7FF161D28EF4F002D040D /* ArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
+		87DCCF111DCC771A009DC7A4 /* NewsRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsRowController.h; sourceTree = "<group>"; };
+		87DCCF121DCC771A009DC7A4 /* NewsRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsRowController.m; sourceTree = "<group>"; };
 		87E9D7AF1D9252B700AD515B /* ArticleServiceAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleServiceAdapter.h; sourceTree = "<group>"; };
 		87E9D7B01D9252B700AD515B /* ArticleServiceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleServiceAdapter.m; sourceTree = "<group>"; };
 		87E9D7B51D9252FB00AD515B /* ArticleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleLoader.h; sourceTree = "<group>"; };
@@ -577,6 +580,8 @@
 				872B5D6E1DC8B38900CAB911 /* InterfaceController.m */,
 				87ED4FBE1DCA37F3003EB478 /* ExtensionDelegate.h */,
 				87ED4FBF1DCA37F3003EB478 /* ExtensionDelegate.m */,
+				87DCCF111DCC771A009DC7A4 /* NewsRowController.h */,
+				87DCCF121DCC771A009DC7A4 /* NewsRowController.m */,
 			);
 			path = "CxNews-Watch Extension";
 			sourceTree = "<group>";
@@ -1114,6 +1119,7 @@
 				87ED4FC01DCA37F3003EB478 /* ExtensionDelegate.m in Sources */,
 				872B5D6F1DC8B38900CAB911 /* InterfaceController.m in Sources */,
 				431A4FA8BA1B65E24048F106 /* EventModel.m in Sources */,
+				87DCCF131DCC771A009DC7A4 /* NewsRowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
