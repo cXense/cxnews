@@ -6,12 +6,13 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
+#import "NewsRowController.h"
 #import "InterfaceController.h"
 #import "EventModel.h"
 @import WatchConnectivity;
 
 @interface InterfaceController ()
-
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
 @end
 
 @implementation InterfaceController
@@ -20,6 +21,27 @@
     [super awakeWithContext:context];
     
     // Configure interface objects here.
+    
+    [self.table setNumberOfRows:5 withRowType:@"NewsRowType"];
+    for (int i =0; i<0; i++) {
+        NewsRowController *controller = (NewsRowController *) [self.table rowControllerAtIndex:i];
+        [controller.timestampLabel setText:[NSString stringWithFormat:@"Row #%d", i]];
+        [controller.headlineLabel setText:@"Headline"];
+    }
+    
+    // Send event to Cxense Insight through WatchConnectivity
+    EventModel *event = [EventModel modelWithEventName:@"CxNews feed opened on Apple Watch"
+                                              pageName:@"Apple Watch news feed"
+                                                   url:@"http://cxnews.azurewebsites.net"
+                                          referringUrl:@"http://cxnews.azurewebsites.net"
+                                           trackerName:@"Watch OS Tracker"];
+    
+    [[WCSession defaultSession] sendMessageData:[NSKeyedArchiver archivedDataWithRootObject:event]
+                                   replyHandler:^(NSData *replyMessageData) {
+                                       NSLog(@"Message was sent.");
+                                   } errorHandler:^(NSError *error) {
+                                       NSLog(@"Error: %@", [error description]);
+                                   }];
 }
 
 - (void)willActivate {
@@ -30,22 +52,6 @@
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
-}
-
-- (IBAction)tapLikeButton {
-    EventModel *event = [EventModel modelWithEventName:@"Apple Watch"
-                                              pageName:@"Apple Watch like page"
-                                                   url:@"https://apple.watch.ru"
-                                          referringUrl:@"http://cxnews.com"
-                                           trackerName:@"Watch OS Tracker"];
-    NSLog(@"Like button was tapped");
-    
-    [[WCSession defaultSession] sendMessageData:[NSKeyedArchiver archivedDataWithRootObject:event]
-                                   replyHandler:^(NSData *replyMessageData) {
-                                       NSLog(@"Hello world");
-                                   } errorHandler:^(NSError *error) {
-                                       NSLog(@"Error: %@", [error description]);
-                                   }];
 }
 
 @end
