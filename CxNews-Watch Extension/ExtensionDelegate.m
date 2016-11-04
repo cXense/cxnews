@@ -9,6 +9,14 @@
 #import "ExtensionDelegate.h"
 
 @implementation ExtensionDelegate
+- (void)sessionDidBecomeInactive:(WCSession *)session {
+    NSLog(@"Session become inactive");
+}
+
+- (void)sessionDidDeactivate:(WCSession *)session {
+    NSLog(@"Session did deactivate");
+}
+
 
 - (void)applicationDidFinishLaunching {
     [self setupWatchConnectivity];
