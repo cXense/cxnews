@@ -9,6 +9,7 @@
 #import "ExtensionDelegate.h"
 
 @implementation ExtensionDelegate
+
 - (void)sessionDidBecomeInactive:(WCSession *)session {
     NSLog(@"Session become inactive");
 }
@@ -17,23 +18,25 @@
     NSLog(@"Session did deactivate");
 }
 
-
 - (void)applicationDidFinishLaunching {
     [self setupWatchConnectivity];
 }
 
 - (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
     if (error) {
-        NSLog(@"[WKit]: Error happened: %@", [error description]);
+        NSLog(@"Error happened: %@", [error description]);
         return;
     }
     
-    NSLog(@"[WKit]: Activation state: %ld", (long)activationState);
+    NSLog(@"Activation state: %ld", (long)activationState);
 }
 
 #pragma mark WatchConnectivity utils
+
+/**
+ Method creates connection with iOS counterpart application if available.
+ */
 -(void)setupWatchConnectivity {
-    
     if ([WCSession isSupported]) {
         WCSession *wcSession = [WCSession defaultSession];
         wcSession.delegate = self;

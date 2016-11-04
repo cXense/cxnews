@@ -81,10 +81,13 @@
         NSLog(@"Error happened: %@", [error description]);
         return;
     }
-    
     NSLog(@"Activation state: %ld", (long) activationState);
 }
 
+/*
+ That method is responsible for receving messages from watchOS counterpart. 
+ Since EventModel implements NSCodying protocol it transmitted in form of NSData.
+ */
 -(void)session:(WCSession *)session didReceiveMessageData:(NSData *)messageData
   replyHandler:(void (^)(NSData * _Nonnull))replyHandler {
     NSLog(@"Message came");
@@ -98,6 +101,9 @@
 
 #pragma mark WatchConnectivity utils
 
+/**
+ Method creates connection with watchOS counterpart application if available.
+ */
 - (void)setupWatchConnectivity {
     NSLog(@"WC setup started");
     if ([WCSession isSupported]) {
