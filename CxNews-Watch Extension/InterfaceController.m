@@ -9,6 +9,9 @@
 #import "NewsRowController.h"
 #import "InterfaceController.h"
 #import "EventModel.h"
+#import "NewsModel.h"
+#import "NewsStorage.h"
+
 @import WatchConnectivity;
 
 @interface InterfaceController ()
@@ -21,13 +24,8 @@
     [super awakeWithContext:context];
     
     // Configure interface objects here.
-    
-    [self.table setNumberOfRows:5 withRowType:@"NewsRowType"];
-    for (int i =0; i<0; i++) {
-        NewsRowController *controller = (NewsRowController *) [self.table rowControllerAtIndex:i];
-        [controller.timestampLabel setText:[NSString stringWithFormat:@"Row #%d", i]];
-        [controller.headlineLabel setText:@"Headline"];
-    }
+    [NewsStorage sharedInstance].delegate = self;
+    [self updateTableView];
     
     // Send event to Cxense Insight through WatchConnectivity
     EventModel *event = [EventModel modelWithEventName:@"CxNews feed opened on Apple Watch"
@@ -54,14 +52,19 @@
                                    }];
 }
 
-- (void)willActivate {
-    // This method is called when watch view controller is about to be visible to user
-    [super willActivate];
+-(void)updateTableView {
+    NSArray<NewsModel *> *news = [NewsStorage sharedInstance].news;
+    [self.table setNumberOfRows:[news count] withRowType:@"NewsRowType"];
+    for (int i =0; i<[news count]; i++) {
+        NewsModel *model = news[i];
+        NewsRowController *controller = (NewsRowController *) [self.table rowControllerAtIndex:i];
+        [controller.timestampLabel setText:model.timestamp];
+        [controller.headlineLabel setText:model.headline];
+    }
 }
 
-- (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
-    [super didDeactivate];
+-(void)newsDataSourceWasUpdated {
+    [self updateTableView];
 }
 
 @end

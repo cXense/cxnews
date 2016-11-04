@@ -33,6 +33,8 @@
 		872B5D5E1DC8B0B900CAB911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872B5D5D1DC8B0B900CAB911 /* Assets.xcassets */; };
 		872B5D621DC8B0B900CAB911 /* CxNews-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 872B5D411DC8B0B900CAB911 /* CxNews-Watch.app */; };
 		872B5D6F1DC8B38900CAB911 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 872B5D6E1DC8B38900CAB911 /* InterfaceController.m */; };
+		8744B4471DCC903A004A2E82 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8744B4461DCC903A004A2E82 /* NewsModel.m */; };
+		8744B44A1DCC90AF004A2E82 /* NewsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8744B4491DCC90AF004A2E82 /* NewsStorage.m */; };
 		87668A2D1D0333D700AC1B4F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 87668A2C1D0333D700AC1B4F /* Constants.m */; };
 		87686F041D5F309F00351C32 /* UIViewController+Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 87686F031D5F309F00351C32 /* UIViewController+Indicator.m */; };
 		877391091D06EB8E009D3A83 /* UserDataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 877391081D06EB8E009D3A83 /* UserDataServiceTests.m */; };
@@ -215,6 +217,11 @@
 		872B5D5F1DC8B0B900CAB911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		872B5D6D1DC8B38900CAB911 /* InterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
 		872B5D6E1DC8B38900CAB911 /* InterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		8744B4451DCC903A004A2E82 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		8744B4461DCC903A004A2E82 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		8744B4481DCC90AF004A2E82 /* NewsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsStorage.h; sourceTree = "<group>"; };
+		8744B4491DCC90AF004A2E82 /* NewsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsStorage.m; sourceTree = "<group>"; };
+		8744B44B1DCC9AE9004A2E82 /* NewsDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDataSourceDelegate.h; sourceTree = "<group>"; };
 		87668A2B1D0333D700AC1B4F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		87668A2C1D0333D700AC1B4F /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		87686F021D5F309F00351C32 /* UIViewController+Indicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Indicator.h"; sourceTree = "<group>"; };
@@ -582,6 +589,11 @@
 				87ED4FBF1DCA37F3003EB478 /* ExtensionDelegate.m */,
 				87DCCF111DCC771A009DC7A4 /* NewsRowController.h */,
 				87DCCF121DCC771A009DC7A4 /* NewsRowController.m */,
+				8744B4451DCC903A004A2E82 /* NewsModel.h */,
+				8744B4461DCC903A004A2E82 /* NewsModel.m */,
+				8744B4481DCC90AF004A2E82 /* NewsStorage.h */,
+				8744B4491DCC90AF004A2E82 /* NewsStorage.m */,
+				8744B44B1DCC9AE9004A2E82 /* NewsDataSourceDelegate.h */,
 			);
 			path = "CxNews-Watch Extension";
 			sourceTree = "<group>";
@@ -1116,7 +1128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8744B4471DCC903A004A2E82 /* NewsModel.m in Sources */,
 				87ED4FC01DCA37F3003EB478 /* ExtensionDelegate.m in Sources */,
+				8744B44A1DCC90AF004A2E82 /* NewsStorage.m in Sources */,
 				872B5D6F1DC8B38900CAB911 /* InterfaceController.m in Sources */,
 				431A4FA8BA1B65E24048F106 /* EventModel.m in Sources */,
 				87DCCF131DCC771A009DC7A4 /* NewsRowController.m in Sources */,

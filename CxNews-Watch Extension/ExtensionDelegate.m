@@ -7,6 +7,8 @@
 //
 
 #import "ExtensionDelegate.h"
+#import "NewsModel.h"
+#import "NewsStorage.h"
 
 @implementation ExtensionDelegate
 
@@ -29,6 +31,23 @@
     }
     
     NSLog(@"Activation state: %ld", (long)activationState);
+}
+
+- (void) session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext {
+    NSArray<NSString *> *news = (NSArray<NSString *> *) applicationContext[@"articles"];
+    if (news) {
+        NSLog(@"%d new news were sent", [news count]);
+        
+        NSMutableArray<NewsModel *> *newNews = [NSMutableArray arrayWithCapacity:([news count] / 2)];
+        for (int i = 0; i < [news count]; i += 2) {
+            NSString *timestamp = news[i];
+            NSString *headline = news[i+1];
+            [newNews addObject:[NewsModel newsModelWith:timestamp and:headline]];
+        }
+        [NewsStorage sharedInstance].news = newNews;
+    } else {
+        NSLog(@"No new news were sent");
+    }
 }
 
 #pragma mark WatchConnectivity utils
