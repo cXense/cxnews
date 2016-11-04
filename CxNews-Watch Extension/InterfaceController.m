@@ -36,6 +36,16 @@
                                           referringUrl:@"http://cxnews.azurewebsites.net"
                                            trackerName:@"Watch OS Tracker"];
     
+    
+    /*
+     These lines show you how to send custom objects from Watch Extension to iOS counterpart.
+     
+     Pay attention that we are using here so called 'Interactive Messaging'. That means that data
+     will be send and received by iOS counterpart ONLY if watchOS and iOS parts will be active.
+     
+     iOS counterpart can recieve the message only in class that implements WCSessionDelegate protocol.
+     In CxNews application such class is AppDelegate.
+     */
     [[WCSession defaultSession] sendMessageData:[NSKeyedArchiver archivedDataWithRootObject:event]
                                    replyHandler:^(NSData *replyMessageData) {
                                        NSLog(@"Message was sent.");
