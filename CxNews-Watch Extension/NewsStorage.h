@@ -11,12 +11,26 @@
 
 @import Foundation;
 
+/**
+ Updatable storage that contains news models.
+ */
 @interface NewsStorage : NSObject
 
-@property id<NewsDataSourceDelegate> delegate;
+/**
+ Storage delegate. If set it will be notified about any state change.
+ */
+@property id<NewsStorageDelegate> delegate;
 
+/**
+ Array of news models that are stored in current storage.
+ */
 @property(nonatomic, setter=setNews:) NSArray<NewsModel *> *news;
 
+/**
+ Initialize and return single instance of the service.
+ 
+ @return service instance
+ */
 +(instancetype)sharedInstance;
 
 @end

@@ -6,11 +6,11 @@
 //  Copyright © 2016 Anver Bogatov. All rights reserved.
 //
 
-#import "NewsDataSourceDelegate.h"
+#import "NewsStorageDelegate.h"
 
 @import WatchKit;
 @import Foundation;
 
-@interface InterfaceController : WKInterfaceController <NewsDataSourceDelegate>
+@interface InterfaceController : WKInterfaceController <NewsStorageDelegate>
 
 @end

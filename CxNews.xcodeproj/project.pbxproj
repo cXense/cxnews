@@ -221,7 +221,7 @@
 		8744B4461DCC903A004A2E82 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		8744B4481DCC90AF004A2E82 /* NewsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsStorage.h; sourceTree = "<group>"; };
 		8744B4491DCC90AF004A2E82 /* NewsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsStorage.m; sourceTree = "<group>"; };
-		8744B44B1DCC9AE9004A2E82 /* NewsDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDataSourceDelegate.h; sourceTree = "<group>"; };
+		8744B44B1DCC9AE9004A2E82 /* NewsStorageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsStorageDelegate.h; sourceTree = "<group>"; };
 		87668A2B1D0333D700AC1B4F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		87668A2C1D0333D700AC1B4F /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		87686F021D5F309F00351C32 /* UIViewController+Indicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Indicator.h"; sourceTree = "<group>"; };
@@ -580,20 +580,14 @@
 		872B5D511DC8B0B900CAB911 /* CxNews-Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				873D063E1DCDBFD40071B0E8 /* Storage */,
+				873D063D1DCDBFA80071B0E8 /* Table */,
+				873D063C1DCDBF980071B0E8 /* Model */,
+				873D063B1DCDBECB0071B0E8 /* Controllers */,
+				873D063A1DCDBEB80071B0E8 /* Basic */,
 				872B5D5D1DC8B0B900CAB911 /* Assets.xcassets */,
 				872B5D5F1DC8B0B900CAB911 /* Info.plist */,
 				872B5D521DC8B0B900CAB911 /* Supporting Files */,
-				872B5D6D1DC8B38900CAB911 /* InterfaceController.h */,
-				872B5D6E1DC8B38900CAB911 /* InterfaceController.m */,
-				87ED4FBE1DCA37F3003EB478 /* ExtensionDelegate.h */,
-				87ED4FBF1DCA37F3003EB478 /* ExtensionDelegate.m */,
-				87DCCF111DCC771A009DC7A4 /* NewsRowController.h */,
-				87DCCF121DCC771A009DC7A4 /* NewsRowController.m */,
-				8744B4451DCC903A004A2E82 /* NewsModel.h */,
-				8744B4461DCC903A004A2E82 /* NewsModel.m */,
-				8744B4481DCC90AF004A2E82 /* NewsStorage.h */,
-				8744B4491DCC90AF004A2E82 /* NewsStorage.m */,
-				8744B44B1DCC9AE9004A2E82 /* NewsDataSourceDelegate.h */,
 			);
 			path = "CxNews-Watch Extension";
 			sourceTree = "<group>";
@@ -604,6 +598,52 @@
 				872B5D531DC8B0B900CAB911 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		873D063A1DCDBEB80071B0E8 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				87ED4FBE1DCA37F3003EB478 /* ExtensionDelegate.h */,
+				87ED4FBF1DCA37F3003EB478 /* ExtensionDelegate.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		873D063B1DCDBECB0071B0E8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				872B5D6D1DC8B38900CAB911 /* InterfaceController.h */,
+				872B5D6E1DC8B38900CAB911 /* InterfaceController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		873D063C1DCDBF980071B0E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8744B4451DCC903A004A2E82 /* NewsModel.h */,
+				8744B4461DCC903A004A2E82 /* NewsModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		873D063D1DCDBFA80071B0E8 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				87DCCF111DCC771A009DC7A4 /* NewsRowController.h */,
+				87DCCF121DCC771A009DC7A4 /* NewsRowController.m */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		873D063E1DCDBFD40071B0E8 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				8744B4481DCC90AF004A2E82 /* NewsStorage.h */,
+				8744B4491DCC90AF004A2E82 /* NewsStorage.m */,
+				8744B44B1DCC9AE9004A2E82 /* NewsStorageDelegate.h */,
+			);
+			name = Storage;
 			sourceTree = "<group>";
 		};
 		87686F011D5F304300351C32 /* Categories */ = {

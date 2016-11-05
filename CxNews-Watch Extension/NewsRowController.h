@@ -10,6 +10,15 @@
 @import WatchKit;
 
 @interface NewsRowController : NSObject
+
+/**
+ Row's timestamp lable.
+ */
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *timestampLabel;
+
+/**
+ Row's headline lable.
+ */
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *headlineLabel;
+
 @end

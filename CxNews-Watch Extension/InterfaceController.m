@@ -15,7 +15,9 @@
 @import WatchConnectivity;
 
 @interface InterfaceController ()
+
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
+
 @end
 
 @implementation InterfaceController
@@ -52,6 +54,9 @@
                                    }];
 }
 
+/**
+ Update table view content from NewsStorage's content.
+ */
 -(void)updateTableView {
     NSArray<NewsModel *> *news = [NewsStorage sharedInstance].news;
     [self.table setNumberOfRows:[news count] withRowType:@"NewsRowType"];
@@ -63,7 +68,12 @@
     }
 }
 
--(void)newsDataSourceWasUpdated {
+#pragma mark NewsStorageDelegate methods
+
+/**
+ Updates controller's table view in case of news content update.
+ */
+-(void)storageDidUpdate {
     [self updateTableView];
 }
 
