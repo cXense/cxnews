@@ -19,11 +19,11 @@
                                 <tableRow identifier="NewsRowType" id="ugY-MQ-KX1" customClass="NewsRowController">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="Qgl-DO-pMs">
                                         <items>
-                                            <label alignment="left" text="Timestamp" id="fBq-9a-hpN">
+                                            <label alignment="left" text="Timestamp" numberOfLines="2" id="fBq-9a-hpN">
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                             </label>
-                                            <label alignment="left" text="News Headline" id="25k-zb-lYQ">
+                                            <label alignment="left" text="News Headline" numberOfLines="4" id="25k-zb-lYQ">
                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
                                         </items>
