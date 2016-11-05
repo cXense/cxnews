@@ -7,7 +7,7 @@
 //
 
 #import "NewsModel.h"
-#import "NewsDataSourceDelegate.h"
+#import "NewsStorageDelegate.h"
 
 @import Foundation;
 

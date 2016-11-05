@@ -23,7 +23,7 @@
 -(void)setNews:(NSArray<NewsModel *> *)news {
     _news = news;
     if (self.delegate) {
-        [self.delegate newsDataSourceWasUpdated];
+        [self.delegate storageDidUpdate];
     }
 }
 
