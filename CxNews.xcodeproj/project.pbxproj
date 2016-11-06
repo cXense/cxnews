@@ -369,8 +369,8 @@
 		431A48E7119F836D6712D095 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				431A40149FC6844D43AECB05 /* EventModel.m */,
 				431A42BC48DF52E832FE3833 /* EventModel.h */,
+				431A40149FC6844D43AECB05 /* EventModel.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -419,16 +419,16 @@
 			isa = PBXGroup;
 			children = (
 				8707D8601CF0887A007B1A2B /* CxNews */,
-				878742691CFEDD37000A926B /* CxNewsTests */,
-				871548321CFEAA26008C4248 /* CxNewsUITests */,
 				872B5D421DC8B0B900CAB911 /* CxNews-Watch */,
 				872B5D511DC8B0B900CAB911 /* CxNews-Watch Extension */,
+				878742691CFEDD37000A926B /* CxNewsTests */,
+				871548321CFEAA26008C4248 /* CxNewsUITests */,
 				8717F8201CF764CC002E5948 /* Frameworks */,
+				2C88801F058B6BB824FE0D69 /* Pods */,
 				8707D85F1CF0887A007B1A2B /* Products */,
+				431A48E7119F836D6712D095 /* Shared */,
 				8707D87C1CF088F0007B1A2B /* UIKit.framework */,
 				87EF9C401D7FF4C7007A5564 /* private_conf.plist */,
-				2C88801F058B6BB824FE0D69 /* Pods */,
-				431A48E7119F836D6712D095 /* Shared */,
 			);
 			sourceTree = "<group>";
 		};
@@ -570,9 +570,9 @@
 		872B5D421DC8B0B900CAB911 /* CxNews-Watch */ = {
 			isa = PBXGroup;
 			children = (
-				872B5D431DC8B0B900CAB911 /* Interface.storyboard */,
 				872B5D461DC8B0B900CAB911 /* Assets.xcassets */,
 				872B5D481DC8B0B900CAB911 /* Info.plist */,
+				872B5D431DC8B0B900CAB911 /* Interface.storyboard */,
 			);
 			path = "CxNews-Watch";
 			sourceTree = "<group>";
@@ -580,14 +580,14 @@
 		872B5D511DC8B0B900CAB911 /* CxNews-Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				873D063E1DCDBFD40071B0E8 /* Storage */,
-				873D063D1DCDBFA80071B0E8 /* Table */,
-				873D063C1DCDBF980071B0E8 /* Model */,
-				873D063B1DCDBECB0071B0E8 /* Controllers */,
 				873D063A1DCDBEB80071B0E8 /* Basic */,
+				873D063B1DCDBECB0071B0E8 /* Controllers */,
+				873D063C1DCDBF980071B0E8 /* Model */,
+				873D063E1DCDBFD40071B0E8 /* Storage */,
+				872B5D521DC8B0B900CAB911 /* Supporting Files */,
+				873D063D1DCDBFA80071B0E8 /* Table */,
 				872B5D5D1DC8B0B900CAB911 /* Assets.xcassets */,
 				872B5D5F1DC8B0B900CAB911 /* Info.plist */,
-				872B5D521DC8B0B900CAB911 /* Supporting Files */,
 			);
 			path = "CxNews-Watch Extension";
 			sourceTree = "<group>";
@@ -597,7 +597,7 @@
 			children = (
 				872B5D531DC8B0B900CAB911 /* PushNotificationPayload.apns */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		873D063A1DCDBEB80071B0E8 /* Basic */ = {
@@ -606,7 +606,7 @@
 				87ED4FBE1DCA37F3003EB478 /* ExtensionDelegate.h */,
 				87ED4FBF1DCA37F3003EB478 /* ExtensionDelegate.m */,
 			);
-			name = Basic;
+			path = Basic;
 			sourceTree = "<group>";
 		};
 		873D063B1DCDBECB0071B0E8 /* Controllers */ = {
@@ -615,7 +615,7 @@
 				872B5D6D1DC8B38900CAB911 /* InterfaceController.h */,
 				872B5D6E1DC8B38900CAB911 /* InterfaceController.m */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		873D063C1DCDBF980071B0E8 /* Model */ = {
@@ -624,7 +624,7 @@
 				8744B4451DCC903A004A2E82 /* NewsModel.h */,
 				8744B4461DCC903A004A2E82 /* NewsModel.m */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		873D063D1DCDBFA80071B0E8 /* Table */ = {
@@ -633,7 +633,7 @@
 				87DCCF111DCC771A009DC7A4 /* NewsRowController.h */,
 				87DCCF121DCC771A009DC7A4 /* NewsRowController.m */,
 			);
-			name = Table;
+			path = Table;
 			sourceTree = "<group>";
 		};
 		873D063E1DCDBFD40071B0E8 /* Storage */ = {
@@ -643,7 +643,7 @@
 				8744B4491DCC90AF004A2E82 /* NewsStorage.m */,
 				8744B44B1DCC9AE9004A2E82 /* NewsStorageDelegate.h */,
 			);
-			name = Storage;
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		87686F011D5F304300351C32 /* Categories */ = {
@@ -1244,6 +1244,7 @@
 				872B5D441DC8B0B900CAB911 /* Base */,
 			);
 			name = Interface.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		87874DE41D41F7EF00A24AFD /* Article.storyboard */ = {
