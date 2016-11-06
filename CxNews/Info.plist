@@ -25,7 +25,7 @@
 		<dict/>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1578</string>
+	<string>1579</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>org-appextension-feature-password-management</string>
