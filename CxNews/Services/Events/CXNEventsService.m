@@ -15,22 +15,30 @@
     NSString *_applicationVersion;
 }
 
--(instancetype)init {
+- (instancetype)init {
     if (self = [super init]) {
         NSDictionary<NSString *, id> *infoDictionary = [[NSBundle mainBundle] infoDictionary];
         _applicationName = [infoDictionary objectForKey:@"CFBundleName"];
         _applicationVersion = [NSString stringWithFormat:@"%@.%@",
-                               [infoDictionary objectForKey:@"CFBundleShortVersionString"],
-                               [infoDictionary objectForKey:@"CFBundleVersion"]];
+                                                         [infoDictionary objectForKey:@"CFBundleShortVersionString"],
+                                                         [infoDictionary objectForKey:@"CFBundleVersion"]];
     }
     return self;
 }
 
--(void)trackEventWithName:(NSString *)eventName
-          forPageWithName:(NSString *)pageName
-                   andUrl:(NSString *)pageUrl
-          andRefferingUrl:(NSString *)referringUrl
-        byTrackerWithName:(NSString *)trackerName {
+- (void)trackEvent:(EventModel *)event {
+    [self trackEventWithName:event.eventName
+             forPageWithName:event.pageName
+                      andUrl:event.url
+             andRefferingUrl:event.referringUrl
+           byTrackerWithName:event.trackerName];
+}
+
+- (void)trackEventWithName:(NSString *)eventName
+           forPageWithName:(NSString *)pageName
+                    andUrl:(NSString *)pageUrl
+           andRefferingUrl:(NSString *)referringUrl
+         byTrackerWithName:(NSString *)trackerName {
     /*
      Cxense Insight is powerful and flexible engine for gathering and reporting on custom events.
      
@@ -70,8 +78,8 @@
     }];
 }
 
--(void)trackActiveTimeOfEventWithName:(NSString *)eventName
-                          trackerName:(NSString *)trackerName {
+- (void)trackActiveTimeOfEventWithName:(NSString *)eventName
+                           trackerName:(NSString *)trackerName {
     /*
      Cxense Insight SDK allows tracking active time for any event that was reported earlier by using 
      'trackerWithName:siteId:trackEvent:name:completion:' method.
@@ -80,7 +88,7 @@
                              siteId:kCxenseInsightSiteId] trackActiveTimeForEvent:eventName];
 }
 
-+(instancetype)sharedInstance {
++ (instancetype)sharedInstance {
     static dispatch_once_t onceToken;
     static CXNEventsService *instance = nil;
     dispatch_once(&onceToken, ^{
