@@ -18,6 +18,8 @@
 #import "CXNEventsService.h"
 #import "FeedViewController+InsetsGenerator.h"
 
+@import WatchConnectivity;
+
 @interface FeedViewController ()
 
 /**
@@ -46,9 +48,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
+    
     _imageDataCache = [NSMutableDictionary dictionary];
-
+    
     // Setup SWRevealViewController
     SWRevealViewController *revealViewController = self.revealViewController;
     if (revealViewController) {
@@ -56,19 +58,19 @@
         [self.sidebarButton setAction:@selector(revealToggle:)];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-
+    
     // Configure UICollectionView insets dynamically
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) [self.ibFeedCollectionView collectionViewLayout];
     layout.sectionInset = [FeedViewController calculateEdgeInsets];
     [layout invalidateLayout];
-
+    
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self
                         action:@selector(loadData)
               forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:_refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
-
+    
     // Create new Recommendations Service instance
     _recoService = [[RecommendationsService alloc] init];
     [self loadData];
@@ -83,7 +85,7 @@
         self.userBarButton.image = nil;
         self.userBarButton.title = @"Login";
     }
-
+    
     [[CXNEventsService sharedInstance] trackEventWithName:@"Feed View"
                                           forPageWithName:@"Recommendations"
                                                    andUrl:kCxenseSiteBaseUrl
@@ -107,14 +109,14 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reco_cell"
                                                                            forIndexPath:indexPath];
-
+    
     ArticleModel *article = self.articles[(NSUInteger) indexPath.row + 1];
-
+    
     NSString *urlString = article.imageUrl;
     NSURL *imageUrl = [NSURL URLWithString:urlString];
-
+    
     UIImageView *thumbnail = [cell viewWithTag:kCxenseFeedViewCollectionViewCellImageTag];
-
+    
     if ([_imageDataCache valueForKey:urlString] != nil) {
         thumbnail.alpha = 0.0;
         thumbnail.image = [_imageDataCache valueForKey:urlString];
@@ -139,16 +141,16 @@
                                                       forKey:urlString];
                                }];
     }
-
+    
     UILabel *section = [cell viewWithTag:kCxenseFeedViewCollectionViewCellBodyTag];
     section.text = article.section;
-
+    
     UITextView *headline = [cell viewWithTag:kCxenseFeedViewCollectionViewCellTitleTag];
     headline.text = article.headline;
-
+    
     UILabel *timestamp = [cell viewWithTag:kCxenseFeedViewCollectionViewCellTimestampTag];
     timestamp.text = article.timestamp;
-
+    
     return cell;
 }
 
@@ -158,19 +160,19 @@
     UICollectionReusableView *supplementaryView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                                      withReuseIdentifier:@"header_view"
                                                                                             forIndexPath:indexPath];
-
+    
     if ([kind isEqualToString:UICollectionElementKindSectionHeader] && self.articles.count > 0) {
         ArticleModel *article = self.articles[0];
-
+        
         UIButton *section = [supplementaryView viewWithTag:kCxenseFeedViewCollectionViewSupplementaryCellButtonTag];
         section.layer.cornerRadius = 15.0f;
-
+        
         [section setTitle:article.section
                  forState:UIControlStateNormal];
-
+        
         UITextView *textView = [supplementaryView viewWithTag:kCxenseFeedViewCollectionViewSupplementaryCellTitleTag];
         textView.text = article.headline;
-
+        
         NSString *urlString = article.imageUrl;
         NSURL *imageUrl = [NSURL URLWithString:urlString];
         UIImageView *imageView = [supplementaryView viewWithTag:kCxenseFeedViewCollectionViewSupplementaryCellImageTag];
@@ -184,9 +186,9 @@
                                            NSLog(@"Image load for supplementary view has failed");
                                            return;
                                        }
-
+                                       
                                        imageView.alpha = 0.0;
-
+                                       
                                        UIImage *image = [UIImage imageWithData:data];
                                        imageView.image = image;
                                        [_imageDataCache setValue:image
@@ -200,7 +202,7 @@
     } else {
         supplementaryView.hidden = YES;
     }
-
+    
     return supplementaryView;
 }
 
@@ -250,10 +252,12 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                                                        self.articles = [Reco2ArticleConverter articlesFromRecommendations:items];
                                                        assert(self.articles.count == items.count);
                                                        [self.collectionView reloadData];
-
+                                                       
                                                        if (_refreshControl.isRefreshing) {
                                                            [_refreshControl endRefreshing];
                                                        }
+                                                       
+                                                       [self updateApplicationContextWithArticles:self.articles];
                                                    }];
     } else {
         [self.collectionView reloadData];
@@ -265,6 +269,20 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 -(void)updateView {
     [self loadData];
+}
+
+#pragma mark Watch Connectivity utils
+-(void)updateApplicationContextWithArticles:(NSArray<ArticleModel *>*)articles {
+    if ([WCSession isSupported]) {
+        NSMutableArray<NSString *>*sequence = [NSMutableArray arrayWithCapacity:([articles count] * 2)];
+        
+        [articles enumerateObjectsUsingBlock:^(ArticleModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [sequence addObject:obj.timestamp];
+            [sequence addObject:obj.headline];
+        }];
+        
+        [[WCSession defaultSession] updateApplicationContext:@{@"articles":sequence} error:nil];
+    }
 }
 
 @end
