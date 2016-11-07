@@ -1,5 +1,7 @@
 language: objective-c
 osx_image: xcode8
 
+xcode_workspace: CxNews.xcworkspace
+
 before_install:
 - pod repo update
