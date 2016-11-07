@@ -1,4 +1,4 @@
-[![codebeat badge](https://codebeat.co/badges/3ce3bf3a-a3c3-4da3-b095-1eea1f655b27)](https://codebeat.co/projects/github-com-cxense-cxnews)
+[![Build Status](https://travis-ci.org/cXense/cxnews.svg?branch=master)](https://travis-ci.org/cXense/cxnews) [![codebeat badge](https://codebeat.co/badges/3ce3bf3a-a3c3-4da3-b095-1eea1f655b27)](https://codebeat.co/projects/github-com-cxense-cxnews)
 
 # CxNews
 #### What CxNews is?
