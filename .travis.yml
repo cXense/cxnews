@@ -4,6 +4,7 @@ osx_image: xcode8
 xcode_workspace: CxNews.xcworkspace
 
 before_script:
+- pod repo update
 - bundle exec pod install
 
 script:
