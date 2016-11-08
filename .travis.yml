@@ -4,12 +4,10 @@ osx_image: xcode8
 xcode_workspace: CxNews.xcworkspace
 
 before_script:
-- bundle exec pod repo update
-- bundle exec pod install
+- pod repo update
 
 script:
-- set -o pipefail && bundle exec rake test | bundle exec xcpretty --test --color
-- bundle exec pod lib lint --quick
+- xcodebuild -scheme CxNews -configuration Debug clean build test -destination 'platform=iOS Simulator,name=iPhone 6s Plus,OS=9.3'
 
 after_success: 
 - bundle exec slather
