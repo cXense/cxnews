@@ -1,0 +1,3 @@
+service: coveralls
+xcodeproj: CxNews.xcodeproj
+scheme: CxNews

@@ -5,3 +5,7 @@ xcode_workspace: CxNews.xcworkspace
 
 before_install:
 - pod repo update
+- gem install slather
+
+after_success: 
+- bundle exec slather
