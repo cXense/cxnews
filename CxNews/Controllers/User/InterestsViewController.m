@@ -58,7 +58,7 @@
     self.chartView.rightAxis.enabled = NO;
     self.chartView.userInteractionEnabled = NO;
     self.chartView.drawBarShadowEnabled = NO;
-    self.chartView.maxVisibleValueCount = 100;
+    self.chartView.maxVisibleCount = 100;
     self.chartView.legend.enabled = NO;
     self.chartView.gridBackgroundColor = [UIColor grayColor];
     self.chartView.xAxis.labelPosition = XAxisLabelPositionBottom;
@@ -85,21 +85,25 @@
             for (InterestModel *child in interest.children) {
                 [colors addObject:[UIColor colorWithRed:0.64 green:0.89 blue:1.00 alpha:1.0]];
                 [xVals addObject:child.category];
-                [yVals addObject:[[BarChartDataEntry alloc] initWithValue:child.weight xIndex:cnt]];
+//                [yVals addObject:[[BarChartDataEntry alloc] initWithValue:child.weight xIndex:cnt]];
+                [yVals addObject:[[BarChartDataEntry alloc] initWithX:cnt y:cnt data:nil]];
                 cnt++;
             }
         }
+        
         [colors addObject:[UIColor colorWithRed:0.33 green:0.79 blue:0.99 alpha:1.0]];
         [xVals addObject:interest.category];
-        [yVals addObject:[[BarChartDataEntry alloc] initWithValue:interest.weight xIndex:cnt]];
+//        [yVals addObject:[[BarChartDataEntry alloc] initWithValue:interest.weight xIndex:cnt]];
+        [yVals addObject:[[BarChartDataEntry alloc] initWithX:cnt y:cnt data:nil]];
         cnt++;
     }
 
-    BarChartDataSet *set = [[BarChartDataSet alloc] initWithYVals:yVals label:@"Interests"];
-    set.barSpace = 0.35;
+    BarChartDataSet *set = [[BarChartDataSet alloc] initWithValues:yVals label:@"Interests"];
+//    set.barSpace = 0.35;
     set.colors = colors;
 
-    BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSets:@[set]];
+    BarChartData *data = [[BarChartData alloc] initWithDataSet:set];
+//    BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSets:@[set]];
     [data setValueFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:10.f]];
 
     self.chartView.data = data;
