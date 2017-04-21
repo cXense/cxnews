@@ -46,6 +46,10 @@
 		879007641D5DDCA700709591 /* InterestsProcessingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 879007631D5DDCA700709591 /* InterestsProcessingService.m */; };
 		879007661D5DDF8000709591 /* InterestsProcessingServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 879007651D5DDF8000709591 /* InterestsProcessingServiceTests.m */; };
 		8790D5531CF9A2FE0009EBFF /* RearMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8790D5521CF9A2FE0009EBFF /* RearMenuViewController.m */; };
+		879416DC1EA786AE00D383EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 879416DB1EA786AE00D383EA /* main.m */; };
+		879416DF1EA786AE00D383EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 879416DE1EA786AE00D383EA /* AppDelegate.m */; };
+		879416E51EA786AE00D383EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 879416E31EA786AE00D383EA /* Main.storyboard */; };
+		879416E71EA786AE00D383EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879416E61EA786AE00D383EA /* Assets.xcassets */; };
 		87A926C51D9BC63B00299341 /* FeedViewController+InsetsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */; };
 		87A926CB1D9BD28400299341 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A926CA1D9BD28400299341 /* Video.storyboard */; };
 		87A926D61D9BDCE000299341 /* VideoFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926D51D9BDCE000299341 /* VideoFeedTableViewController.m */; };
@@ -57,6 +61,10 @@
 		87B267601D22DE520061F635 /* GenericPasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B2675F1D22DE520061F635 /* GenericPasswordExtension.m */; };
 		87B340EA1D4767F200929491 /* CXNEventsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B340E91D4767F200929491 /* CXNEventsService.m */; };
 		87B340EE1D479C3F00929491 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B340EC1D479C3F00929491 /* UserProfile.storyboard */; };
+		87B45A8E1EAA28EB00FB1ADB /* TvNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B45A8D1EAA28EB00FB1ADB /* TvNewsViewController.m */; };
+		87B45A8F1EAA2FD700FB1ADB /* VideoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926DC1D9BEF0500299341 /* VideoService.m */; };
+		87B45A901EAA33AE00FB1ADB /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A926D81D9BEE0C00299341 /* VideoModel.m */; };
+		87B45A911EAA342300FB1ADB /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 87668A2C1D0333D700AC1B4F /* Constants.m */; };
 		87B7FF101D28EAC3002D040D /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF0F1D28EAC3002D040D /* ArticleViewController.m */; };
 		87B7FF141D28EF34002D040D /* ArticleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF131D28EF34002D040D /* ArticleService.m */; };
 		87B7FF171D28EF4F002D040D /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF161D28EF4F002D040D /* ArticleModel.m */; };
@@ -245,6 +253,13 @@
 		879007651D5DDF8000709591 /* InterestsProcessingServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsProcessingServiceTests.m; sourceTree = "<group>"; };
 		8790D5511CF9A2FE0009EBFF /* RearMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearMenuViewController.h; sourceTree = "<group>"; };
 		8790D5521CF9A2FE0009EBFF /* RearMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearMenuViewController.m; sourceTree = "<group>"; };
+		879416D81EA786AE00D383EA /* CxNews-Tv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CxNews-Tv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		879416DB1EA786AE00D383EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		879416DD1EA786AE00D383EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		879416DE1EA786AE00D383EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		879416E41EA786AE00D383EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		879416E61EA786AE00D383EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		879416E81EA786AE00D383EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87A926C31D9BC63B00299341 /* FeedViewController+InsetsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedViewController+InsetsGenerator.h"; sourceTree = "<group>"; };
 		87A926C41D9BC63B00299341 /* FeedViewController+InsetsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FeedViewController+InsetsGenerator.m"; sourceTree = "<group>"; };
 		87A926CA1D9BD28400299341 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
@@ -264,6 +279,8 @@
 		87B340E81D4767F200929491 /* CXNEventsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNEventsService.h; sourceTree = "<group>"; };
 		87B340E91D4767F200929491 /* CXNEventsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNEventsService.m; sourceTree = "<group>"; };
 		87B340ED1D479C3F00929491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserProfile.storyboard; sourceTree = "<group>"; };
+		87B45A8C1EAA28EB00FB1ADB /* TvNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvNewsViewController.h; sourceTree = "<group>"; };
+		87B45A8D1EAA28EB00FB1ADB /* TvNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TvNewsViewController.m; sourceTree = "<group>"; };
 		87B7FF0E1D28EAC3002D040D /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		87B7FF0F1D28EAC3002D040D /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		87B7FF121D28EF34002D040D /* ArticleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleService.h; sourceTree = "<group>"; };
@@ -315,6 +332,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		878742651CFEDD37000A926B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		879416D51EA786AE00D383EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -423,6 +447,7 @@
 				872B5D511DC8B0B900CAB911 /* CxNews-Watch Extension */,
 				878742691CFEDD37000A926B /* CxNewsTests */,
 				871548321CFEAA26008C4248 /* CxNewsUITests */,
+				879416D91EA786AE00D383EA /* CxNews-Tv */,
 				8717F8201CF764CC002E5948 /* Frameworks */,
 				2C88801F058B6BB824FE0D69 /* Pods */,
 				8707D85F1CF0887A007B1A2B /* Products */,
@@ -440,6 +465,7 @@
 				878742681CFEDD37000A926B /* CxNewsTests.xctest */,
 				872B5D411DC8B0B900CAB911 /* CxNews-Watch.app */,
 				872B5D4D1DC8B0B900CAB911 /* CxNews-Watch Extension.appex */,
+				879416D81EA786AE00D383EA /* CxNews-Tv.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -730,6 +756,37 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		879416D91EA786AE00D383EA /* CxNews-Tv */ = {
+			isa = PBXGroup;
+			children = (
+				879416EC1EA787BE00D383EA /* Controllers */,
+				879416DD1EA786AE00D383EA /* AppDelegate.h */,
+				879416DE1EA786AE00D383EA /* AppDelegate.m */,
+				879416E31EA786AE00D383EA /* Main.storyboard */,
+				879416E61EA786AE00D383EA /* Assets.xcassets */,
+				879416E81EA786AE00D383EA /* Info.plist */,
+				879416DA1EA786AE00D383EA /* Supporting Files */,
+			);
+			path = "CxNews-Tv";
+			sourceTree = "<group>";
+		};
+		879416DA1EA786AE00D383EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				879416DB1EA786AE00D383EA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		879416EC1EA787BE00D383EA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				87B45A8C1EAA28EB00FB1ADB /* TvNewsViewController.h */,
+				87B45A8D1EAA28EB00FB1ADB /* TvNewsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		87A926D01D9BDCC200299341 /* Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -900,6 +957,23 @@
 			productReference = 878742681CFEDD37000A926B /* CxNewsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		879416D71EA786AE00D383EA /* CxNews-Tv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 879416EB1EA786AE00D383EA /* Build configuration list for PBXNativeTarget "CxNews-Tv" */;
+			buildPhases = (
+				879416D41EA786AE00D383EA /* Sources */,
+				879416D51EA786AE00D383EA /* Frameworks */,
+				879416D61EA786AE00D383EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CxNews-Tv";
+			productName = "CxNews-Tv";
+			productReference = 879416D81EA786AE00D383EA /* CxNews-Tv.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -936,6 +1010,11 @@
 						LastSwiftMigration = 0800;
 						TestTargetID = 8707D85D1CF0887A007B1A2B;
 					};
+					879416D71EA786AE00D383EA = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 9NHCZJEZXH;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 8707D8591CF0887A007B1A2B /* Build configuration list for PBXProject "CxNews" */;
@@ -962,6 +1041,7 @@
 				878742671CFEDD37000A926B /* CxNewsTests */,
 				872B5D401DC8B0B900CAB911 /* CxNews-Watch */,
 				872B5D4C1DC8B0B900CAB911 /* CxNews-Watch Extension */,
+				879416D71EA786AE00D383EA /* CxNews-Tv */,
 			);
 		};
 /* End PBXProject section */
@@ -1043,6 +1123,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		879416D61EA786AE00D383EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				879416E71EA786AE00D383EA /* Assets.xcassets in Resources */,
+				879416E51EA786AE00D383EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1058,7 +1147,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3CD506F2BE23F4BFF35DFAC5 /* [CP] Embed Pods Frameworks */ = {
@@ -1217,6 +1306,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		879416D41EA786AE00D383EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				879416DF1EA786AE00D383EA /* AppDelegate.m in Sources */,
+				87B45A901EAA33AE00FB1ADB /* VideoModel.m in Sources */,
+				87B45A8F1EAA2FD700FB1ADB /* VideoService.m in Sources */,
+				879416DC1EA786AE00D383EA /* main.m in Sources */,
+				87B45A8E1EAA28EB00FB1ADB /* TvNewsViewController.m in Sources */,
+				87B45A911EAA342300FB1ADB /* Constants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1282,6 +1384,14 @@
 			);
 			name = Article.storyboard;
 			path = .;
+			sourceTree = "<group>";
+		};
+		879416E31EA786AE00D383EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				879416E41EA786AE00D383EA /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		87B340EC1D479C3F00929491 /* UserProfile.storyboard */ = {
@@ -1572,6 +1682,42 @@
 			};
 			name = Release;
 		};
+		879416E91EA786AE00D383EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = 9NHCZJEZXH;
+				INFOPLIST_FILE = "CxNews-Tv/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anverbogatov.CxNews-Tv";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		879416EA1EA786AE00D383EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = 9NHCZJEZXH;
+				INFOPLIST_FILE = "CxNews-Tv/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anverbogatov.CxNews-Tv";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1625,6 +1771,15 @@
 			buildConfigurations = (
 				878742701CFEDD37000A926B /* Debug */,
 				878742711CFEDD37000A926B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		879416EB1EA786AE00D383EA /* Build configuration list for PBXNativeTarget "CxNews-Tv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				879416E91EA786AE00D383EA /* Debug */,
+				879416EA1EA786AE00D383EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

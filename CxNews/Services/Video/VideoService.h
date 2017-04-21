@@ -20,7 +20,7 @@ typedef void(^VideoServiceCompletion)(NSSet<VideoModel *> *videos, NSError *erro
 /**
  Returns descriptors of all videos available to play.
 
- @return array with video models
+ @param completion completion block that handles errors or retreived videos
  */
 -(void)availableVideosWithCompleteion:(VideoServiceCompletion)completion;
 
