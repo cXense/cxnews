@@ -84,11 +84,6 @@
                             </button>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="ibCenterNewsButton" destination="xiE-Vh-mCy" id="Kgp-zK-8d4"/>
-                        <outlet property="ibLeftNewsButton" destination="8eW-Ss-sb3" id="L5E-SF-S9f"/>
-                        <outlet property="ibRightNewsButton" destination="KZ3-w7-rxZ" id="V4i-za-kYC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ab-Kc-pRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
