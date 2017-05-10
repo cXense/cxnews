@@ -5,6 +5,7 @@ target :CxNews do
 
   pod 'Charts', '~> 3'
   pod 'HockeySDK'
+  pod 'MBProgressHUD'
   pod 'SWRevealViewController', '~>2'
 
   # Used in CxNews for loading user profiles
