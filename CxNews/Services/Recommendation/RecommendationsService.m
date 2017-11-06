@@ -7,14 +7,15 @@
 //
 
 #import "RecommendationsService.h"
-#import "CxenseContent.h"
 #import "UserService.h"
 #import "Constants.h"
+
+@import CxenseSDK;
 
 @implementation RecommendationsService
 
 - (void)fetchRecommendationsForUserWithExternalId:(NSString *)externalId
-                                     withCallback:(void (^)(BOOL success, NSArray *items, NSError *error))callback {
+                                     withCallback:(void (^)(NSArray<ContentRecommendation *> *items, NSError *error))callback {
     /*
      This method is a simple example of working with Cxense Content APIs.
      
@@ -36,27 +37,24 @@
      information about current user.
      */
     NSString *userExternalId = [[UserService sharedInstance] userExternalId];
-    CxenseContentUser *defUser = [CxenseContentUser userWithIds:@{@"usi" : userExternalId, @"cxd" : userExternalId}
+    ContentUser *defaultUser = [[ContentUser alloc] initWithIds:@{@"usi" : userExternalId, @"cxd" : userExternalId}
                                                           likes:nil
                                                        dislikes:nil];
-    [CxenseContent setDefaultUser:defUser];
-
+    
     /*
      You can configure your widget to show more relevant information to the user's interests.
-     That can be done through CxenseContentContext object.
+     That can be done through ContentContext object.
      */
-    CxenseContentContext *context = [CxenseContentContext new];
-    [context setUrl:kCxenseSiteBaseUrl];
-
-    CxenseContentWidget *widget = [CxenseContent widgetWithId:kCxenseWidgetId
-                                                      context:context
-                                                         user:defUser];
-
+    ContentContext *context = [ContentContext new];
+    context.url = kCxenseSiteBaseUrl;
+    
+    ContentWidget *widget = [Cxense widgetWithId:kCxenseWidgetId context:context andUser:defaultUser];
+    
     /*
      Result content recommendation items can be recieved by using 'fetchItemsWithCompletion:' method.
      Content recommendation items and the widget itself have no UI, so, it is up to you how to present them.
      */
-    [widget fetchItemsWithCompletion:callback];
+    [widget fetchItemsWithCallback:callback];
 }
 
 @end

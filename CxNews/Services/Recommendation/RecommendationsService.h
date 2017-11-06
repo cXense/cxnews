@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@import CxenseSDK;
 
 @interface RecommendationsService : NSObject
 
@@ -18,6 +19,6 @@
  @param callback   callback that will be invoked as soon as recommendations will be loaded
  */
 - (void)fetchRecommendationsForUserWithExternalId:(NSString *)externalId
-                                     withCallback:(void (^)(BOOL success, NSArray *items, NSError *error))callback;
+                                     withCallback:(void (^)(NSArray<ContentRecommendation *> *items, NSError *error))callback;
 
 @end

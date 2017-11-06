@@ -8,12 +8,11 @@
 
 #import "AppDelegate.h"
 #import "UserService.h"
-#import "CxenseDMP.h"
-#import "CxenseInsight.h"
 #import "ArticleServiceAdapter.h"
 #import "UserProfileService.h"
 #import "CXNEventsService.h"
 
+@import CxenseSDK;
 @import HockeySDK;
 
 @implementation AppDelegate
@@ -31,12 +30,10 @@
     [hockeyManager startManager];
     [hockeyManager.authenticator authenticateInstallation];
     
-    // Cxense DMP SDK initialization
-    [CxenseDMP setUsername:privateConfig[@"CXENSE_API_USERNAME"]
-                    apiKey:privateConfig[@"CXENSE_API_KEY"]];
-    
-    // Cxense Insight SDK initialization
-    [CxenseInsight setDispatchMode:CxenseInsightDispatchModeOnline];
+    // Cxense SDK initialization
+    Configuration *config = [[Configuration alloc] initWithUserName:privateConfig[@"CXENSE_API_USERNAME"] apiKey:privateConfig[@"CXENSE_API_KEY"]];
+    config.dispatchMode = DispatchModeOnline;
+    [Cxense initializeWithConfiguration:config error:nil];
     
     // Pre-fetch user data if logged in
     if ([[UserService sharedInstance] isUserAuthorized]) {

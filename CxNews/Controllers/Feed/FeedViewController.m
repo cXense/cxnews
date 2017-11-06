@@ -8,7 +8,6 @@
 
 #import "ArticleViewController.h"
 #import "FeedViewController.h"
-#import "CxenseContentRecommendation.h"
 #import "RecommendationsService.h"
 #import "SWRevealViewController.h"
 #import "UserService.h"
@@ -19,6 +18,7 @@
 #import "FeedViewController+InsetsGenerator.h"
 
 @import WatchConnectivity;
+@import CxenseSDK;
 
 @interface FeedViewController ()
 
@@ -244,7 +244,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.articles == nil) {
         // set recommended articles only if external articles list was not provided
         [_recoService fetchRecommendationsForUserWithExternalId:[[UserService sharedInstance] userExternalId]
-                                                   withCallback:^(BOOL success, NSArray *items, NSError *error) {
+                                                   withCallback:^(NSArray<ContentRecommendation *> *items, NSError *error) {
                                                        if (error) {
                                                            NSLog(@"Can not fetch content recommendations");
                                                        }
