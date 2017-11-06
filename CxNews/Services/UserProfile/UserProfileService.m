@@ -6,9 +6,10 @@
 #import "UserProfileService.h"
 #import "UserModel.h"
 #import "InterestModel.h"
-#import "CxenseDMP.h"
 #import "InterestsProcessingService.h"
 #import "Constants.h"
+
+@import CxenseSDK;
 
 @implementation UserProfileService {
     NSMutableDictionary<NSString *, UserModel *> *dataCache;
@@ -62,26 +63,26 @@
 
 - (void)loadInterestsForUserWithExternalId:(NSString *)externalId
                             withCompletion:(void (^)(NSArray<InterestModel *> *))completion {
-    [CxenseDMP getUserProfileWithUserId:externalId
-                         identifierType:@"cx"
-                             completion:^(CxenseDMPUser *user, NSError *error) {
-                                 if (error) {
-                                     NSLog(@"Interests profile load failed with %@", error.description);
-                                 }
-
-                                 NSMutableArray<InterestModel *> *result = [NSMutableArray array];
-                                 for (id obj in [user profiles]) {
-                                     CxenseDMPProfile *profile = (CxenseDMPProfile *) obj;
-                                     for (id obj in profile.groups) {
-                                         CxenseDMPGroup *group = (CxenseDMPGroup *)obj;
-                                         if ([group.group isEqualToString:@"cxd-categories"]) {
-                                             NSLog(@"Found interest: '%@' = '%f'", profile.item, group.weight);
-                                             [result addObject:[[InterestModel alloc] initWithCategory:profile.item andWeight:group.weight * 100]];
-                                         }
-                                     }
-                                 }
-                                 completion([InterestsProcessingService processInterestsTree:result]);
-                             }];
+    
+    [Cxense getUserProfileWithUserId:externalId identifierType:@"cx" :nil :YES :nil andCallback:^(DMPUser* user, NSError* error) {
+        if (error) {
+            NSLog(@"Interests profile load failed with %@", error.description);
+        }
+        
+        NSMutableArray<InterestModel *> *result = [NSMutableArray array];
+        // TODO: Update when CxenseSDK 1.1 will be available
+//        for (id obj in [user profiles]) {
+//            CxenseDMPProfile *profile = (CxenseDMPProfile *) obj;
+//            for (id obj in profile.groups) {
+//                CxenseDMPGroup *group = (CxenseDMPGroup *)obj;
+//                if ([group.group isEqualToString:@"cxd-categories"]) {
+//                    NSLog(@"Found interest: '%@' = '%f'", profile.item, group.weight);
+//                    [result addObject:[[InterestModel alloc] initWithCategory:profile.item andWeight:group.weight * 100]];
+//                }
+//            }
+//        }
+        completion([InterestsProcessingService processInterestsTree:result]);
+    }];
 }
 
 + (instancetype)sharedInstance {

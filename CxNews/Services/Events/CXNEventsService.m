@@ -7,8 +7,9 @@
 //
 
 #import "CXNEventsService.h"
-#import "CxenseInsight.h"
 #import "Constants.h"
+
+@import CxenseSDK;
 
 @implementation CXNEventsService {
     NSString *_applicationName;
@@ -42,17 +43,12 @@
     /*
      Cxense Insight is powerful and flexible engine for gathering and reporting on custom events.
      
-     Cxense Insight SDK also operates with events. Event are list of parameters related to 
-     certain moment of time or session. They can be built by using CxenseInsightEventBuilder class.
+     Cxense SDK also operates with events. Event are list of parameters related to
+     certain moment of time or session. They can be built by using one of the provided
+     classes - PageViewEvent or PerformanceEvent.
      */
-    CxenseInsightEventBuilder *builder = [CxenseInsightEventBuilder pageViewEventWithURL:pageUrl referringURL:referringUrl];
-
-    /*
-     Each event has required parameters like 'pageUrl' and can have any amount of custom parameters
-     on which you can report later.
-     */
-    [builder setParameter:pageName
-                   forKey:@"pgn"];
+    PageViewEvent *event = [[PageViewEvent alloc] initWithName:eventName];
+    
     /*
      Following code demonstrates one of best practises of working with events custom parameters.
      We are tracking here two vital parameters:
@@ -62,30 +58,32 @@
      will show you statistics on your applications & their versions. This can be important if you have
      multiple applications & version accessing same resources.
      */
-    [builder setCustomParameter:_applicationName
-                         forKey:@"cxn_app"];
-    [builder setCustomParameter:_applicationVersion
-                         forKey:@"cxn_appv"];
-
+    [event addCustomParameterForKey:@"cxn_app" withValue:_applicationName];
+    [event addCustomParameterForKey:@"cxn_appv" withValue:_applicationVersion];
+    
     /*
-     Following method reports your event to Cxense Insight engine.
+     Even if Cxense SDK's API does not provide dedicated method to set certain parameter, you can still
+     add it to event's data. For doing that you must consult with event's data reference: https://wiki.cxense.com/display/cust/Event+data
+     in attempt to find exact name of paramter you want to attach to event. And then - you must use
+     following method.
      */
-    [[CxenseInsight trackerWithName:trackerName
-                             siteId:kCxenseInsightSiteId] trackEvent:[builder build] name:eventName completion:^(NSDictionary *event, NSError *error) {
-        if (error) {
-            NSLog(@"Event for url '%@' was not send because '%@'", pageUrl, [error description]);
-        }
-    }];
+    [event addParameterForKey:@"pgn" withValue:pageName];
+    
+    event.location = pageUrl;
+    
+    /*
+     Following method reports your event to Cxense SDK's dispatch engine.
+     */
+    [Cxense reportEvent:event];
 }
 
 - (void)trackActiveTimeOfEventWithName:(NSString *)eventName
                            trackerName:(NSString *)trackerName {
     /*
-     Cxense Insight SDK allows tracking active time for any event that was reported earlier by using 
-     'trackerWithName:siteId:trackEvent:name:completion:' method.
+     Cxense SDK allows tracking active time for any event that was reported earlier by using
+     'trackActiveTimeForEvent:' method.
      */
-    [[CxenseInsight trackerWithName:trackerName
-                             siteId:kCxenseInsightSiteId] trackActiveTimeForEvent:eventName];
+    [Cxense trackActiveTimeForEvent:eventName];
 }
 
 + (instancetype)sharedInstance {

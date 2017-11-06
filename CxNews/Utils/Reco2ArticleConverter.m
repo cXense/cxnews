@@ -7,28 +7,29 @@
 //
 
 #import "Reco2ArticleConverter.h"
-#import "CxenseContentRecommendation.h"
 #import "ArticleModel.h"
 #import "ATS-URL-Converter.h"
 
+@import CxenseSDK;
+
 @implementation Reco2ArticleConverter
 
-+ (NSArray<ArticleModel *> *)articlesFromRecommendations:(NSArray<CxenseContentRecommendation *> *)recos {
++ (NSArray<ArticleModel *> *)articlesFromRecommendations:(NSArray<ContentRecommendation *> *)recos {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:recos.count];
-    for (CxenseContentRecommendation *reco in recos) {
+    for (ContentRecommendation *reco in recos) {
         [result addObject:[Reco2ArticleConverter articleFromRecommendation:reco]];
     }
     return result;
 }
 
-+ (ArticleModel *)articleFromRecommendation:(CxenseContentRecommendation *)reco {
++ (ArticleModel *)articleFromRecommendation:(ContentRecommendation *)reco {
     ArticleModel *model = [[ArticleModel alloc] init];
-    model.imageUrl = [reco data][@"dominantthumbnail"];
-    model.headline = [reco data][@"title"];
+    model.imageUrl = reco.dominantthumbnail;
+    model.headline = reco.title;
     model.clickUrl = [ATS_URL_Converter convertToHttps:reco.clickUrl];
     model.url = [ATS_URL_Converter convertToHttps:reco.url];
-    model.timestamp = reco.data[@"body"][1];
-    model.section = reco.data[@"body"][0];
+    model.timestamp = reco.data[1];
+    model.section = reco.data[0];
     return model;
 }
 
