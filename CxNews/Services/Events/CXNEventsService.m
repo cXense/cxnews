@@ -70,6 +70,7 @@
     [event addParameterForKey:@"pgn" withValue:pageName];
     
     event.location = pageUrl;
+    event.siteId = kCxenseInsightSiteId;
     
     /*
      Following method reports your event to Cxense SDK's dispatch engine.
