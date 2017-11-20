@@ -48,7 +48,7 @@
     ContentContext *context = [ContentContext new];
     context.url = kCxenseSiteBaseUrl;
     
-    ContentWidget *widget = [Cxense widgetWithId:kCxenseWidgetId context:context andUser:defaultUser];
+    ContentWidget *widget = [Cxense makeWidgetWithId:kCxenseWidgetId context:context user:defaultUser];
     
     /*
      Result content recommendation items can be recieved by using 'fetchItemsWithCompletion:' method.
