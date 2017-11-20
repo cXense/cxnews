@@ -1,32 +1,33 @@
 
-# Created by https://www.gitignore.io/api/appcode,xcode
+# Created by https://www.gitignore.io/api/xcode,appcode,cocoapods
 
 ### AppCode ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea
-.idea/workspace.xml
-.idea/tasks.xml
+.idea/**/workspace.xml
+.idea/**/tasks.xml
 .idea/dictionaries
-.idea/vcs.xml
-.idea/jsLibraryMappings.xml
 
 # Sensitive or high-churn files:
-.idea/dataSources.ids
-.idea/dataSources.xml
-.idea/dataSources.local.xml
-.idea/sqlDataSources.xml
-.idea/dynamic.xml
-.idea/uiDesigner.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
 
 # Gradle:
-.idea/gradle.xml
-.idea/libraries
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# CMake
+cmake-build-debug/
 
 # Mongo Explorer plugin:
-.idea/mongoSettings.xml
+.idea/**/mongoSettings.xml
 
 ## File-based project format:
 *.iws
@@ -42,6 +43,12 @@
 # JIRA plugin
 atlassian-ide-plugin.xml
 
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Ruby plugin and RubyMine
+/.rakeTasks
+
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
@@ -53,7 +60,19 @@ fabric.properties
 
 # *.iml
 # modules.xml
+# .idea/misc.xml
+# *.ipr
 
+# Sonarlint plugin
+.idea/sonarlint
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a lage number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGONRE THE LOCK FILE
+Pods/
 
 ### Xcode ###
 # Xcode
@@ -80,27 +99,11 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
-## Obj-C/Swift specific
-*.hmap
-*.ipa
-*.dSYM.zip
-*.dSYM
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
 
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
- Podfile.lock
- Pods/
-
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
-Carthage/Build
-
-## Application private configuration
-private_conf.plist
+# End of https://www.gitignore.io/api/xcode,appcode,cocoapods
