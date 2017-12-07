@@ -5,4 +5,4 @@ xcode_workspace: CxNews.xcworkspace
 xcode_scheme: CxNews
 
 before_install:
-- pod repo update --repo-update
+- pod repo update
