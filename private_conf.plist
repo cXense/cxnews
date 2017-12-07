@@ -2,11 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>HOCKEY_API_KEY</key>
-	<string>[PUT YOUR HERE]</string>
-	<key>CXENSE_API_KEY</key>
-	<string>[PUT YOUR HERE]</string>
 	<key>CXENSE_API_USERNAME</key>
-	<string>[PUT YOUR HERE]</string>
+	<string>#YOUR-CXENSE-API-USERNAME#</string>
+	<key>CXENSE_API_KEY</key>
+	<string>#YOUR-CXENSE-API-KEY#</string>
+	<key>HOCKEY_API_KEY</key>
+	<string>#YOUR-HOCKEY-API-KEY#</string>
 </dict>
 </plist>
