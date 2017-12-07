@@ -6,3 +6,6 @@ xcode_scheme: CxNews
 
 before_install:
 - pod repo update
+
+script:
+- xcodebuild -workspace CxNews.xcworkspace -scheme CxNews clean build
